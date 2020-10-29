@@ -1,7 +1,7 @@
 <?php
 
-// action là callback
 $router->get('/', function () {
     echo 'home';
 });
-$router->get('/tuanquen/{id}', 'HomeController@index');
+$router->get('/login', 'AuthenticationController@login');
+$router->post('/login', 'AuthenticationController@login');
