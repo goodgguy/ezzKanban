@@ -20,9 +20,13 @@ class AuthenticationController extends Controller
     {
         if(isset($_FILES))
         {
+            print_r($_FILES);
             $email=$_POST["email"];
             $password=$_POST["password"];
             $password=password_hash($password, PASSWORD_DEFAULT);
+            //Check Exception
+            //...
+            $this->UserModel->addUser();
         }
     }
 }

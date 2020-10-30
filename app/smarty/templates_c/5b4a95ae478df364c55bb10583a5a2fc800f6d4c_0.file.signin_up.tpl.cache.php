@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-30 14:21:07
+/* Smarty version 3.1.34-dev-7, created on 2020-10-30 18:12:36
   from 'C:\Apache24\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9bbee32c0305_18690066',
+  'unifunc' => 'content_5f9bf524dc9957_81270556',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b4a95ae478df364c55bb10583a5a2fc800f6d4c' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604042448,
+      1 => 1604044126,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9bbee32c0305_18690066 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '10742519405f9bbee32a93d4_35931531';
+function content_5f9bf524dc9957_81270556 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '2112265435f9bf524db22b8_78798400';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +121,7 @@ $_smarty_tpl->compiled->nocache_hash = '10742519405f9bbee32a93d4_35931531';
                             <label for="exampleInputEmail1">Confirm password</label>
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
-                          <input type="file" name="fileToUpload" id="fileToUpload">
+                          <input type="file" name="fileToUpload" id="fileToUpload" required >
                          <div class="col-md-12 text-center mb-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>

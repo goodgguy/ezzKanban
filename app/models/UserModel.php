@@ -7,7 +7,10 @@ class UserModel extends Database{
         while ($row = mysqli_fetch_assoc($result)){
             var_dump($row);
         }
-        // Xóa kết quả khỏi bộ nhớ
         mysqli_free_result($result);
+    }
+    function addUser($email,$password)
+    {
+
     }
 }
