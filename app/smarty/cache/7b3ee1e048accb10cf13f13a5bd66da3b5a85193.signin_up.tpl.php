@@ -1,29 +1,33 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-30 15:35:58
+/* Smarty version 3.1.34-dev-7, created on 2020-10-30 15:53:39
   from 'C:\xampp\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9c24cebc9049_37635327',
+  'unifunc' => 'content_5f9c28f3f14475_04209119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8f0aacf467e4caec08437b8e4e3fafff29d96b7e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1603985757,
+      1 => 1604069615,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_5f9c24cebc9049_37635327 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9c28f3f14475_04209119 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
     <title>Document</title>
 
     <!--BOOTSTRAP-->
@@ -76,35 +80,7 @@ function content_5f9c24cebc9049_37635327 (Smarty_Internal_Template $_smarty_tpl)
                            <div class="col-md-12 text-center ">
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>
-                           <div class="form-check mt-4">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Keep me logged in</label>
-                          </div>
-                           <div class="col-md-12 ">
-                              <div class="login-or">
-                                 <hr class="hr-or">
-                                 <span class="span-or">Or login with</span>
-                              </div>
-                           </div>
-                           <div class="col-md-12 mb-3">
-                              <div class="row">
-                                  <div class="col-md-6">
-                                    <p class="text-center">
-                                        <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
-                                        </i> Google
-                                        </a>
-                                     </p>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <p class="text-center">
-                                        <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-facebook-square">
-                                        </i> Facebook
-                                        </a>
-                                     </p>
-                                  </div>
-                              </div>
-                           </div>
-                           <div class="form-group">
+                           <div class="form-group mt-4">
                               <p class="text-center"><a href="#" id="signup">Don't have a login? Sign up</a></p>
                            </div>
                         </form>
@@ -118,7 +94,7 @@ function content_5f9c24cebc9049_37635327 (Smarty_Internal_Template $_smarty_tpl)
                             <h1 >Signup</h1>
                          </div>
                       </div>
-                      <form action="#" name="registration">
+                      <form action="register" name="registration" method="post" enctype="multipart/form-data">
                          <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
@@ -131,10 +107,7 @@ function content_5f9c24cebc9049_37635327 (Smarty_Internal_Template $_smarty_tpl)
                             <label for="exampleInputEmail1">Confirm password</label>
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Fullname</label>
-                            <input type="text" name="fullname" id="fullname"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Fullname">
-                         </div>
+                          <input type="file" name="fileToUpload" id="fileToUpload" required >
                          <div class="col-md-12 text-center mb-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>
