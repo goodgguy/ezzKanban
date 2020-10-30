@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-10-30 12:54:28
+  from 'C:\Apache24\htdocs\ezzKanban\app\views\signin_up.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f9baa946222f8_64499545',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5b4a95ae478df364c55bb10583a5a2fc800f6d4c' => 
+    array (
+      0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
+      1 => 1604037266,
+      2 => 'file',
+    ),
+  ),
+  'cache_lifetime' => 3600,
+),true)) {
+function content_5f9baa946222f8_64499545 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -101,4 +122,5 @@
 		</div>
       </div>   
 </body>
-</html>
+</html><?php }
+}
