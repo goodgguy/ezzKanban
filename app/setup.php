@@ -6,8 +6,6 @@ class Template extends Smarty
     function __construct()
     {
 
-        // Class Constructor.
-        // These automatically get set with each new instance.
 
         parent::__construct();
 
