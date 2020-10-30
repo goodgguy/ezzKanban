@@ -66,6 +66,8 @@ class Route
         if (is_string($action)) {
             $action = explode('@', $action);
             require_once PATH_ROOT . '/app/controllers/' . $action[0] . '.php';
+            require_once PATH_ROOT . '/core/Database.php';
+            require_once PATH_ROOT . '/core/Controller.php';
             $controller = new $action[0];
             call_user_func_array([$controller, $action[1]], $params);
 

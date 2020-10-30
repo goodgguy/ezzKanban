@@ -12,6 +12,7 @@ class AuthenticationController
     }
     public function login()
     {
+
         $this->smarty->display('signin_up.tpl');
     }
 }
