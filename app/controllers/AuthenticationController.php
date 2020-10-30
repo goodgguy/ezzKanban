@@ -10,7 +10,7 @@ class AuthenticationController extends Controller
     function __construct()
     {
         $this->smarty = new Template();
-        $this->UserModel=$this->model('UserModel');
+        $this->UserModel = $this->model('UserModel');
     }
     public function login()
     {
@@ -18,15 +18,14 @@ class AuthenticationController extends Controller
     }
     public function register()
     {
-        if(isset($_FILES))
-        {
+        if (isset($_FILES)) {
             print_r($_FILES);
-            $email=$_POST["email"];
-            $password=$_POST["password"];
-            $password=password_hash($password, PASSWORD_DEFAULT);
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $password = password_hash($password, PASSWORD_DEFAULT);
             //Check Exception
             //...
-            $this->UserModel->addUser();
+
         }
     }
 }
