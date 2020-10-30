@@ -2,7 +2,7 @@
 class Database
 {
     public $con;
-    protected $servername = "localhost";
+    protected $servername = "localhost:3306";
     protected $username = "root";
     protected $password = "123456";
     protected $dbname = "ql_kanban";
