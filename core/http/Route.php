@@ -1,6 +1,5 @@
 <?php
 
-namespace Core\Http;
 
 class Route
 {
@@ -58,16 +57,15 @@ class Route
     }
     private function __call_action_route($action, $params)
     {
+        require_once PATH_ROOT . '/core/Database.php';
+        require_once PATH_ROOT . '/core/Controller.php';
         if (is_callable($action)) {
             call_user_func_array($action, $params);
             return;
         }
-
         if (is_string($action)) {
             $action = explode('@', $action);
             require_once PATH_ROOT . '/app/controllers/' . $action[0] . '.php';
-            require_once PATH_ROOT . '/core/Database.php';
-            require_once PATH_ROOT . '/core/Controller.php';
             $controller = new $action[0];
             call_user_func_array([$controller, $action[1]], $params);
 

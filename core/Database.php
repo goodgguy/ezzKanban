@@ -1,11 +1,11 @@
 <?php
 class Database
 {
-    public $config;
+    public $con;
     protected $servername = "localhost";
     protected $username = "root";
-    protected $password = "";
-    protected $dbname = "";
+    protected $password = "123456";
+    protected $dbname = "ql_kanban";
     function __construct()
     {
         $this->con = mysqli_connect($this->servername, $this->username, $this->password);

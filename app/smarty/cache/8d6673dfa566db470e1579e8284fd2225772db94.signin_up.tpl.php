@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-30 13:17:28
+/* Smarty version 3.1.34-dev-7, created on 2020-10-30 14:21:07
   from 'C:\Apache24\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9baff85216e1_53634405',
+  'unifunc' => 'content_5f9bbee32cb109_02347306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b4a95ae478df364c55bb10583a5a2fc800f6d4c' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604038645,
+      1 => 1604042448,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_5f9baff85216e1_53634405 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9bbee32cb109_02347306 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +73,6 @@ function content_5f9baff85216e1_53634405 (Smarty_Internal_Template $_smarty_tpl)
                            <div class="form-group">
                               <p class="text-right"><a href="#">Forgot Password</a></p>
                            </div>
-                           <input type="hidden" id="status" name="status" value="login">
                            <div class="col-md-12 text-center ">
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>
@@ -91,7 +90,7 @@ function content_5f9baff85216e1_53634405 (Smarty_Internal_Template $_smarty_tpl)
                             <h1 >Signup</h1>
                          </div>
                       </div>
-                      <form action="login" name="registration" method="post">
+                      <form action="register" name="registration" method="post" enctype="multipart/form-data">
                          <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
@@ -104,7 +103,7 @@ function content_5f9baff85216e1_53634405 (Smarty_Internal_Template $_smarty_tpl)
                             <label for="exampleInputEmail1">Confirm password</label>
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
-                          <input type="hidden" id="status" name="status" value="register">
+                          <input type="file" name="fileToUpload" id="fileToUpload">
                          <div class="col-md-12 text-center mb-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>

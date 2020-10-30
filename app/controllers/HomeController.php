@@ -3,7 +3,7 @@
 
 require_once './app/setup.php';
 
-class HomeController
+class HomeController extends Controller
 {
     private $smarty;
     function __construct()

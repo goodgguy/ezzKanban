@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/UserModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/smarty/cache/8d6673dfa566db470e1579e8284fd2225772db94.signin_up.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/cache/8d6673dfa566db470e1579e8284fd2225772db94.signin_up.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/smarty/templates_c/5b4a95ae478df364c55bb10583a5a2fc800f6d4c_0.file.signin_up.tpl.cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/templates_c/5b4a95ae478df364c55bb10583a5a2fc800f6d4c_0.file.signin_up.tpl.cache.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/signin_up.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signin_up.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/http/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/http/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/signup_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/signup_in.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604037001420</updated>
-      <workItem from="1604037002904" duration="2939000" />
+      <workItem from="1604037002904" duration="10365000" />
     </task>
     <servers />
   </component>
@@ -52,5 +55,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604039255666" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604042460558">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604042460558" />
   </component>
 </project>

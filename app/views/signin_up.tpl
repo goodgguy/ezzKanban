@@ -52,7 +52,6 @@
                            <div class="form-group">
                               <p class="text-right"><a href="#">Forgot Password</a></p>
                            </div>
-                           <input type="hidden" id="status" name="status" value="login">
                            <div class="col-md-12 text-center ">
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>
@@ -70,7 +69,7 @@
                             <h1 >Signup</h1>
                          </div>
                       </div>
-                      <form action="login" name="registration" method="post">
+                      <form action="register" name="registration" method="post" enctype="multipart/form-data">
                          <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
@@ -83,7 +82,7 @@
                             <label for="exampleInputEmail1">Confirm password</label>
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
-                          <input type="hidden" id="status" name="status" value="register">
+                          <input type="file" name="fileToUpload" id="fileToUpload" required >
                          <div class="col-md-12 text-center mb-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>
