@@ -4,10 +4,14 @@
 class Route
 {
     private $__routes;
+    private $__disableRoutes;
 
     public function __construct()
     {
         $this->__routes = [];
+        $this->__disableRoutes = [];
+        array_push($this->__disableRoutes, $this->__setDisRoute("AuthenticationController", "login"));
+        array_push($this->__disableRoutes, $this->__setDisRoute("AuthenticationController", "register"));
     }
 
     public function get(string $url, $action)
@@ -42,10 +46,6 @@ class Route
         foreach ($this->__routes as $route) {
 
             if ($route['method'] == $method) {
-                // if (isset($_SESSION)) {
-                //     $this->__call_action_route('AuthenticationController@login', array());
-                //     return;
-                // }
                 $reg = '/^' . $route['url'] . '$/';
                 if (preg_match($reg, $url, $params)) {
                     array_shift($params);
@@ -69,11 +69,24 @@ class Route
         }
         if (is_string($action)) {
             $action = explode('@', $action);
+            foreach ($this->__disableRoutes as $disroute) {
+                if ($disroute["controller"] != $action[0] && $disroute["action"] != $action[1] && empty($__SESSION)) {
+                    $action[0] = "AuthenticationController";
+                    $action[1] = "login";
+                }
+            }
             require_once PATH_ROOT . '/app/controllers/' . $action[0] . '.php';
             $controller = new $action[0];
             call_user_func_array([$controller, $action[1]], $params);
 
             return;
         }
+    }
+    private function __setDisRoute($controller, $action)
+    {
+        return [
+            "controller" => $controller,
+            "action" => $action
+        ];
     }
 }

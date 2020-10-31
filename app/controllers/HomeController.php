@@ -10,9 +10,8 @@ class HomeController extends Controller
     {
         $this->smarty = new Template();
     }
-    public function index($id)
+    public function index()
     {
-        // $this->smarty->assign('Name', $id);
-        // $this->smarty->display('test.tpl');
+        echo "HOME PAGE";
     }
 }

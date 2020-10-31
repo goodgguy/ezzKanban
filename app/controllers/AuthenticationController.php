@@ -14,7 +14,20 @@ class AuthenticationController extends Controller
     }
     public function login()
     {
-        $this->smarty->display('signin_up.tpl');
+        if (empty($_POST)) {
+            $this->smarty->display('signin_up.tpl');
+            die();
+        }
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $user = $this->UserModel->getUser($email);
+        if (isset($user) && $user["activated"] == 1) {
+            if (password_verify($password, $user["password"])) {
+                header("Location:http://localhost:9999/ezzKanban/home");
+                die();
+            }
+        }
+        header("Location:http://localhost:9999/ezzKanban/login");
     }
     public function register()
     {
@@ -24,19 +37,18 @@ class AuthenticationController extends Controller
         $message = '';
 
         while (1) {
-            if (!isset($_POST) || !isset($_FILES)) {
+            if (empty($_POST) || empty($_FILES)) {
                 $message = "Must require data!";
                 $success = false;
                 break;
             }
 
             $user = $this->UserModel->getUser($email);
-            if (isset($use)) {
+            if (isset($user)) {
                 $message = "Email already exists";
                 $success = false;
                 break;
             }
-
             if (!UTIL::copyFile($_FILES)) {
                 $message = "Invalid file";
                 $success = false;
@@ -52,7 +64,6 @@ class AuthenticationController extends Controller
             }
             break;
         }
-
         $this->smarty->assign('message', $message);
         $this->smarty->display('signin_up.tpl');
     }
