@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-31 19:40:23
+/* Smarty version 3.1.34-dev-7, created on 2020-10-31 23:58:22
   from 'C:\xampp\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9d5b373c7c04_48509762',
+  'unifunc' => 'content_5f9d97ae5f8073_73683966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8f0aacf467e4caec08437b8e4e3fafff29d96b7e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604146634,
+      1 => 1604163497,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9d5b373c7c04_48509762 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '17065471415f9d5b3737a690_82707533';
+function content_5f9d97ae5f8073_73683966 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '12356247255f9d97ae581e93_98080084';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@ $_smarty_tpl->compiled->nocache_hash = '17065471415f9d5b3737a690_82707533';
 <meta http-equiv="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="Cache-Control" content="no-cache">
-    <title>Document</title>
+    <title>ezzKanban</title>
 
     <!--BOOTSTRAP-->
     <!-- CSS only -->
@@ -86,11 +86,11 @@ $_smarty_tpl->compiled->nocache_hash = '17065471415f9d5b3737a690_82707533';
                    <form action="login" method="post" name="login">
                                               <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                              <input type="email" name="email"  class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
                            </div>
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
-                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                              <input type="password" name="password" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                            </div>
                            <div class="form-group">
                               <p class="text-right"><a href="#">Forgot Password</a></p>
@@ -112,7 +112,7 @@ $_smarty_tpl->compiled->nocache_hash = '17065471415f9d5b3737a690_82707533';
                             <h1 >Signup</h1>
                          </div>
                       </div>
-                      <form action="register" name="registration" method="post" enctype="multipart/form-data">
+                      <form  action="register" name="registration" method="post" enctype="multipart/form-data">
                          <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">

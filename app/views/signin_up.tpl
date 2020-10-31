@@ -7,7 +7,7 @@
 <meta http-equiv="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="Cache-Control" content="no-cache">
-    <title>Document</title>
+    <title>ezzKanban</title>
 
     <!--BOOTSTRAP-->
     <!-- CSS only -->
@@ -48,11 +48,11 @@
                    {* {if isset($message)}{$message}{/if} *}
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                              <input type="email" name="email"  class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
                            </div>
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
-                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                              <input type="password" name="password" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                            </div>
                            <div class="form-group">
                               <p class="text-right"><a href="#">Forgot Password</a></p>
@@ -74,7 +74,7 @@
                             <h1 >Signup</h1>
                          </div>
                       </div>
-                      <form action="register" name="registration" method="post" enctype="multipart/form-data">
+                      <form  action="register" name="registration" method="post" enctype="multipart/form-data">
                          <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">

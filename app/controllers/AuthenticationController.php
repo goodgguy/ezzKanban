@@ -21,26 +21,39 @@ class AuthenticationController extends Controller
         $email = $_POST["email"];
         $password = $_POST["password"];
         $isSuccess = true;
-        $message = 'asdasds';
+        $message = '';
 
-        echo "OK";
+        while (1) {
+            if (!isset($_POST) || !isset($_FILES)) {
+                $message = "Must require data!";
+                $success = false;
+                break;
+            }
 
-        //CHECK TRUE DATA RECIVED
-        // if (isset($_POST) || isset($_FILES)) {
-        // }
+            $user = $this->UserModel->getUser($email);
+            if (isset($use)) {
+                $message = "Email already exists";
+                $success = false;
+                break;
+            }
 
-        //CHECK EXISTS EMAIL
-        //print_r($this->UserModel->getUser($email));
+            if (!UTIL::copyFile($_FILES)) {
+                $message = "Invalid file";
+                $success = false;
+                break;
+            }
 
+            $filePath = "public/img/" . $_FILES["fileToUpload"]["name"];
+            $result = $this->UserModel->addUser($email, $password, $filePath);
+            if ($result != 1) {
+                $message = "Registration was not successful";
+                $success = false;
+                break;
+            }
+            break;
+        }
 
-        //CHECK FILE -COPY FILE
-        //UTIL::copyFile($_FILES);
-
-
-        //ADD DATABASE
-        //$this->UserModel->addUser($email, $password, 'tuanquen');
-
-        // $this->smarty->assign('message', $message);
-        // $this->smarty->display('signin_up.tpl');
+        $this->smarty->assign('message', $message);
+        $this->smarty->display('signin_up.tpl');
     }
 }

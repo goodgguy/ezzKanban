@@ -13,12 +13,10 @@ class UTIL
         $maxfilesize   = 800000;
         $allowtypes    = array('jpg', 'png', 'jpeg', 'gif');
         if (!isset($file[$file_key])) {
-            echo "Dữ liệu không đúng cấu trúc";
-            die;
+            return false;
         }
         if ($file[$file_key]['error'] != 0) {
-            echo "Dữ liệu upload bị lỗi";
-            die;
+            return false;
         }
         $check = getimagesize($file[$file_key]["tmp_name"]);
         if ($check !== false) {
