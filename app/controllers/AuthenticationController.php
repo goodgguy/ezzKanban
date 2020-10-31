@@ -23,6 +23,8 @@ class AuthenticationController extends Controller
         $isSuccess = true;
         $message = 'asdasds';
 
+        echo "OK";
+
         //CHECK TRUE DATA RECIVED
         // if (isset($_POST) || isset($_FILES)) {
         // }
