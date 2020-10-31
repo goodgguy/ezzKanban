@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-30 19:41:25
+/* Smarty version 3.1.34-dev-7, created on 2020-10-31 19:40:23
   from 'C:\xampp\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9c5e556c7b52_11212475',
+  'unifunc' => 'content_5f9d5b373c7c04_48509762',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8f0aacf467e4caec08437b8e4e3fafff29d96b7e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604080700,
+      1 => 1604146634,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9c5e556c7b52_11212475 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '11958897335f9c5e5567d279_22270125';
+function content_5f9d5b373c7c04_48509762 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '17065471415f9d5b3737a690_82707533';
 ?>
 <!DOCTYPE html>
 <html lang="en">

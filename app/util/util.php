@@ -37,12 +37,12 @@ class UTIL
         }
         if ($allowUpload) {
             if (move_uploaded_file($file[$file_key]["tmp_name"], $target_file)) {
-                return true;
+                return $allowUpload;
             } else {
-                return false;
+                return $allowUpload;
             }
         } else {
-            return false;
+            return $allowUpload;
         }
     }
 }

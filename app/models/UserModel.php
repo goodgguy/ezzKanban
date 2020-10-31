@@ -19,7 +19,13 @@ class UserModel extends Database
         $stmt->bind_param("ssss", $email, $passwordHashed, $filename, $date);
         return $stmt->execute(); //1 if successs
     }
-    public function getuser($email)
+    public function getUser($email)
     {
+        $query = "SELECT * FROM ql_kanban.user where email like ?;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
     }
 }

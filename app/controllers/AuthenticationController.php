@@ -20,10 +20,15 @@ class AuthenticationController extends Controller
     {
         $email = $_POST["email"];
         $password = $_POST["password"];
+        $isSuccess = true;
+        $message = 'asdasds';
 
         //CHECK TRUE DATA RECIVED
+        // if (isset($_POST) || isset($_FILES)) {
+        // }
 
         //CHECK EXISTS EMAIL
+        //print_r($this->UserModel->getUser($email));
 
 
         //CHECK FILE -COPY FILE
@@ -32,5 +37,8 @@ class AuthenticationController extends Controller
 
         //ADD DATABASE
         //$this->UserModel->addUser($email, $password, 'tuanquen');
+
+        // $this->smarty->assign('message', $message);
+        // $this->smarty->display('signin_up.tpl');
     }
 }
