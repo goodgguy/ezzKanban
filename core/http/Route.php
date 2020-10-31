@@ -42,7 +42,10 @@ class Route
         foreach ($this->__routes as $route) {
 
             if ($route['method'] == $method) {
-
+                // if (isset($_SESSION)) {
+                //     $this->__call_action_route('AuthenticationController@login', array());
+                //     return;
+                // }
                 $reg = '/^' . $route['url'] . '$/';
                 if (preg_match($reg, $url, $params)) {
                     array_shift($params);
@@ -59,6 +62,7 @@ class Route
     {
         require_once PATH_ROOT . '/core/Database.php';
         require_once PATH_ROOT . '/core/Controller.php';
+        require_once PATH_ROOT . '/app/util/UTIL.php';
         if (is_callable($action)) {
             call_user_func_array($action, $params);
             return;

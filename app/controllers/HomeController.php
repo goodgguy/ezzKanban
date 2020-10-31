@@ -12,7 +12,7 @@ class HomeController extends Controller
     }
     public function index($id)
     {
-        $this->smarty->assign('Name', $id);
-        $this->smarty->display('test.tpl');
+        // $this->smarty->assign('Name', $id);
+        // $this->smarty->display('test.tpl');
     }
 }
