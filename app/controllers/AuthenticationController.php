@@ -18,14 +18,19 @@ class AuthenticationController extends Controller
     }
     public function register()
     {
-        if (isset($_FILES)) {
-            print_r($_FILES);
-            $email = $_POST["email"];
-            $password = $_POST["password"];
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            //Check Exception
-            //...
+        $email = $_POST["email"];
+        $password = $_POST["password"];
 
-        }
+        //CHECK TRUE DATA RECIVED
+
+        //CHECK EXISTS EMAIL
+
+
+        //CHECK FILE -COPY FILE
+        //UTIL::copyFile($_FILES);
+
+
+        //ADD DATABASE
+        //$this->UserModel->addUser($email, $password, 'tuanquen');
     }
 }

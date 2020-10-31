@@ -45,6 +45,7 @@
 						 </div>
 					</div>
                    <form action="login" method="post" name="login">
+                   {* {if isset($message)}{$message}{/if} *}
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -87,7 +88,7 @@
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
                           <input type="file" name="fileToUpload" id="fileToUpload" required >
-                         <div class="col-md-12 text-center mb-3">
+                         <div class="col-md-12 text-center mb-3 mt-2">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>
                          <div class="col-md-12 ">

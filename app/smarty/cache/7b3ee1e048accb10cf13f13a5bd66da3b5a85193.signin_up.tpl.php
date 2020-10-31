@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-30 15:53:39
+/* Smarty version 3.1.34-dev-7, created on 2020-10-31 18:42:36
   from 'C:\xampp\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9c28f3f14475_04209119',
+  'unifunc' => 'content_5f9d4dac66b7a1_11622126',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8f0aacf467e4caec08437b8e4e3fafff29d96b7e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604069615,
+      1 => 1604080700,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_5f9c28f3f14475_04209119 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9d4dac66b7a1_11622126 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +66,7 @@ function content_5f9c28f3f14475_04209119 (Smarty_Internal_Template $_smarty_tpl)
 						 </div>
 					</div>
                    <form action="login" method="post" name="login">
-                           <div class="form-group">
+                                              <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                            </div>
@@ -108,7 +108,7 @@ function content_5f9c28f3f14475_04209119 (Smarty_Internal_Template $_smarty_tpl)
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
                           <input type="file" name="fileToUpload" id="fileToUpload" required >
-                         <div class="col-md-12 text-center mb-3">
+                         <div class="col-md-12 text-center mb-3 mt-2">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>
                          <div class="col-md-12 ">
