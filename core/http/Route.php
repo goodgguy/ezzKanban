@@ -70,7 +70,7 @@ class Route
         if (is_string($action)) {
             $action = explode('@', $action);
             foreach ($this->__disableRoutes as $disroute) {
-                if ($disroute["controller"] != $action[0] && $disroute["action"] != $action[1] && empty($__SESSION)) {
+                if ($disroute["controller"] != $action[0] && $disroute["action"] != $action[1] && empty($_SESSION)) {
                     $action[0] = "AuthenticationController";
                     $action[1] = "login";
                 }
@@ -78,7 +78,6 @@ class Route
             require_once PATH_ROOT . '/app/controllers/' . $action[0] . '.php';
             $controller = new $action[0];
             call_user_func_array([$controller, $action[1]], $params);
-
             return;
         }
     }

@@ -1,7 +1,7 @@
 <?php
 class UserModel extends Database
 {
-    function getAllUser()
+    public function getAllUser()
     {
         $query = "SELECT * FROM USER";
         $result = mysqli_query($this->con, $query);
@@ -10,7 +10,7 @@ class UserModel extends Database
         }
         mysqli_free_result($result);
     }
-    function addUser($email, $password, $filename)
+    public function addUser($email, $password, $filename)
     {
         $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
         $date = date("Y-m-d H:i:s");

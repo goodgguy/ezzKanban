@@ -16,15 +16,18 @@ class AuthenticationController extends Controller
     {
         if (empty($_POST)) {
             $this->smarty->display('signin_up.tpl');
-            die();
+            return;
         }
         $email = $_POST["email"];
         $password = $_POST["password"];
         $user = $this->UserModel->getUser($email);
         if (isset($user) && $user["activated"] == 1) {
             if (password_verify($password, $user["password"])) {
+                $_SESSION["email"] = $user["email"];
+                $_SESSION["image"] = $user["image"];
+                $_SESSION["create_date"] = $user["create_date"];
                 header("Location:http://localhost:9999/ezzKanban/home");
-                die();
+                return;
             }
         }
         header("Location:http://localhost:9999/ezzKanban/login");
