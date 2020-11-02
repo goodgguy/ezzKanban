@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-11-03 01:07:27
+  from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5fa04adf902ef2_05874236',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6f9421d4861dd309d89035daca18b56424643641' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
+      1 => 1604340419,
+      2 => 'file',
+    ),
+  ),
+  'cache_lifetime' => 3600,
+),true)) {
+function content_5fa04adf902ef2_05874236 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -382,4 +403,5 @@
     <script src="public/js/kanban.js"></script>
 </body>
 
-</html>
+</html><?php }
+}

@@ -54,9 +54,6 @@
                               <label for="exampleInputEmail1">Password</label>
                               <input type="password" name="password" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                            </div>
-                           <div class="form-group">
-                              <p class="text-right"><a href="#">Forgot Password</a></p>
-                           </div>
                            <div class="col-md-12 text-center ">
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>

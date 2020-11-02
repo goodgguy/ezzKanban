@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Arimo:400,700|Roboto+Slab:400,700");
+.card.draggable {
+    cursor: grab;
+}
+
+.droppable {
+    background-color: var(--success);
+    min-height: 120px;
+    margin-bottom: 1rem;
+}
+.card-title {
+    font-family: "Arimo", sans-serif;
+    font-size: 1.5rem;
+}
+.lead {
+    font-size: 1.25rem;
+    font-family: "Roboto Slab", serif;
+    color: #555555;
+}
+.card {
+    -webkit-box-shadow: -6px 13px 28px -12px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: -6px 13px 28px -12px rgba(0, 0, 0, 0.57);
+    box-shadow: -6px 13px 28px -12px rgba(0, 0, 0, 0.57);
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #000000;
+}

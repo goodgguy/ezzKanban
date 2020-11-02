@@ -12,6 +12,6 @@ class HomeController extends Controller
     }
     public function index()
     {
-        echo "HOME PAGE";
+        $this->__smarty->display('homepage.tpl');
     }
 }
