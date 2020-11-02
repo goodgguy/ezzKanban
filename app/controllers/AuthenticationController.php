@@ -5,22 +5,22 @@ require_once './app/setup.php';
 
 class AuthenticationController extends Controller
 {
-    private $smarty;
-    private $UserModel;
+    private $__smarty;
+    private $__UserModel;
     function __construct()
     {
-        $this->smarty = new Template();
-        $this->UserModel = $this->model('UserModel');
+        $this->__smarty = new Template();
+        $this->__UserModel = $this->model('UserModel');
     }
     public function login()
     {
         if (empty($_POST)) {
-            $this->smarty->display('signin_up.tpl');
+            $this->__smarty->display('signin_up.tpl');
             return;
         }
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $user = $this->UserModel->getUser($email);
+        $user = $this->__UserModel->getUser($email);
         if (isset($user) && $user["activated"] == 1) {
             if (password_verify($password, $user["password"])) {
                 $_SESSION["email"] = $user["email"];
@@ -46,7 +46,7 @@ class AuthenticationController extends Controller
                 break;
             }
 
-            $user = $this->UserModel->getUser($email);
+            $user = $this->__UserModel->getUser($email);
             if (isset($user)) {
                 $message = "Email already exists";
                 $success = false;
@@ -59,7 +59,7 @@ class AuthenticationController extends Controller
             }
 
             $filePath = "public/img/" . $_FILES["fileToUpload"]["name"];
-            $result = $this->UserModel->addUser($email, $password, $filePath);
+            $result = $this->__UserModel->addUser($email, $password, $filePath);
             if ($result != 1) {
                 $message = "Registration was not successful";
                 $success = false;
@@ -67,7 +67,7 @@ class AuthenticationController extends Controller
             }
             break;
         }
-        $this->smarty->assign('message', $message);
-        $this->smarty->display('signin_up.tpl');
+        $this->__smarty->assign('message', $message);
+        $this->__smarty->display('signin_up.tpl');
     }
 }

@@ -74,6 +74,10 @@ class Route
                     $action[0] = "AuthenticationController";
                     $action[1] = "login";
                 }
+                else if ($disroute["controller"] == $action[0] && $disroute["action"] == $action[1] && !empty($_SESSION)) {
+                    $action[0] = "HomeController";
+                    $action[1] = "index";
+                }
             }
             require_once PATH_ROOT . '/app/controllers/' . $action[0] . '.php';
             $controller = new $action[0];

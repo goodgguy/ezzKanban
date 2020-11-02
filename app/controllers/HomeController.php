@@ -5,10 +5,10 @@ require_once './app/setup.php';
 
 class HomeController extends Controller
 {
-    private $smarty;
+    private $__smarty;
     function __construct()
     {
-        $this->smarty = new Template();
+        $this->__smarty = new Template();
     }
     public function index()
     {
