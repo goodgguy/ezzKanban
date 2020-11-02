@@ -26,11 +26,11 @@ class AuthenticationController extends Controller
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["image"] = $user["image"];
                 $_SESSION["create_date"] = $user["create_date"];
-                header("Location:http://localhost:9999/ezzKanban/home");
+                header("Location:http://localhost:8080/ezzKanban/home");
                 return;
             }
         }
-        header("Location:http://localhost:9999/ezzKanban/login");
+        header("Location:http://localhost:8080/ezzKanban/login");
     }
     public function register()
     {

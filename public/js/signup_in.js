@@ -58,7 +58,7 @@ $(function () {
         confirm_password: {
           required: true,
           minlength: 5,
-          //equalTo: "#password"
+          equalTo: "#password"
         },
         fullname: "required"
       },

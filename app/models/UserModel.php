@@ -18,6 +18,7 @@ class UserModel extends Database
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("ssss", $email, $passwordHashed, $filename, $date);
         return $stmt->execute(); //1 if successs
+
     }
     public function getUser($email)
     {

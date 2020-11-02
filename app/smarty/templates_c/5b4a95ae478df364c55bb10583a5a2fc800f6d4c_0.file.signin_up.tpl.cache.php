@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-30 18:12:36
+/* Smarty version 3.1.34-dev-7, created on 2020-11-02 15:31:50
   from 'C:\Apache24\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9bf524dc9957_81270556',
+  'unifunc' => 'content_5f9fc3f6e5e0a9_03300868',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b4a95ae478df364c55bb10583a5a2fc800f6d4c' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604044126,
+      1 => 1604305909,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9bf524dc9957_81270556 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '2112265435f9bf524db22b8_78798400';
+function content_5f9fc3f6e5e0a9_03300868 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '16243221135f9fc3f6e464f3_96517992';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+    <title>ezzKanban</title>
 
     <!--BOOTSTRAP-->
     <!-- CSS only -->
@@ -80,13 +84,13 @@ $_smarty_tpl->compiled->nocache_hash = '2112265435f9bf524db22b8_78798400';
 						 </div>
 					</div>
                    <form action="login" method="post" name="login">
-                           <div class="form-group">
+                                              <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                              <input type="email" name="email"  class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
                            </div>
                            <div class="form-group">
                               <label for="exampleInputEmail1">Password</label>
-                              <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                              <input type="password" name="password" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                            </div>
                            <div class="form-group">
                               <p class="text-right"><a href="#">Forgot Password</a></p>
@@ -108,7 +112,7 @@ $_smarty_tpl->compiled->nocache_hash = '2112265435f9bf524db22b8_78798400';
                             <h1 >Signup</h1>
                          </div>
                       </div>
-                      <form action="register" name="registration" method="post" enctype="multipart/form-data">
+                      <form  action="register" name="registration" method="post" enctype="multipart/form-data">
                          <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
@@ -122,7 +126,7 @@ $_smarty_tpl->compiled->nocache_hash = '2112265435f9bf524db22b8_78798400';
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
                           <input type="file" name="fileToUpload" id="fileToUpload" required >
-                         <div class="col-md-12 text-center mb-3">
+                         <div class="col-md-12 text-center mb-3 mt-2">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>
                          <div class="col-md-12 ">
