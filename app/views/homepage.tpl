@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/kanban.css">
+    <link rel="stylesheet" href="css/kanban.css">
 </head>
 
 <body class="bg-dark" data-new-gr-c-s-check-loaded="14.981.0">
@@ -39,6 +39,14 @@
             </div>
         </nav>
         <!--NAV-->
+        <form class="form-inline mt-3">
+            <div class="form-group mx-sm-3">
+                <input type="password" class="form-control" id="inputPassword2" placeholder="">
+            </div>
+            <button type="submit" class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
+        </form>
+
+
         <h3 class="font-weight-light text-white"></h3>
         <div class="small  text-light"></div>
         <div id="master" class="row flex-row flex-sm-nowrap py-4" style="overflow: auto;height: 90vh;">
@@ -48,7 +56,16 @@
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
                         <div id="1" class="items border border-light list-card">
                             <!--EX CARD-->
                             <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
@@ -141,7 +158,16 @@
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">Implement</h6>
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">implement</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
 
                         <div id="2" class="items border border-light list-card">
                             <!--EX CARD-->
@@ -201,8 +227,16 @@
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">Tomorrow</h6>
-
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">tomorrow</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
                         <div id="3" class="items border border-light list-card">
                             <!--EX CARD-->
                             <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
@@ -235,8 +269,16 @@
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">DONE</h6>
-
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">Done</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
                         <div id="4" class="items border border-light list-card">
                             <!--EX CARD-->
                             <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
@@ -335,7 +377,16 @@
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
 
                         <div id="5" class="items border border-light list-card">
                             <!--EX CARD-->
@@ -378,8 +429,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="public/js/Sortable.js"></script>
-    <script src="public/js/kanban.js"></script>
+    <script src="js/Sortable.js"></script>
+    <script src="js/kanban.js"></script>
 </body>
 
 </html>

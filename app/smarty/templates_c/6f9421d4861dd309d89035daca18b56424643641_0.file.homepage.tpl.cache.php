@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-03 01:07:27
+/* Smarty version 3.1.34-dev-7, created on 2020-11-03 01:35:06
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa04adf8f3832_72926806',
+  'unifunc' => 'content_5fa0515a876be1_99515296',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604340419,
+      1 => 1604342009,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa04adf8f3832_72926806 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
+function content_5fa0515a876be1_99515296 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '1239165575fa0515a801486_00286618';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/kanban.css">
+    <link rel="stylesheet" href="css/kanban.css">
 </head>
 
 <body class="bg-dark" data-new-gr-c-s-check-loaded="14.981.0">
@@ -64,6 +64,14 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
             </div>
         </nav>
         <!--NAV-->
+        <form class="form-inline mt-3">
+            <div class="form-group mx-sm-3">
+                <input type="password" class="form-control" id="inputPassword2" placeholder="">
+            </div>
+            <button type="submit" class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
+        </form>
+
+
         <h3 class="font-weight-light text-white"></h3>
         <div class="small  text-light"></div>
         <div id="master" class="row flex-row flex-sm-nowrap py-4" style="overflow: auto;height: 90vh;">
@@ -73,7 +81,16 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
                         <div id="1" class="items border border-light list-card">
                             <!--EX CARD-->
                             <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
@@ -166,7 +183,16 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">Implement</h6>
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">implement</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
 
                         <div id="2" class="items border border-light list-card">
                             <!--EX CARD-->
@@ -226,8 +252,16 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">Tomorrow</h6>
-
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">tomorrow</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
                         <div id="3" class="items border border-light list-card">
                             <!--EX CARD-->
                             <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
@@ -260,8 +294,16 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">DONE</h6>
-
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">Done</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
                         <div id="4" class="items border border-light list-card">
                             <!--EX CARD-->
                             <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
@@ -360,7 +402,16 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
                     <div class="card-body" style="background-color: #ebecf0">
-                        <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
+                            </div>
+                            <div class="col-sm-4 ">
+                                <a href="#">
+                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                        width="25" height="25"></a>
+                            </div>
+                        </div>
 
                         <div id="5" class="items border border-light list-card">
                             <!--EX CARD-->
@@ -410,10 +461,10 @@ $_smarty_tpl->compiled->nocache_hash = '10298463345fa04adf8aca53_04415723';
         crossorigin="anonymous"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="public/js/Sortable.js"><?php echo '</script'; ?>
+ src="js/Sortable.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="public/js/kanban.js"><?php echo '</script'; ?>
+ src="js/kanban.js"><?php echo '</script'; ?>
 >
 </body>
 
