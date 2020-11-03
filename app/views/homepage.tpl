@@ -41,7 +41,7 @@
         <!--NAV-->
         <form class="form-inline mt-3">
             <div class="form-group mx-sm-3">
-                <input type="password" class="form-control" id="inputPassword2" placeholder="">
+                <input type="text" class="form-control" id="addcolumm" placeholder="">
             </div>
             <button type="submit" class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
         </form>

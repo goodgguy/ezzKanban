@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-03 09:11:22
+/* Smarty version 3.1.34-dev-7, created on 2020-11-03 10:02:29
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa0bc4aea26b2_64829259',
+  'unifunc' => 'content_5fa0c845c8eab9_54926603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604369480,
+      1 => 1604372547,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa0bc4aea26b2_64829259 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '20110871145fa0bc4ae8ab13_71662192';
+function content_5fa0c845c8eab9_54926603 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '3823370225fa0c845c76573_92890431';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,7 @@ $_smarty_tpl->compiled->nocache_hash = '20110871145fa0bc4ae8ab13_71662192';
         <!--NAV-->
         <form class="form-inline mt-3">
             <div class="form-group mx-sm-3">
-                <input type="password" class="form-control" id="inputPassword2" placeholder="">
+                <input type="text" class="form-control" id="addcolumm" placeholder="">
             </div>
             <button type="submit" class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
         </form>

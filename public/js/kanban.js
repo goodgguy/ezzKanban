@@ -13,16 +13,16 @@ new Sortable(master, {
 new Sortable(list_card_1, {
     group: 'shared', // set both lists to same group
     animation: 150,
-    onEnd: function (/**Event*/ evt) {
-        var itemEl = evt.item; // dragged HTMLElement
-        evt.to; // target list
-        evt.from; // previous list
-        evt.oldIndex; // element's old index within old parent
-        evt.newIndex; // element's new index within new parent
-        evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
-        evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
-        evt.clone; // the clone element
-        evt.pullMode; // when item is in another sortable: `"clone"` if cloning, `true` if moving
+    onEnd: function ( evt) {
+        var itemEl = evt.item; 
+        evt.to; 
+        evt.from; 
+        evt.oldIndex; 
+        evt.newIndex; 
+        evt.oldDraggableIndex; 
+        evt.newDraggableIndex; 
+        evt.clone; 
+        evt.pullMode; 
         console.log(evt.to);
         console.log(evt.from);
     },
