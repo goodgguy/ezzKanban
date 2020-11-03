@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-03 11:44:27
+/* Smarty version 3.1.34-dev-7, created on 2020-11-03 17:21:45
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa0e02b3c26b7_98312051',
+  'unifunc' => 'content_5fa12f39a95cf4_34877700',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_5fa0e02b3c26b7_98312051 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa12f39a95cf4_34877700 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 

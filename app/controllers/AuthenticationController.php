@@ -58,7 +58,7 @@ class AuthenticationController extends Controller
                 break;
             }
 
-            $filePath = "public/img/" . $_FILES["fileToUpload"]["name"];
+            $filePath = $_FILES["fileToUpload"]["name"];
             $result = $this->__UserModel->addUser($email, $password, $filePath);
             if ($result != 1) {
                 $message = "Registration was not successful";
