@@ -9,6 +9,7 @@ class HomeController extends Controller
     function __construct()
     {
         $this->__smarty = new Template();
+        $this->__smarty->caching = false;
     }
     public function index()
     {

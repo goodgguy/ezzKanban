@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/smarty/cache/b14bfe4f0450c969b6e193dc313d47d57d8bbc78.homepage.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/cache/b14bfe4f0450c969b6e193dc313d47d57d8bbc78.homepage.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/smarty/templates_c/e6a0ae0917ab8071f497764397f70ca9d2248405_0.file.homepage.tpl.cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/templates_c/e6a0ae0917ab8071f497764397f70ca9d2248405_0.file.homepage.tpl.cache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/homepage.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/homepage.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
