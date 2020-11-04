@@ -25,14 +25,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hi, tuanquen260@gmail.com
+                            Hi, {$smarty.session.username}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Log out</a>
+                            <a class="dropdown-item" href="logout">Log out</a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
+                        <img src="public/img/{$smarty.session.image}"
                             alt="Girl in a jacket" width="50" height="50">
                     </li>
                 </ul>

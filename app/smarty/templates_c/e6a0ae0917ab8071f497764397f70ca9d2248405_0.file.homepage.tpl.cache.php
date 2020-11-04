@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-03 10:02:29
+/* Smarty version 3.1.34-dev-7, created on 2020-11-04 14:48:00
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa0c845c8eab9_54926603',
+  'unifunc' => 'content_5fa25cb00eff68_74131036',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604372547,
+      1 => 1604475958,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa0c845c8eab9_54926603 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '3823370225fa0c845c76573_92890431';
+function content_5fa25cb00eff68_74131036 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '19633657375fa25cb00d8030_09526791';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,14 +50,16 @@ $_smarty_tpl->compiled->nocache_hash = '3823370225fa0c845c76573_92890431';
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hi, tuanquen260@gmail.com
+                            Hi, <?php echo $_SESSION['username'];?>
+
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Log out</a>
+                            <a class="dropdown-item" href="logout">Log out</a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
+                        <img src="public/img/<?php echo $_SESSION['image'];?>
+"
                             alt="Girl in a jacket" width="50" height="50">
                     </li>
                 </ul>

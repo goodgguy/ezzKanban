@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-03 17:21:45
+/* Smarty version 3.1.34-dev-7, created on 2020-11-04 14:48:00
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa12f39a95cf4_34877700',
+  'unifunc' => 'content_5fa25cb00fd0c9_32733587',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604372547,
+      1 => 1604475958,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 3600,
 ),true)) {
-function content_5fa12f39a95cf4_34877700 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa25cb00fd0c9_32733587 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -46,14 +46,14 @@ function content_5fa12f39a95cf4_34877700 (Smarty_Internal_Template $_smarty_tpl)
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hi, tuanquen260@gmail.com
+                            Hi, tuanquen
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Log out</a>
+                            <a class="dropdown-item" href="logout">Log out</a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
+                        <img src="public/img/admin1.jpg"
                             alt="Girl in a jacket" width="50" height="50">
                     </li>
                 </ul>
