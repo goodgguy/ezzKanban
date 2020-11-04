@@ -5,14 +5,13 @@ require_once './app/setup.php';
 
 class HomeController extends Controller
 {
-    private $smarty;
+    private $__smarty;
     function __construct()
     {
-        $this->smarty = new Template();
+        $this->__smarty = new Template();
     }
-    public function index($id)
+    public function index()
     {
-        // $this->smarty->assign('Name', $id);
-        // $this->smarty->display('test.tpl');
+        $this->__smarty->display('homepage.tpl');
     }
 }

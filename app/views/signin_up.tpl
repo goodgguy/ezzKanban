@@ -45,7 +45,6 @@
 						 </div>
 					</div>
                    <form action="login" method="post" name="login">
-                   {* {if isset($message)}{$message}{/if} *}
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
@@ -54,15 +53,15 @@
                               <label for="exampleInputEmail1">Password</label>
                               <input type="password" name="password" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
                            </div>
-                           <div class="form-group">
-                              <p class="text-right"><a href="#">Forgot Password</a></p>
-                           </div>
                            <div class="col-md-12 text-center ">
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>
                            <div class="form-group mt-4">
                               <p class="text-center"><a href="#" id="signup">Don't have a login? Sign up</a></p>
                            </div>
+                       {if isset($message)}
+                           <span style="color: #ff0000" >{$message}</span>
+                       {/if}
                         </form>
                  
 				</div>
@@ -79,6 +78,10 @@
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
                          </div>
+                          <div class="form-group">
+                              <label for="exampleInputEmail1">Display name</label>
+                              <input type="text"  name="username" class="form-control" id="username" placeholder="Display name">
+                          </div>
                          <div class="form-group">
                             <label for="exampleInputEmail1">Password</label>
                             <input type="password"  name="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter Password">
@@ -87,7 +90,8 @@
                             <label for="exampleInputEmail1">Confirm password</label>
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                          </div>
-                          <input type="file" name="fileToUpload" id="fileToUpload" required >
+                          <input type="file" name="fileToUpload" id="fileToUpload" >
+                          <label id="fileToUpload-error" class="error" for="fileToUpload">This field is required.</label>
                          <div class="col-md-12 text-center mb-3 mt-2">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                          </div>

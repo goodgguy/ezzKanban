@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-11-03 10:02:29
+  from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5fa0c845c8eab9_54926603',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
+    array (
+      0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
+      1 => 1604372547,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5fa0c845c8eab9_54926603 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '3823370225fa0c845c76573_92890431';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -420,17 +445,28 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="public/js/Sortable.js"></script>
-    <script src="public/js/kanban.js"></script>
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="public/js/Sortable.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="public/js/kanban.js"><?php echo '</script'; ?>
+>
 </body>
 
-</html>
+</html><?php }
+}

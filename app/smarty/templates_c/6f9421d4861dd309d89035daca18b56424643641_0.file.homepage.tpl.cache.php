@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-11-03 01:35:06
+  from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5fa0515a876be1_99515296',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6f9421d4861dd309d89035daca18b56424643641' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
+      1 => 1604342009,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5fa0515a876be1_99515296 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '1239165575fa0515a801486_00286618';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +32,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/kanban.css">
+    <link rel="stylesheet" href="css/kanban.css">
 </head>
 
 <body class="bg-dark" data-new-gr-c-s-check-loaded="14.981.0">
@@ -41,7 +66,7 @@
         <!--NAV-->
         <form class="form-inline mt-3">
             <div class="form-group mx-sm-3">
-                <input type="text" class="form-control" id="addcolumm" placeholder="">
+                <input type="password" class="form-control" id="inputPassword2" placeholder="">
             </div>
             <button type="submit" class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
         </form>
@@ -420,17 +445,28 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="public/js/Sortable.js"></script>
-    <script src="public/js/kanban.js"></script>
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/Sortable.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/kanban.js"><?php echo '</script'; ?>
+>
 </body>
 
-</html>
+</html><?php }
+}
