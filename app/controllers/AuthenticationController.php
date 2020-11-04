@@ -10,6 +10,7 @@ class AuthenticationController extends Controller
     function __construct()
     {
         $this->__smarty = new Template();
+        $this->__smarty->caching = false;
         $this->__UserModel = $this->model('UserModel');
     }
     public function login()
@@ -36,9 +37,9 @@ class AuthenticationController extends Controller
     {
         $email = $_POST["email"];
         $password = $_POST["password"];
+        $username = $_POST["username"];
         $isSuccess = true;
         $message = '';
-
         while (1) {
             if (empty($_POST) || empty($_FILES)) {
                 $message = "Must require data!";
@@ -52,14 +53,16 @@ class AuthenticationController extends Controller
                 $success = false;
                 break;
             }
-            if (!UTIL::copyFile($_FILES)) {
+            if (!UTIL::copyFile($_FILES,$email)) {
                 $message = "Invalid file";
                 $success = false;
                 break;
             }
-
-            $filePath = $_FILES["fileToUpload"]["name"];
-            $result = $this->__UserModel->addUser($email, $password, $filePath);
+            $user = strstr($email, '@', true);
+            $file_key = array_key_first($_FILES);
+            $file_type = pathinfo($_FILES[$file_key]["name"], PATHINFO_EXTENSION);
+            $filePath = $user.'.'.$file_type;
+            $result = $this->__UserModel->addUser($email, $password, $filePath,$username);
             if ($result != 1) {
                 $message = "Registration was not successful";
                 $success = false;
@@ -67,7 +70,7 @@ class AuthenticationController extends Controller
             }
             break;
         }
-        $this->__smarty->assign('message', $message);
-        $this->__smarty->display('signin_up.tpl');
+        $this->__smarty->assign("message",$message);
+        $this->__smarty->display("signin_up.tpl");
     }
 }

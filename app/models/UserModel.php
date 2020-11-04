@@ -10,13 +10,13 @@ class UserModel extends Database
         }
         mysqli_free_result($result);
     }
-    public function addUser($email, $password, $filename)
+    public function addUser($email, $password, $filename,$username)
     {
         $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
         $date = date("Y-m-d H:i:s");
-        $query = "insert into user (email,password,image,create_date,activated) value (?,?,?,?,1);";
+        $query = "insert into user (email,password,image,create_date,activated,username) value (?,?,?,?,1,?);";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssss", $email, $passwordHashed, $filename, $date);
+        $stmt->bind_param("sssss", $email, $passwordHashed, $filename, $date,$username);
         return $stmt->execute(); //1 if successs
 
     }

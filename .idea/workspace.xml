@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="" />
+    <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/smarty/cache/8d6673dfa566db470e1579e8284fd2225772db94.signin_up.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/cache/8d6673dfa566db470e1579e8284fd2225772db94.signin_up.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/smarty/templates_c/5b4a95ae478df364c55bb10583a5a2fc800f6d4c_0.file.signin_up.tpl.cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/templates_c/5b4a95ae478df364c55bb10583a5a2fc800f6d4c_0.file.signin_up.tpl.cache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/util/util.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/util/util.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signin_up.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signin_up.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/signup_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/signup_in.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +47,7 @@
       <workItem from="1604305273974" duration="262000" />
       <workItem from="1604305539021" duration="242000" />
       <workItem from="1604309104989" duration="619000" />
+      <workItem from="1604459564184" duration="9930000" />
     </task>
     <servers />
   </component>

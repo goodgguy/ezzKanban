@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-04 13:31:12
+/* Smarty version 3.1.34-dev-7, created on 2020-11-04 13:43:19
   from 'C:\Apache24\htdocs\ezzKanban\app\views\signin_up.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa24ab0b80a77_47712722',
+  'unifunc' => 'content_5fa24d8712caf3_88283594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b4a95ae478df364c55bb10583a5a2fc800f6d4c' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
-      1 => 1604471470,
+      1 => 1604472196,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa24ab0b80a77_47712722 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '18558435645fa24ab0b68944_49138123';
-?>
-<!DOCTYPE html>
+function content_5fa24d8712caf3_88283594 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -84,9 +82,6 @@ $_smarty_tpl->compiled->nocache_hash = '18558435645fa24ab0b68944_49138123';
 						 </div>
 					</div>
                    <form action="login" method="post" name="login">
-                    <?php if ((isset($_smarty_tpl->tpl_vars['message']->value))) {
-echo $_smarty_tpl->tpl_vars['message']->value;
-}?>
                            <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" name="email"  class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
@@ -101,6 +96,10 @@ echo $_smarty_tpl->tpl_vars['message']->value;
                            <div class="form-group mt-4">
                               <p class="text-center"><a href="#" id="signup">Don't have a login? Sign up</a></p>
                            </div>
+                       <?php if ((isset($_smarty_tpl->tpl_vars['message']->value))) {?>
+                           <span style="color: #ff0000" ><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+</span>
+                       <?php }?>
                         </form>
                  
 				</div>
@@ -109,7 +108,7 @@ echo $_smarty_tpl->tpl_vars['message']->value;
                 <div class="myform form ">
                       <div class="logo mb-3">
                          <div class="col-md-12 text-center">
-                            <h1 >Signp</h1>
+                            <h1 >Signup</h1>
                          </div>
                       </div>
                       <form  action="register" name="registration" method="post" enctype="multipart/form-data">

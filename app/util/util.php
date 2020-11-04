@@ -3,14 +3,16 @@
 
 class UTIL
 {
-    public static function copyFile($file)
+    public static function copyFile($file,$email)
     {
+        $user = strstr($email, '@', true);
         $file_key = array_key_first($file);
+        $file_type = pathinfo($file[$file_key]["name"], PATHINFO_EXTENSION);
         $target_dir    = "public/img/";
-        $target_file   = $target_dir . basename($file[$file_key]["name"]);
+        $target_file   = $target_dir . $user.'.'.$file_type;
         $allowUpload   = true;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-        $maxfilesize   = 800000;
+        $maxfilesize   = 80000000;
         $allowtypes    = array('jpg', 'png', 'jpeg', 'gif');
         if (!isset($file[$file_key])) {
             return false;

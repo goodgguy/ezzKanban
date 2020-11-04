@@ -60,7 +60,9 @@ $(function () {
           minlength: 5,
           equalTo: "#password"
         },
-        fullname: "required"
+        username:{
+          required:true,
+        }
       },
 
       messages: {
@@ -74,7 +76,9 @@ $(function () {
           minlength: "Your Password must be longer than 5 characters",
           equalTo: "Please enter the same password as above"
         },
-        fullname: "Please enter your fullname"
+        username:{
+          required:"Please provide a display name",
+        }
       },
 
       submitHandler: function (form) {
