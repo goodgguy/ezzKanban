@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/smarty/templates_c/5b4a95ae478df364c55bb10583a5a2fc800f6d4c_0.file.signin_up.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/templates_c/5b4a95ae478df364c55bb10583a5a2fc800f6d4c_0.file.signin_up.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/signin_up.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signin_up.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

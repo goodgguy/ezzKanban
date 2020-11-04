@@ -31,7 +31,8 @@ class AuthenticationController extends Controller
                 return;
             }
         }
-        header("Location:http://localhost:8080/ezzKanban/login");
+        $this->__smarty->assign("message","Login failed");
+        $this->__smarty->display("signin_up.tpl");
     }
     public function register()
     {
