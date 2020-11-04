@@ -44,3 +44,4 @@ new Sortable(list_card_5, {
     group: 'shared',
     animation: 150
 });
+
