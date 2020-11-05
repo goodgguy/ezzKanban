@@ -95,10 +95,37 @@ new Sortable(list_card_5, {
         function addColumn(val)
         {
             $(board).empty();
-            let str=``;
+            let str=`<div class="col-sm-6 col-md-4 col-xl-3 list-columm">
+            <div class="card bg-light">
+                <div class="card-body" style="background-color: #ebecf0">
+                    <div class="row">
+                        <div class="col-sm-8 ">
+                            <h6 class="card-title text-uppercase text-truncate py-2">${val.title}</h6>
+                        </div>
+                        <div class="col-sm-4 ">
+                            <a href="#">
+                                <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
+                                    width="25" height="25"></a>
+                        </div>
+                    </div>
+                    <div id="${val.IDcolumn}" class="items border border-light list-card">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>`;
             $(board).append(str);
+            addRow(val.IDcolumn,val.cardlist);
         }
 
+        function addRow(idcol,cardlist)
+        {
+            $.each(cardlist, function (index,val)
+            {
+                console.log(cardlist);
+            });
+        }
     };
  
 }( jQuery ));
