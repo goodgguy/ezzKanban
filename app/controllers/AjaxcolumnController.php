@@ -6,16 +6,16 @@ require_once './app/setup.php';
 class AjaxcolumnController extends Controller
 {
     private $__smarty;
-    private $__AjaxcolumnController;
+    private $__ColumnModel;
     function __construct()
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
-        $this->__AjaxcolumnController=$this->model("ColumnModel");
+        $this->__ColumnModel=$this->model("ColumnModel");
     }
     public function add()
     {
-        // echo $_POST["column"];
-        $this->__AjaxcolumnController->addColumn();
+        $title= $_POST["column"];
+        echo $this->__ColumnModel->addColumn($title);
     }
 }
