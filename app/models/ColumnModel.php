@@ -11,4 +11,8 @@ class ColumnModel extends Database
         }
         return $list;
     }
+    public function addColumn()
+    {
+        
+    }
 }

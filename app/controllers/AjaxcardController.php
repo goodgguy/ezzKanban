@@ -22,10 +22,9 @@ class AjaxcardController extends Controller
         $columnList=$this->__ColumnModel->getAllColumn();
         foreach ($columnList as &$column)
         {
-            $cardList=$this->__CardModel->getCardByColumn(1);
+            $cardList=$this->__CardModel->getCardByColumn($column['IDcolumn']);
             foreach ($cardList as &$card)
             {
-                $card['userList']=array();
                 $userList=$this->__UserModel->getUserByCard($card['IDcard']);
                 $card['userList']=$userList;
             }
