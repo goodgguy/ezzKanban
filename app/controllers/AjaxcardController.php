@@ -7,31 +7,31 @@ class AjaxcardController extends Controller
 {
     private $__smarty;
     private $__CardModel;
+    private $__UserModel;
     private $__ColumnModel;
     function __construct()
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
         $this->__CardModel=$this->model('CardModel');
-        $this->__Column=$this->model('ColumnModel');
+        $this->__ColumnModel=$this->model('ColumnModel');
+        $this->__UserModel = $this->model('UserModel');
     }
     public function getData()
     {
-        $cardList=$this->__CardModel->getCardByColumn(1);
-        $columnList=$this->__Column->getAllColumn();
-        foreach ($columnList as $column)
+        $columnList=$this->__ColumnModel->getAllColumn();
+        foreach ($columnList as &$column)
         {
             $column['cardlist']=array();
-            foreach ($cardList as $card)
+            $cardList=$this->__CardModel->getCardByColumn(1);
+            foreach ($cardList as &$card)
             {
-                if($card['IDcolumn']===$column['IDcolumn'])
-                {
-                    array_push($column['cardlist'],$card);
-                }
+                $card['userList']=array();
+                $userList=$this->__UserModel->getUserByCard($card['IDcard']);
+                array_push($card['userList'],$userList);
             }
+            array_push($column['cardlist'],$cardList);
         }
-//        echo "<pre>";
-//        print_r($columnList);
-//        echo "</pre>";
+        echo json_encode($columnList);
     }
 }
