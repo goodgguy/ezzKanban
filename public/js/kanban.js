@@ -57,11 +57,14 @@
                             }
                         });
                 },
-                onMove: function (/**Event*/ evt, /**Event*/ originalEvent) {
+                onMove: function (evt, originalEvent) {
                     let idColRelated = evt.related.id;
                     idColRelated = idColRelated.split("_").pop();
                     idColListRelated.push(idColRelated);
                 },
+                onStart: function (evt) {
+                    idColListRelated = []
+                }
             });
         }
         function loadData() {
