@@ -32,4 +32,10 @@ class AjaxcardController extends Controller
         }
         echo json_encode($columnList);
     }
+    public function setPosition()
+    {
+        $toColumn= $_POST["toColumn"];
+        $idCard= $_POST["idCard"];
+        echo $idCard;
+    }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-06 13:31:08
+/* Smarty version 3.1.34-dev-7, created on 2020-11-06 14:10:16
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa4edac3416d7_00717069',
+  'unifunc' => 'content_5fa4f6d883cb99_34287835',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604644265,
+      1 => 1604646609,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa4edac3416d7_00717069 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa4f6d883cb99_34287835 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -131,7 +131,7 @@ function content_5fa4edac3416d7_00717069 (Smarty_Internal_Template $_smarty_tpl)
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">EDIT COLUMN</h5>
+          <h5 class="modal-title" id="exampleModalLabel">EDIT BOARD</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

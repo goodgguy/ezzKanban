@@ -112,7 +112,7 @@ new Sortable(master, {
 
         function addRow(idcol, cardlist) {
             $.each(cardlist, function (index, val) {
-                let str = `<div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
+                let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
                 <div class="card-body p-2" style="background-color: #${val.priority == 1 ? "28df99" : ""}">
                     <div class="card-title">
                         <a href="" class="lead">${val.title}</a>
@@ -134,10 +134,20 @@ new Sortable(master, {
             });
         }
         function handleDragdropCard(idcol) {
-            let card = $("#" + idcol).get(0);
-            new Sortable(card, {
+            let col = $("#" + idcol).get(0);
+            new Sortable(col, {
                 group: 'shared',
-                animation: 150
+                animation: 150,
+                onEnd: function (evt) {
+                    let idCard = evt.item.id;
+                    idCard = idCard.split("_").pop();
+                    $.post(options.url + "card/changState", { toColumn: evt.to.id, idCard: idCard })
+                        .done(function (data) {
+                            if (data.length > 0) {
+                                console.log(data);
+                            }
+                        });
+                },
             });
         }
         function addUser(idcard, userlist) {
@@ -189,6 +199,9 @@ new Sortable(master, {
                         });
                 })
             });
+        }
+        function handleaddCard() {
+
         }
 
     };
