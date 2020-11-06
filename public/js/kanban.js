@@ -128,7 +128,6 @@ new Sortable(master, {
                         console.log(data);
                         $(textAlert).html(`<p>${data}</p>`);
                         $(modalAlert).modal();
-                        loadData();
                     });
             });
         }
