@@ -25,11 +25,18 @@ class ColumnModel extends Database
             return "Erorr" . mysqli_error($conn);
         }
     }
-    public function delete($id)
+    public function deleteColumn($id)
     {
-        $queryupdate = "UPDATE `column` SET activated= 0 WHERE IDcolumn=".$id;
-        if (!mysqli_query($this->conn, $queryupdate)) {
-            return "Erorr" . mysqli_error($conn);
-        }
+        $queryupdate = "UPDATE `column` SET activated= 0 WHERE IDcolumn=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("i",$id);
+        return $stmt->execute();
+    }
+    public function editColumn($id,$title)
+    {
+        $queryupdate = "UPDATE `column` SET title= ? WHERE IDcolumn=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("si", $title,$id);
+        return $stmt->execute();
     }
 }

@@ -180,7 +180,13 @@ new Sortable(master, {
                 $(getEditColumn).modal();
                 $(confirmEditCol).on("click", function () {
                     const titleChanged = $(inputEditCol).val();
-                    console.log(titleChanged);
+                    $.post(options.url + "editColumn", { column: IDcolumn, title: titleChanged })
+                        .done(function (data) {
+                            if (data.length > 0) {
+                                $(textAlert).html(`<p>${data}</p>`);
+                                $(modalAlert).modal();
+                            }
+                        });
                 })
             });
         }

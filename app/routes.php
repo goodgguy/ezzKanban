@@ -14,3 +14,4 @@ $router->post('/login', 'AuthenticationController@login');
 $router->post('/register', 'AuthenticationController@register');
 $router->post('/addColumn','AjaxcolumnController@add');
 $router->post('/deleteColumn','AjaxcolumnController@delete');
+$router->post('/editColumn','AjaxcolumnController@edit');
