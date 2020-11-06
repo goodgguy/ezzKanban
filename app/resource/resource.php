@@ -1,0 +1,2 @@
+<?php
+CONST TEST="test";

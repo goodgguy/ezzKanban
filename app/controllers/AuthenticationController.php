@@ -27,11 +27,16 @@ class AuthenticationController extends Controller
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["image"] = $user["image"];
                 $_SESSION["create_date"] = $user["create_date"];
+                $_SESSION["username"] = $user["username"];
+                $_SESSION["iduser"] = $user["IDuser"];
                 header("Location:http://localhost:8080/ezzKanban/home");
                 return;
             }
+        }else
+        {
+            $this->__smarty->assign("message","Login failed");
+            $this->__smarty->display("signin_up.tpl");
         }
-        header("Location:http://localhost:8080/ezzKanban/login");
     }
     public function register()
     {
@@ -72,5 +77,15 @@ class AuthenticationController extends Controller
         }
         $this->__smarty->assign("message",$message);
         $this->__smarty->display("signin_up.tpl");
+    }
+    public function logout()
+    {
+        unset($_SESSION["email"]);
+        unset($_SESSION["image"]);
+        unset($_SESSION["create_date"]);
+        unset($_SESSION["username"]);
+        unset($_SESSION["iduser"]);
+        header("Location:http://localhost:8080/ezzKanban/login");
+        return;
     }
 }

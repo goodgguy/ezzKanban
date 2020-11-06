@@ -6,7 +6,7 @@ class UserModel extends Database
         $query = "SELECT * FROM USER";
         $result = mysqli_query($this->con, $query);
         while ($row = mysqli_fetch_assoc($result)) {
-            var_dump($row);
+            // var_dump($row);
         }
         mysqli_free_result($result);
     }
@@ -28,5 +28,18 @@ class UserModel extends Database
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_assoc();
+    }
+    public function getUserByCard($idCard)
+    {
+        $query = "SELECT * FROM user_card INNER JOIN USER ON user_card.IDuser=USER.IDuser WHERE Idcard=?;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $idCard);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $list = array();
+        while($listitem = $result->fetch_assoc()){
+            $list[] = $listitem;
+        }
+        return $list;
     }
 }

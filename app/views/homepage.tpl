@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+    <title>EzKanban</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/kanban.css">
@@ -25,26 +29,26 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hi, tuanquen260@gmail.com
+                            Hi, {$smarty.session.username}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Log out</a>
+                            <a class="dropdown-item" href="logout">Log out</a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
-                            alt="Girl in a jacket" width="50" height="50">
+                        <img src="public/img/{$smarty.session.image}"
+                            alt="Girl nude" width="50" height="50">
                     </li>
                 </ul>
             </div>
         </nav>
         <!--NAV-->
-        <form class="form-inline mt-3">
+        <div class="form-inline mt-3">
             <div class="form-group mx-sm-3">
-                <input type="text" class="form-control" id="addcolumm" placeholder="">
+                <input type="text" class="form-control" id="addcolumn" placeholder="">
             </div>
-            <button type="submit" class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
-        </form>
+            <button id="btnAddcolumn"  class="btn mb-2" style="background-color: #f6d6ad">ADD COLUMM</button>
+        </div>
 
 
         <h3 class="font-weight-light text-white"></h3>
@@ -84,67 +88,6 @@
                                 <div class="card-body p-3">
                                     <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/96804601_2293610367599267_6939648882309595136_n.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=rv0PsebSdgMAX-vxxbt&_nc_ht=scontent.fsgn2-5.fna&oh=3450517011470d18f9013aa3f8871164&oe=5FC6636D"
                                         class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/108028012_2122660484531421_2707723521934228565_n.jpg?_nc_cat=103&ccb=2&_nc_sid=174925&_nc_ohc=zqhFjZcOfTMAX-bI_Lz&_nc_ht=scontent.fsgn2-2.fna&oh=d1283f8a0822b1280864fc949ac905cb&oe=5FC55E37"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t31.0-8/14542510_1724210307907746_7981139227832726955_o.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=fCuNXwBRCpYAX-IFNAr&_nc_ht=scontent.fsgn2-5.fna&oh=2deff445da7017945bd8f0374b103299&oe=5FC679E2"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
-                                        class="rounded-circle" width="30" height="30">
-
-                                </div>
-                            </div>
-                            <!--EX-->
-                            <!--EX CARD-->
-                            <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
-                                <div class="card-body p-2" style="background-color: #28df99">
-                                    <div class="card-title">
-                                        <a href="" class="lead">Apply CSS</a>
-                                        <a href="#">
-                                            <img src="https://i.ibb.co/jzf1cFG/clear.png"
-                                                class="rounded-circle float-right" width="25" height="25"></a>
-                                    </div>
-                                    <p>
-                                        <span class="badge badge-warning">03/11/2020</span>
-                                    </p>
-
-                                </div>
-                                <div class="card-body p-3">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/96804601_2293610367599267_6939648882309595136_n.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=rv0PsebSdgMAX-vxxbt&_nc_ht=scontent.fsgn2-5.fna&oh=3450517011470d18f9013aa3f8871164&oe=5FC6636D"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t31.0-8/14542510_1724210307907746_7981139227832726955_o.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=fCuNXwBRCpYAX-IFNAr&_nc_ht=scontent.fsgn2-5.fna&oh=2deff445da7017945bd8f0374b103299&oe=5FC679E2"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t31.0-8/12823459_1096000113756181_1084984300339522831_o.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=3Sp5mjKwf_sAX-RR3cL&_nc_ht=scontent.fsgn2-5.fna&oh=462a4c77272823991ef54c88a1d5e0b4&oe=5FC5CC0F"
-                                        class="rounded-circle" width="30" height="30">
-
-                                </div>
-                            </div>
-                            <!--EX-->
-                            <!--EX CARD-->
-                            <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
-                                <div class="card-body p-2">
-                                    <div class="card-title">
-                                        <a href="" class="lead">Config Apache</a>
-                                        <a href="#">
-                                            <img src="https://i.ibb.co/jzf1cFG/clear.png"
-                                                class="rounded-circle float-right" width="25" height="25"></a>
-                                    </div>
-                                    <p>
-                                        <span class="badge badge-warning">03/11/2020</span>
-                                    </p>
-                                    <span class="badge badge-danger float-right">PRIORITY</span>
-                                </div>
-                                <div class="card-body p-3">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/96804601_2293610367599267_6939648882309595136_n.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=rv0PsebSdgMAX-vxxbt&_nc_ht=scontent.fsgn2-5.fna&oh=3450517011470d18f9013aa3f8871164&oe=5FC6636D"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.0-9/119453863_2795069310777500_3470783028003456032_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=ixmXEQ2EJNkAX-Fz93F&_nc_ht=scontent.fsgn2-1.fna&oh=d74eb2d4bba9eca0c4e5956e88fd4f9e&oe=5FC53D96"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.0-9/122187360_2156049037872253_7058690284541665846_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=on382a_PXY4AX82Unzn&_nc_ht=scontent.fsgn2-6.fna&oh=39f23c3fbd52882622dba7fd657df53a&oe=5FC4A44A"
-                                        class="rounded-circle" width="30" height="30">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/79151762_3268849723233237_6585934306497012185_n.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=Q2A1k-DSWaMAX9CYoe-&_nc_ht=scontent.fsgn2-5.fna&oh=cbd71fa43b67abda6e912b1fbbda99b4&oe=5FC4A414"
-                                        class="rounded-circle" width="30" height="30">
-
                                 </div>
                             </div>
                             <!--EX-->
@@ -154,6 +97,10 @@
                 </div>
             </div>
             <!--EX COLUMM-->
+
+
+
+
             <!--EX COLUMM-->
             <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
                 <div class="card bg-light">
@@ -420,9 +367,7 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
