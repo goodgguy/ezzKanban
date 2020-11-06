@@ -44,32 +44,23 @@
         }
         function addEventDragDropBoard() {
             var master = document.getElementById('master');
+            let idColListRelated = [];
             new Sortable(master, {
                 animation: 150,
                 ghostClass: 'blue-background-class',
                 onEnd: function (evt) {
-                    var itemEl = evt.item;
-                    evt.to;
-                    evt.from;
-                    evt.oldIndex;
-                    evt.newIndex;
-                    evt.oldDraggableIndex;
-                    evt.newDraggableIndex;
-                    evt.clone;
-                    evt.pullMode;
-                    // console.log(evt.oldIndex);
-                    // console.log(evt.newIndex);
-                    // console.log(evt.item);
-                    //console.log(evt.related);
+                    let idCol = evt.item.id;
+                    idCol = idCol.split("_").pop();
+                    $.post(options.url + "column/changState", { column: idCol, columnRelated: idColListRelated })
+                        .done(function (data) {
+                            if (data.length > 0) {
+                            }
+                        });
                 },
                 onMove: function (/**Event*/ evt, /**Event*/ originalEvent) {
-                    // evt.dragged;
-                    // evt.draggedRect;
-                    // evt.related;
-                    // evt.relatedRect;
-                    // evt.willInsertAfter;
-                    // originalEvent.clientY;
-                     console.log(evt.related);
+                    let idColRelated = evt.related.id;
+                    idColRelated = idColRelated.split("_").pop();
+                    idColListRelated.push(idColRelated);
                 },
             });
         }
@@ -87,7 +78,7 @@
             });
         }
         function addColumn(val) {
-            let str = `<div class="col-sm-6 col-md-4 col-xl-3 list-columm">
+            let str = `<div id="board_${val.IDcolumn}" class="col-sm-6 col-md-4 col-xl-3 list-columm">
             <div class="card bg-light">
                 <div class="card-body" style="background-color: #ebecf0">
                     <div class="row">

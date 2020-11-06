@@ -37,4 +37,18 @@ class AjaxcolumnController extends Controller
             echo "Erorr when edit";
         }
     }
+    public function setPosition()
+    {
+        $id= $_POST["column"];
+        $columnRelatedList= $_POST["columnRelated"];
+        $result; 
+        foreach($columnRelatedList as $columnRelated)
+        {
+           $result= $this->__ColumnModel->setStateColumn($id,$columnRelated);
+        }
+        if($result!=1)
+        {
+            echo "Erorr";
+        }
+    }
 }

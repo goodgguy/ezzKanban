@@ -16,3 +16,4 @@ $router->post('/addColumn','AjaxcolumnController@add');
 $router->post('/deleteColumn','AjaxcolumnController@delete');
 $router->post('/editColumn','AjaxcolumnController@edit');
 $router->post('/card/changState','AjaxcardController@setPosition');
+$router->post('/column/changState','AjaxcolumnController@setPosition');

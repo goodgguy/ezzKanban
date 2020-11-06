@@ -39,4 +39,14 @@ class ColumnModel extends Database
         $stmt->bind_param("si", $title,$id);
         return $stmt->execute();
     }
+    public function setStateColumn($idCol,$idColRelated)
+    {
+        $queryupdate = "UPDATE `column` a
+        INNER JOIN `column` b ON a.IDcolumn<>b.IDcolumn
+        SET a.index=b.index,b.index=a.index
+        WHERE a.IDcolumn=? AND b.IDcolumn=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("ii", $idCol,$idColRelated);
+        return $stmt->execute();
+    }
 }
