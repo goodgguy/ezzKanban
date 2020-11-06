@@ -21,6 +21,6 @@ class AjaxcolumnController extends Controller
     public function delete()
     {
         $id= $_POST["column"];
-        echo $id;
+        echo $this->__ColumnModel->delete($id);
     }
 }

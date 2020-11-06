@@ -13,3 +13,4 @@ $router->get('/getboard', 'AjaxcardController@getData');
 $router->post('/login', 'AuthenticationController@login');
 $router->post('/register', 'AuthenticationController@register');
 $router->post('/addColumn','AjaxcolumnController@add');
+$router->post('/deleteColumn','AjaxcolumnController@delete');

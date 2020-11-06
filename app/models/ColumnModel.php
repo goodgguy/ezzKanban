@@ -3,7 +3,7 @@ class ColumnModel extends Database
 {
     public function getAllColumn()
     {
-        $query="SELECT * FROM `Column` ORDER BY `index` AND activated=1";
+        $query="SELECT * FROM `Column` WHERE activated=1 ORDER BY `index`";
         $result=$this->conn->query($query);
         $list = array();
         while($listitem = $result->fetch_assoc()){
@@ -22,6 +22,13 @@ class ColumnModel extends Database
         if (mysqli_query($this->conn, $queryupdate)) {
             return "Success";
         } else {
+            return "Erorr" . mysqli_error($conn);
+        }
+    }
+    public function delete($id)
+    {
+        $queryupdate = "UPDATE `column` SET activated= 0 WHERE IDcolumn=".$id;
+        if (!mysqli_query($this->conn, $queryupdate)) {
             return "Erorr" . mysqli_error($conn);
         }
     }

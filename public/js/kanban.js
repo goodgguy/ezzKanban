@@ -25,23 +25,23 @@ new Sortable(master, {
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
-            "modalAlert":"#getAlert",
-            "textAlert":"#modelAlert",
-            "col_del":"#col_del_",
-            "getConfirmDel":"#getConfirmDel",
-            "textConfirmDel":"#modelConfirmDel",
-            "confirmBtn":"confirmBtn"
+            "modalAlert": "#getAlert",
+            "textAlert": "#modelAlert",
+            "col_del": "#col_del_",
+            "getConfirmDel": "#getConfirmDel",
+            "textConfirmDel": "#modelConfirmDel",
+            "confirmBtn": "confirmBtn"
         };
         options = $.extend({}, defaults, options);
 
         let addfield = options.addfield;
         let btnAddfield = options.btnAddfield;
         let board = options.board;
-        let modalAlert=options.modalAlert;
-        let textAlert=options.textAlert;
-        let col_del=options.col_del;
-        let getConfirmDel=options.getConfirmDel;
-        let textConfirmDel=options.textConfirmDel;
+        let modalAlert = options.modalAlert;
+        let textAlert = options.textAlert;
+        let col_del = options.col_del;
+        let getConfirmDel = options.getConfirmDel;
+        let textConfirmDel = options.textConfirmDel;
 
         init();
 
@@ -134,21 +134,24 @@ new Sortable(master, {
                 const value = $(addfield).val();
                 $.post(options.url + "addColumn", { column: value })
                     .done(function (data) {
-                        console.log(data);
                         $(textAlert).html(`<p>${data}</p>`);
                         $(modalAlert).modal();
                     });
             });
         }
-        function handledeleteColumn(IDcolumn)
-        {
-            $(col_del+IDcolumn).on("click", function () {
-                let id=$(this).attr("col_delete_id");
+        function handledeleteColumn(IDcolumn) {
+            $(col_del + IDcolumn).on("click", function () {
+                let id = $(this).attr("col_delete_id");
                 $(textConfirmDel).html(`<p>Are you sure you want to delete this column</p>`);
                 $(getConfirmDel).modal();
-                $(confirmBtn).on("click", function ()
-                {
-                    
+                $(confirmBtn).on("click", function () {
+                    $.post(options.url + "deleteColumn", { column: id })
+                        .done(function (data) {
+                            if (data.length > 0) {
+                                $(textAlert).html(`<p>${data}</p>`);
+                                $(modalAlert).modal();
+                            }
+                        });
                 });
             })
         }
