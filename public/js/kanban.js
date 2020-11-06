@@ -26,7 +26,11 @@ new Sortable(master, {
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
             "modalAlert":"#getAlert",
-            "textAlert":"#modelAlert"
+            "textAlert":"#modelAlert",
+            "col_del":"#col_del_",
+            "getConfirmDel":"#getConfirmDel",
+            "textConfirmDel":"#modelConfirmDel",
+            "confirmBtn":"confirmBtn"
         };
         options = $.extend({}, defaults, options);
 
@@ -35,6 +39,9 @@ new Sortable(master, {
         let board = options.board;
         let modalAlert=options.modalAlert;
         let textAlert=options.textAlert;
+        let col_del=options.col_del;
+        let getConfirmDel=options.getConfirmDel;
+        let textConfirmDel=options.textConfirmDel;
 
         init();
 
@@ -65,10 +72,11 @@ new Sortable(master, {
                         <div class="col-sm-8 ">
                             <h6 class="card-title text-uppercase text-truncate py-2">${val.title}</h6>
                         </div>
-                        <div class="col-sm-4 ">
-                            <a href="#">
+                        <div class="col-sm-4">
+                            <a col_delete_id=${val.IDcolumn} id="col_del_${val.IDcolumn}">
                                 <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
-                                    width="25" height="25"></a>
+                                    width="25" height="25">
+                            </a>
                         </div>
                     </div>
                     <div id="${val.IDcolumn}" class="items border border-light list-card">
@@ -81,6 +89,7 @@ new Sortable(master, {
             $(board).append(str);
             handleDragdropCard(val.IDcolumn);
             addRow(val.IDcolumn, val.cardlist);
+            handledeleteColumn(val.IDcolumn);
         }
 
         function addRow(idcol, cardlist) {
@@ -131,6 +140,19 @@ new Sortable(master, {
                     });
             });
         }
+        function handledeleteColumn(IDcolumn)
+        {
+            $(col_del+IDcolumn).on("click", function () {
+                let id=$(this).attr("col_delete_id");
+                $(textConfirmDel).html(`<p>Are you sure you want to delete this column</p>`);
+                $(getConfirmDel).modal();
+                $(confirmBtn).on("click", function ()
+                {
+                    
+                });
+            })
+        }
+
     };
 
 }(jQuery));

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-06 10:41:44
+/* Smarty version 3.1.34-dev-7, created on 2020-11-06 12:26:16
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa4c5f87787f0_44086511',
+  'unifunc' => 'content_5fa4de789fc284_36200442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604634103,
+      1 => 1604640373,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa4c5f87787f0_44086511 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa4de789fc284_36200442 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -79,9 +79,15 @@ function content_5fa4c5f87787f0_44086511 (Smarty_Internal_Template $_smarty_tpl)
         <h3 class="font-weight-light text-white"></h3>
         <div class="small  text-light"></div>
         <div id="master" class="row flex-row flex-sm-nowrap py-4" style="overflow: auto;height: 90vh;">
-                    </div>
+            <!--COLUMN-->
+        </div>
     </div>
-    <!-- Modal -->
+
+
+
+
+
+    <!-- Modal ALERT-->
   <div class="modal fade" id="getAlert" role="dialog">
     <div class="modal-dialog">
     
@@ -94,6 +100,25 @@ function content_5fa4c5f87787f0_44086511 (Smarty_Internal_Template $_smarty_tpl)
                   </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal CONFIRM DELETE-->
+  <div class="modal fade" id="getConfirmDel" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+                  </div>
+        <div class="modal-body" id="modelConfirmDel">
+                  </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn btn-danger" data-dismiss="modal" id="confirmBtn">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       

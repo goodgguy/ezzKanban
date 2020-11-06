@@ -18,4 +18,9 @@ class AjaxcolumnController extends Controller
         $title= $_POST["column"];
         echo $this->__ColumnModel->addColumn($title);
     }
+    public function delete()
+    {
+        $id= $_POST["column"];
+        echo $id;
+    }
 }

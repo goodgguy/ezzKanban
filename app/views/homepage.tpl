@@ -54,50 +54,15 @@
         <h3 class="font-weight-light text-white"></h3>
         <div class="small  text-light"></div>
         <div id="master" class="row flex-row flex-sm-nowrap py-4" style="overflow: auto;height: 90vh;">
-            {* <!--EX COLUMM-->
-            <div class="col-sm-6 col-md-4 col-xl-3 list-columm">
-                <div class="card bg-light">
-                    <div class="card-body" style="background-color: #ebecf0">
-                        <div class="row">
-                            <div class="col-sm-8 ">
-                                <h6 class="card-title text-uppercase text-truncate py-2">To Do</h6>
-                            </div>
-                            <div class="col-sm-4 ">
-                                <a href="#">
-                                    <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
-                                        width="25" height="25"></a>
-                            </div>
-                        </div>
-                        <div id="1" class="items border border-light list-card">
-                            <!--EX CARD-->
-                            <div class="card draggable shadow-sm mb-3" id="cd1" style="background-color: #f6f7d4;">
-                                <div class="card-body p-2" style="background-color: #28df99">
-                                    <div class="card-title">
-                                        <a href="" class="lead">Fix Login</a>
-                                        <a href="#">
-                                            <img src="https://i.ibb.co/jzf1cFG/clear.png"
-                                                class="rounded-circle float-right" width="25" height="25"></a>
-                                    </div>
-                                    <p>
-                                        <span class="badge badge-warning">03/11/2020</span>
-                                    </p>
-                                    <span class="badge badge-danger float-right">PRIORITY</span>
-                                </div>
-                                <div class="card-body p-3">
-                                    <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.0-9/96804601_2293610367599267_6939648882309595136_n.jpg?_nc_cat=1&ccb=2&_nc_sid=09cbfe&_nc_ohc=rv0PsebSdgMAX-vxxbt&_nc_ht=scontent.fsgn2-5.fna&oh=3450517011470d18f9013aa3f8871164&oe=5FC6636D"
-                                        class="rounded-circle" width="30" height="30">
-                                </div>
-                            </div>
-                            <!--EX-->
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--EX COLUMM--> *}
+            <!--COLUMN-->
         </div>
     </div>
-    <!-- Modal -->
+
+
+
+
+
+    <!-- Modal ALERT-->
   <div class="modal fade" id="getAlert" role="dialog">
     <div class="modal-dialog">
     
@@ -111,6 +76,27 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal CONFIRM DELETE-->
+  <div class="modal fade" id="getConfirmDel" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          {* <h4 class="modal-title">Notification</h4> *}
+        </div>
+        <div class="modal-body" id="modelConfirmDel">
+          {* <p>Some text in the modal.</p> *}
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn btn-danger" data-dismiss="modal" id="confirmBtn">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       
