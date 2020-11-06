@@ -30,18 +30,27 @@ new Sortable(master, {
             "col_del": "#col_del_",
             "getConfirmDel": "#getConfirmDel",
             "textConfirmDel": "#modelConfirmDel",
-            "confirmBtn": "confirmBtn"
+            "confirmBtn": "confirmBtn",
+            "col_edit": "#col_edit_",
+            "getEditColumn": "#getEditColumn",
+            "inputEditCol": "#inputEditCol",
+            "confirmEditCol": "#confirmEditCol"
+
         };
         options = $.extend({}, defaults, options);
 
-        let addfield = options.addfield;
-        let btnAddfield = options.btnAddfield;
-        let board = options.board;
-        let modalAlert = options.modalAlert;
-        let textAlert = options.textAlert;
-        let col_del = options.col_del;
-        let getConfirmDel = options.getConfirmDel;
-        let textConfirmDel = options.textConfirmDel;
+        const addfield = options.addfield;
+        const btnAddfield = options.btnAddfield;
+        const board = options.board;
+        const modalAlert = options.modalAlert;
+        const textAlert = options.textAlert;
+        const col_del = options.col_del;
+        const getConfirmDel = options.getConfirmDel;
+        const textConfirmDel = options.textConfirmDel;
+        const col_edit = options.col_edit;
+        const getEditColumn = options.getEditColumn;
+        const inputEditCol = options.inputEditCol;
+        const confirmEditCol = options.confirmEditCol;
 
         init();
 
@@ -77,6 +86,14 @@ new Sortable(master, {
                                 <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
                                     width="25" height="25">
                             </a>
+                            <a col_edit_id=${val.IDcolumn} id="col_edit_${val.IDcolumn}">
+                                <img src="https://i.ibb.co/5MKxrvT/edit.png" class="float-right"
+                                    width="25" height="25">
+                            </a>
+                            <a col_add_id=${val.IDcolumn} id="col_add_${val.IDcolumn}">
+                                <img src="https://i.ibb.co/2srq9nT/plus.png" class="float-right"
+                                    width="25" height="25">
+                            </a>
                         </div>
                     </div>
                     <div id="${val.IDcolumn}" class="items border border-light list-card">
@@ -90,6 +107,7 @@ new Sortable(master, {
             handleDragdropCard(val.IDcolumn);
             addRow(val.IDcolumn, val.cardlist);
             handledeleteColumn(val.IDcolumn);
+            handleeditColumn(val.IDcolumn, val.title);
         }
 
         function addRow(idcol, cardlist) {
@@ -136,6 +154,7 @@ new Sortable(master, {
                     .done(function (data) {
                         $(textAlert).html(`<p>${data}</p>`);
                         $(modalAlert).modal();
+                        $(addfield).val("");
                     });
             });
         }
@@ -154,6 +173,16 @@ new Sortable(master, {
                         });
                 });
             })
+        }
+        function handleeditColumn(IDcolumn, title) {
+            $(col_edit + IDcolumn).on("click", function () {
+                $(inputEditCol).val(title);
+                $(getEditColumn).modal();
+                $(confirmEditCol).on("click", function () {
+                    const titleChanged = $(inputEditCol).val();
+                    console.log(titleChanged);
+                })
+            });
         }
 
     };
