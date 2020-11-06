@@ -18,7 +18,6 @@ class ColumnModel extends Database
         $stmt->bind_param("s", $title);
         $stmt->execute(); 
         $lastIDinserted=$this->conn->insert_id;
-
         $queryupdate = "UPDATE `column` SET `index`= IDcolumn WHERE IDcolumn=".$lastIDinserted;
         if (mysqli_query($this->conn, $queryupdate)) {
             return "Record updated successfully";

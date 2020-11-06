@@ -24,13 +24,17 @@ new Sortable(master, {
             "url": "http://localhost:8080/ezzKanban/",
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
-            "board": "#master"
+            "board": "#master",
+            "modalAlert":"#getAlert",
+            "textAlert":"#modelAlert"
         };
         options = $.extend({}, defaults, options);
 
         let addfield = options.addfield;
         let btnAddfield = options.btnAddfield;
         let board = options.board;
+        let modalAlert=options.modalAlert;
+        let textAlert=options.textAlert;
 
         init();
 
@@ -122,6 +126,9 @@ new Sortable(master, {
                 $.post(options.url + "addColumn", { column: value })
                     .done(function (data) {
                         console.log(data);
+                        $(textAlert).html(`<p>${data}</p>`);
+                        $(modalAlert).modal();
+                        loadData();
                     });
             });
         }

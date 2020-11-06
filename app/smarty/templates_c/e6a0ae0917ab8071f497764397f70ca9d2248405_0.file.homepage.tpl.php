@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-05 11:38:18
+/* Smarty version 3.1.34-dev-7, created on 2020-11-06 10:37:24
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa381bac095e4_60336329',
+  'unifunc' => 'content_5fa4c4f4eacce3_74843508',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604551090,
+      1 => 1604633819,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa381bac095e4_60336329 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa4c4f4eacce3_74843508 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -389,6 +389,24 @@ function content_5fa381bac095e4_60336329 (Smarty_Internal_Template $_smarty_tpl)
             <!--EX COLUMM-->
         </div>
     </div>
+    <!-- Modal -->
+  <div class="modal fade" id="getAlert" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Notification</h4>
+        </div>
+        <div class="modal-body" id="modelAlert">
+                  </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 
 
