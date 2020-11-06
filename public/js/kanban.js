@@ -91,11 +91,11 @@
                                     width="25" height="25">
                             </a>
                             <a col_edit_id=${val.IDcolumn} id="col_edit_${val.IDcolumn}">
-                                <img src="https://i.ibb.co/5MKxrvT/edit.png" class="float-right"
+                                <img src="https://i.ibb.co/5MKxrvT/edit.png" class="float-right mr-2"
                                     width="25" height="25">
                             </a>
                             <a col_add_id=${val.IDcolumn} id="col_add_${val.IDcolumn}">
-                                <img src="https://i.ibb.co/2srq9nT/plus.png" class="float-right"
+                                <img src="https://i.ibb.co/2srq9nT/plus.png" class="float-right mr-2"
                                     width="25" height="25">
                             </a>
                         </div>
