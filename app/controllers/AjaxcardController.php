@@ -36,6 +36,10 @@ class AjaxcardController extends Controller
     {
         $toColumn= $_POST["toColumn"];
         $idCard= $_POST["idCard"];
-        echo $idCard;
+        $result=$this->__CardModel->setStateCard($toColumn,$idCard);
+        if($result==1)
+        {
+            return "Erorr";
+        }
     }
 }

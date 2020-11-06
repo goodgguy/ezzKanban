@@ -14,4 +14,11 @@ class CardModel extends Database
         }
         return $list;
     }
+    public function setStateCard($idColumn,$idCard)
+    {
+        $queryupdate = "UPDATE card SET IDcolumn= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("ii", $idColumn,$idCard);
+        return $stmt->execute();
+    }
 }
