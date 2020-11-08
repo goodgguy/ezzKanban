@@ -15,7 +15,15 @@
             "col_edit": "#col_edit_",
             "getEditColumn": "#getEditColumn",
             "inputEditCol": "#inputEditCol",
-            "confirmEditCol": "#confirmEditCol"
+            "confirmEditCol": "#confirmEditCol",
+            "row_add": "#row_add_",
+            "getAddCard": "#getAddCard",
+            "addcard_startdate": "#addcard_startdate",
+            "addcard_duedate": "#addcard_duedate",
+            "title_addCard": "#title_addCard",
+            "description_addCard": "#description_addCard",
+            "priority_addCard": "#priority_addCard",
+            "submit_addCard": "#submit_addCard"
 
         };
         options = $.extend({}, defaults, options);
@@ -32,6 +40,15 @@
         const getEditColumn = options.getEditColumn;
         const inputEditCol = options.inputEditCol;
         const confirmEditCol = options.confirmEditCol;
+        const row_add = options.row_add;
+        const getAddCard = options.getAddCard;
+
+        const addcard_startdate = options.addcard_startdate;
+        const addcard_duedate = options.addcard_duedate;
+        const title_addCard = options.title_addCard;
+        const description_addCard = options.description_addCard;
+        const priority_addCard = options.priority_addCard;
+        const submit_addCard = options.submit_addCard;
 
         init();
 
@@ -97,7 +114,7 @@
                                 <img src="https://i.ibb.co/5MKxrvT/edit.png" class="float-right mr-2"
                                     width="25" height="25">
                             </a>
-                            <a col_add_id=${val.IDcolumn} id="col_add_${val.IDcolumn}">
+                            <a row_add_id=${val.IDcolumn} id="row_add_${val.IDcolumn}">
                                 <img src="https://i.ibb.co/2srq9nT/plus.png" class="float-right mr-2"
                                     width="25" height="25">
                             </a>
@@ -115,6 +132,8 @@
             addRow(val.IDcolumn, val.cardlist);
             handledeleteColumn(val.IDcolumn);
             handleeditColumn(val.IDcolumn, val.title);
+            handleAddRow(val.IDcolumn);
+
         }
 
         function addRow(idcol, cardlist) {
@@ -207,10 +226,33 @@
                 })
             });
         }
-        function handleaddCard() {
+        function loadDatetimePicker() {
 
         }
+        function handleAddRow(IDcolumn) {
+            $(row_add + IDcolumn).on('click', function () {
+                let card = {
+                    title: "",
+                    description: "",
+                    startdate: "",
+                    duedate: "",
+                    priority: false
+                };
+                $(getAddCard).modal();
+                $(priority_addCard).on('click', function () {
+                    card.priority = !card.priority;
+                    $(this).toggleClass("btn-danger");
+                });
+                $(submit_addCard).on('click', function () {
+                    card.title = $(title_addCard).val();
+                    card.description = $(description_addCard).val();
+                    card.startdate = $(addcard_startdate).val();
+                    card.duedate = $(addcard_duedate).val();
+                    console.log(card);
+                });
 
+            });
+        }
     };
 
 }(jQuery));

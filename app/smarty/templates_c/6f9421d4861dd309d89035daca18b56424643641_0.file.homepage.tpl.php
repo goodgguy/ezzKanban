@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-11-08 19:04:51
+  from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5fa7dee3bc06c3_18030122',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6f9421d4861dd309d89035daca18b56424643641' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
+      1 => 1604837088,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5fa7dee3bc06c3_18030122 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,14 +52,16 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              Hi, {$smarty.session.username}
+              Hi, <?php echo $_SESSION['username'];?>
+
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="logout">Log out</a>
             </div>
           </li>
           <li class="nav-item active">
-            <img src="public/img/{$smarty.session.image}" alt="Girl nude" width="50" height="50">
+            <img src="public/img/<?php echo $_SESSION['image'];?>
+" alt="Girl nude" width="50" height="50">
           </li>
         </ul>
       </div>
@@ -71,8 +96,7 @@
           <h4 class="modal-title">Notification</h4>
         </div>
         <div class="modal-body" id="modelAlert">
-          {* <p>Some text in the modal.</p> *}
-        </div>
+                  </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -88,11 +112,9 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          {* <h4 class="modal-title">Notification</h4> *}
-        </div>
+                  </div>
         <div class="modal-body" id="modelConfirmDel">
-          {* <p>Some text in the modal.</p> *}
-        </div>
+                  </div>
         <div class="modal-footer">
           <button type="button" class="btn btn btn-danger" data-dismiss="modal" id="confirmBtn">Delete</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -191,16 +213,27 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  <?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-  <script src="public/js/Sortable.js"></script>
-  <script src="public/js/kanban.js"></script>
+        crossorigin="anonymous"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="public/js/Sortable.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="public/js/kanban.js"><?php echo '</script'; ?>
+>
 </body>
 
-</html>
+</html><?php }
+}
