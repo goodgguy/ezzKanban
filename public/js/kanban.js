@@ -203,8 +203,7 @@
                     $.post(options.url + "deleteColumn", { column: id })
                         .done(function (data) {
                             if (data.length > 0) {
-                                $(textAlert).html(`<p>${data}</p>`);
-                                $(modalAlert).modal();
+                                showAlert(data);
                             }
                         });
                 });
@@ -219,15 +218,11 @@
                     $.post(options.url + "editColumn", { column: IDcolumn, title: titleChanged })
                         .done(function (data) {
                             if (data.length > 0) {
-                                $(textAlert).html(`<p>${data}</p>`);
-                                $(modalAlert).modal();
+                                showAlert(data);
                             }
                         });
                 })
             });
-        }
-        function loadDatetimePicker() {
-
         }
         function handleAddRow(IDcolumn) {
             $(row_add + IDcolumn).on('click', function () {
@@ -248,10 +243,28 @@
                     card.description = $(description_addCard).val();
                     card.startdate = $(addcard_startdate).val();
                     card.duedate = $(addcard_duedate).val();
-                    console.log(card);
+                    //HANDLE EXCEPTION
+                    if (card.title.trim() === "") {
+                        showAlert("Your title is empty");
+                        return;
+                    }
+                    if (card.startdate.trim() === "" || card.duedate.trim() === "") {
+                        showAlert("Start date or duedate is empty");
+                        return
+                    }
+                    $.post(options.url + "card/add", card)
+                        .done(function (data) {
+                            if (data.length > 0) {
+                                console.log(data);
+                            }
+                        });
                 });
 
             });
+        }
+        function showAlert(text) {
+            $(textAlert).html(`<p>${text}</p>`);
+            $(modalAlert).modal();
         }
     };
 

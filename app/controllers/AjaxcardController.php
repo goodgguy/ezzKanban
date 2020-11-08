@@ -13,33 +13,35 @@ class AjaxcardController extends Controller
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
-        $this->__CardModel=$this->model('CardModel');
-        $this->__ColumnModel=$this->model('ColumnModel');
+        $this->__CardModel = $this->model('CardModel');
+        $this->__ColumnModel = $this->model('ColumnModel');
         $this->__UserModel = $this->model('UserModel');
     }
     public function getData()
     {
-        $columnList=$this->__ColumnModel->getAllColumn();
-        foreach ($columnList as &$column)
-        {
-            $cardList=$this->__CardModel->getCardByColumn($column['IDcolumn']);
-            foreach ($cardList as &$card)
-            {
-                $userList=$this->__UserModel->getUserByCard($card['IDcard']);
-                $card['userList']=$userList;
+        $columnList = $this->__ColumnModel->getAllColumn();
+        foreach ($columnList as &$column) {
+            $cardList = $this->__CardModel->getCardByColumn($column['IDcolumn']);
+            foreach ($cardList as &$card) {
+                $userList = $this->__UserModel->getUserByCard($card['IDcard']);
+                $card['userList'] = $userList;
             }
-            $column['cardlist']=$cardList;
+            $column['cardlist'] = $cardList;
         }
         echo json_encode($columnList);
     }
     public function setPosition()
     {
-        $toColumn= $_POST["toColumn"];
-        $idCard= $_POST["idCard"];
-        $result=$this->__CardModel->setStateCard($toColumn,$idCard);
-        if($result==1)
-        {
+        $toColumn = $_POST["toColumn"];
+        $idCard = $_POST["idCard"];
+        $result = $this->__CardModel->setStateCard($toColumn, $idCard);
+        if ($result == 1) {
             return "Erorr";
         }
+    }
+    public function addCard()
+    {
+        $card = $_POST;
+        print_r($card);
     }
 }
