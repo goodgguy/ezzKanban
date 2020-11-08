@@ -21,4 +21,7 @@ class CardModel extends Database
         $stmt->bind_param("ii", $idColumn, $idCard);
         return $stmt->execute();
     }
+    public function addCard($title, $description, $startdate, $duedate, $priority)
+    {
+    }
 }
