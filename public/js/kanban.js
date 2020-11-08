@@ -250,7 +250,7 @@
                     }
                     if (card.startdate.trim() === "" || card.duedate.trim() === "") {
                         showAlert("Start date or duedate is empty");
-                        return
+                        return;
                     }
                     $.post(options.url + "card/add", card)
                         .done(function (data) {

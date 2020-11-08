@@ -41,7 +41,10 @@ class AjaxcardController extends Controller
     }
     public function addCard()
     {
-        $card = $_POST;
-        print_r($card);
+        $title = $_POST["title"];
+        $description = $_POST["description"];
+        $startdate = UTIL::convertDate($_POST["startdate"]);
+        $duedate = UTIL::convertDate($_POST["duedate"]);
+        $priority = $_POST["priority"];
     }
 }
