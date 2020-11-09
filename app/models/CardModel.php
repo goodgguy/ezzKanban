@@ -73,4 +73,18 @@ class CardModel extends Database
         $stmt->bind_param("ii", $status, $id);
         return $stmt->execute();
     }
+    public function setTitleCard($id, $title)
+    {
+        $queryupdate = "UPDATE card SET title= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("si", $title, $id);
+        return $stmt->execute();
+    }
+    public function setDescription($id, $description)
+    {
+        $queryupdate = "UPDATE card SET `description`= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("si", $description, $id);
+        return $stmt->execute();
+    }
 }

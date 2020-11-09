@@ -93,4 +93,16 @@ class CardController extends Controller
         $id = $_POST['id'];
         $this->__CardModel->setStatusCard($id, $state);
     }
+    public function setTitle()
+    {
+        $title = $_POST["title"];
+        $id = $_POST["id"];
+        $this->__CardModel->setTitleCard($id, $title);
+    }
+    public function setDescription()
+    {
+        $title = $_POST["description"];
+        $id = $_POST["id"];
+        $this->__CardModel->setDescription($id, $title);
+    }
 }

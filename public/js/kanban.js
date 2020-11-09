@@ -30,7 +30,9 @@
             "row_title": "#row_title_",
             "getEditCard": "#getEditCard",
             "detailcard_priority": "#detailcard_priority",
-            "detailcard_done": "#detailcard_done"
+            "detailcard_done": "#detailcard_done",
+            "detailcard_title": "#detailcard_title",
+            "detailcard_description": "#detailcard_description"
 
         };
         options = $.extend({}, defaults, options);
@@ -66,6 +68,8 @@
 
         const detailcard_priority = options.detailcard_priority;
         const detailcard_done = options.detailcard_done;
+        const detailcard_title = options.detailcard_title;
+        const detailcard_description = options.detailcard_description;
 
         var IDCOL_ADDCARD;
         var DETAILCARD;
@@ -282,6 +286,8 @@
                     if (DETAILCARD.status === 1) {
                         $(detailcard_done).addClass("btn-success");
                     }
+                    $(detailcard_title).text(DETAILCARD.title);
+                    $(detailcard_description).text(DETAILCARD.description);
                 });
                 $(getEditCard).modal();
             });
@@ -404,6 +410,46 @@
             });
         }
         function handleModalDetailCard() {
+            $('.editable').each(function () {
+                let label = $(this);
+                label.after("<input type='text' style ='display:none' /> ");
+                let edittext = $(this).next();
+                edittext[0].name = this.id.replace('lbl', 'txt');
+                edittext.val(label.html());
+                label.click(function () {
+                    $(this).hide();
+                    $(this).next().show();
+                })
+                edittext.focusout(function () {
+                    $(this).hide();
+                    if ($(this).val() == "" || $(this).val() === label.text()) {
+                        $(this).val(label.text());
+                    } else {
+                        let checkField = $(this).prev().attr('id');
+                        if (checkField === "detailcard_title") {
+                            $.ajax({
+                                url: options.url + "card/setTitle",
+                                type: "POST",
+                                dataType: "html",
+                                data: { title: $(this).val(), id: DETAILCARD.IDcard },
+                                cache: false
+                            }).done(function (data) {
+                            });
+                        } else {
+                            $.ajax({
+                                url: options.url + "card/setDescription",
+                                type: "POST",
+                                dataType: "html",
+                                data: { description: $(this).val(), id: DETAILCARD.IDcard },
+                                cache: false
+                            }).done(function (data) {
+                            });
+                        }
+                    }
+                    $(this).prev().html($(this).val());
+                    $(this).prev().show();
+                })
+            });
             $(detailcard_priority).on("click", function () {
                 $(this).toggleClass("btn-danger");
                 DETAILCARD.priority = DETAILCARD.priority === 1 ? 0 : 1;

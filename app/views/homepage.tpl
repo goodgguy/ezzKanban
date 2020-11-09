@@ -202,11 +202,11 @@
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
-              <span id="lb1" class="editable">Fix Spec</span>
+              <span id="detailcard_title" class="editable"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <span id="lb2" class="editable">MUST Chang Database Diagram</span>
+              <span id="detailcard_description" class="editable"></span>
             </div>
             <div class="row">
               <div class="col-6">
