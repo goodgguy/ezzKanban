@@ -58,4 +58,20 @@ class AjaxcardController extends Controller
             echo json_encode($cardList);
         }
     }
+    public function delete()
+    {
+        $idCard=$_POST["card"];
+        $IDColumn= $this->__CardModel->getColIDCard($idCard);
+        $this->__CardModel->deleteCard($idCard);
+        $cardList = $this->__CardModel->getCardByColumn($IDColumn);
+        foreach ($cardList as &$card) {
+            $userList = $this->__UserModel->getUserByCard($card['IDcard']);
+            $card['userList'] = $userList;
+        }
+        $response=array(
+            "card"=>$cardList,
+            "idcol"=>$IDColumn,
+        );
+        echo json_encode($response);
+    }
 }

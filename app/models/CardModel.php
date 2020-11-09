@@ -35,4 +35,20 @@ class CardModel extends Database
         }
         return $lastIDinserted = $this->conn->insert_id;
     }
+    public function deleteCard($idCard)
+    {
+        $queryupdate = "DELETE FROM card WHERE IDcard = ?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("i", $idCard);
+        return $stmt->execute();   
+    }
+    public function getColIDCard($idCard)
+    {
+        $query = "SELECT IDcolumn FROM ql_kanban.card where IDcard = ?;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $idCard);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc()["IDcolumn"];
+    }
 }

@@ -23,7 +23,8 @@
             "title_addCard": "#title_addCard",
             "description_addCard": "#description_addCard",
             "priority_addCard": "#priority_addCard",
-            "submit_addCard": "#submit_addCard"
+            "submit_addCard": "#submit_addCard",
+            "row_del": "#row_del_"
 
         };
         options = $.extend({}, defaults, options);
@@ -49,6 +50,8 @@
         const description_addCard = options.description_addCard;
         const priority_addCard = options.priority_addCard;
         const submit_addCard = options.submit_addCard;
+
+        const row_del = options.row_del;
 
         init();
 
@@ -142,7 +145,7 @@
                 <div class="card-body p-2" style="background-color: #${val.status == 1 ? "28df99" : ""}">
                     <div class="card-title">
                         <a href="" class="lead">${val.title}</a>
-                        <a href="#">
+                        <a id="row_del_${val.IDcard}">
                             <img src="https://i.ibb.co/jzf1cFG/clear.png"
                                 class="rounded-circle float-right" width="25" height="25"></a>
                     </div>
@@ -157,6 +160,7 @@
             </div>`;
                 $("#" + idcol).append(str);
                 addUser(val.IDcard, val.userList);
+                handleDeleteRow(val.IDcard);
             });
         }
         function handleDragdropCard(idcol) {
@@ -278,6 +282,21 @@
                     });
                 });
 
+            });
+        }
+        function handleDeleteRow(IDcard) {
+            $(row_del + IDcard).on("click", function () {
+                $.ajax({
+                    url: options.url + "card/delete",
+                    type: "POST",
+                    dataType: "json",
+                    data: { card: IDcard },
+                    cache: false
+                }).done(function (data) {
+                    $("#" + data.idcol).empty();
+                    addRow(data.idcol, data.card);
+
+                });
             });
         }
         function showAlert(text) {
