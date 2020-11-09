@@ -332,6 +332,11 @@
                     showAlert("Start date or duedate is empty");
                     return;
                 }
+                if(card.startdate.trim()>card.duedate.trim())
+                {
+                    showAlert("Start date must before duedate");
+                    return;
+                }
                 $.ajax({
                     url: options.url + "card/add",
                     type: "POST",
