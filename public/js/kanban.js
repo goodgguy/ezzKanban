@@ -25,6 +25,7 @@
             "priority_addCard": "#priority_addCard",
             "submit_addCard": "#submit_addCard",
             "row_del": "#row_del_",
+            "col_board": "#board_"
 
         };
         options = $.extend({}, defaults, options);
@@ -52,6 +53,7 @@
         const submit_addCard = options.submit_addCard;
 
         const row_del = options.row_del;
+        const col_board = options.col_board;
 
         init();
 
@@ -302,7 +304,7 @@
             $(modalAlert).modal();
         }
         function removeColumnfrBoard(IDcolumn) {
-            $("#board_" + IDcolumn).remove();
+            $(col_board + IDcolumn).remove();
         }
     };
 
