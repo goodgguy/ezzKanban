@@ -3,7 +3,7 @@
 
 require_once './app/setup.php';
 require_once './app/resource/resource.php';
-class AjaxcardController extends Controller
+class CardController extends Controller
 {
     private $__smarty;
     private $__CardModel;
