@@ -74,4 +74,12 @@ class CardController extends Controller
         );
         echo json_encode($response);
     }
+    public function getDetail()
+    {
+        $card=$_POST['card'];
+        $cardDetail=$this->__CardModel->getCardbyID($card);
+        $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
+        $cardDetail['userList'] = $userList;
+        echo json_encode($cardDetail);
+    }
 }

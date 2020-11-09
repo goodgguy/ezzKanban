@@ -18,4 +18,5 @@ $router->post('/editColumn', 'ColumnController@edit');
 $router->post('/card/changState', 'CardController@setPosition');
 $router->post('/card/add', 'CardController@addCard');
 $router->post('/card/delete', 'CardController@delete');
+$router->post('/card/getDetail', 'CardController@getDetail');
 $router->post('/column/changState', 'ColumnController@setPosition');

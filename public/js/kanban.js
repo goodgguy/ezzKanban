@@ -26,7 +26,9 @@
             "submit_addCard": "#submit_addCard",
             "row_del": "#row_del_",
             "col_board": "#board_",
-            "board_title": "#board_title_"
+            "board_title": "#board_title_",
+            "row_title": "#row_title_",
+            "getEditCard": "#getEditCard"
 
         };
         options = $.extend({}, defaults, options);
@@ -57,8 +59,11 @@
         const col_board = options.col_board;
         const board_title = options.board_title;
 
+        const row_title = options.row_title;
+        const getEditCard = options.getEditCard;
 
         var IDCOL_ADDCARD;
+        var DETAILCARD;
 
         init();
 
@@ -69,6 +74,7 @@
             loadData();
             handleAddcolumn();
             handleModalAddRow();
+            handleModalDetailCard();
         }
         function addEventDragDropBoard() {
             var master = document.getElementById('master');
@@ -152,7 +158,7 @@
                 let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
                 <div class="card-body p-2" style="background-color: #${val.status == 1 ? "28df99" : ""}">
                     <div class="card-title">
-                        <a href="" class="lead">${val.title}</a>
+                        <a id="row_title_${val.IDcard}" class="lead">${val.title}</a>
                         <a id="row_del_${val.IDcard}">
                             <img src="https://i.ibb.co/jzf1cFG/clear.png"
                                 class="rounded-circle float-right" width="25" height="25"></a>
@@ -169,6 +175,7 @@
                 $("#" + idcol).append(str);
                 addUser(val.IDcard, val.userList);
                 handleDeleteRow(val.IDcard);
+                handleEditRow(val.IDcard);
             });
         }
         function handleDragdropCard(idcol) {
@@ -181,9 +188,9 @@
                     idCard = idCard.split("_").pop();
                     $.post(options.url + "card/changState", { toColumn: evt.to.id, idCard: idCard })
                         .done(function (data) {
-                            if (data.length > 0) {
-                                //RELOAD();
-                            }
+                            // if (data.length > 0) {
+                            //     //RELOAD();
+                            // }
                         });
                 },
             });
@@ -252,6 +259,20 @@
             $(row_add + IDcolumn).on('click', function () {
                 IDCOL_ADDCARD = IDcolumn;
                 $(getAddCard).modal();
+            });
+        }
+        function handleEditRow(IDcard) {
+            $(row_title + IDcard).on('click', function () {
+                $.ajax({
+                    url: options.url + "card/getDetail",
+                    type: "POST",
+                    dataType: "json",
+                    data: { card: IDcard },
+                    cache: false
+                }).done(function (data) {
+                    DETAILCARD = data;
+                });
+                $(getEditCard).modal();
             });
         }
         function handleDeleteRow(IDcard) {
@@ -371,6 +392,9 @@
                     }
                 });
             });
+        }
+        function handleModalDetailCard() {
+            
         }
         function checkXSS(val) {
             return val.search("<[^>]*script")

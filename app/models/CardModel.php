@@ -51,4 +51,13 @@ class CardModel extends Database
         $result = $stmt->get_result();
         return $result->fetch_assoc()["IDcolumn"];
     }
+    public function getCardbyID($IDcard)
+    {
+        $query = "SELECT * FROM ql_kanban.card where IDcard = ?;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $IDcard);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 }

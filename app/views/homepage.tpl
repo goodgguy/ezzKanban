@@ -132,73 +132,219 @@
 
   <!--Modal ADD CARDS-->
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true" id="getAddCard">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ADD NEW CARD</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">TITLE:</label>
-                            <input id="title_addCard" type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-                            <input id="description_addCard" type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label class="control-label">Start Date</label>
-                                    <div class='input-group date' id='datetimepicker_addCard_1'>
-                                        <input id="addcard_startdate" type="datetime-local">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label class="control-label">Due Date</label>
-                                    <div class='input-group date' id='datetimepicker_addCard_2'>
-                                        <input id="addcard_duedate" type="datetime-local">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <label class="control-label">Priority: </label>
-                            </div>
-                            <div class="col-11">
-                                <button id="priority_addCard" type="button" class="btn">Priority</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit_addCard">Submit</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
+    aria-hidden="true" id="getAddCard">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ADD NEW CARD</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">TITLE:</label>
+              <input id="title_addCard" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
+              <input id="description_addCard" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="control-label">Start Date</label>
+                  <div class='input-group date' id='datetimepicker_addCard_1'>
+                    <input id="addcard_startdate" type="datetime-local">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="control-label">Due Date</label>
+                  <div class='input-group date' id='datetimepicker_addCard_2'>
+                    <input id="addcard_duedate" type="datetime-local">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1">
+                <label class="control-label">Priority: </label>
+              </div>
+              <div class="col-11">
+                <button id="priority_addCard" type="button" class="btn">Priority</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit_addCard">Submit</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!--Model EDIT DETAIL CARD-->
-
+  <!--Model EDIT DETAIL CARD-->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="getEditCard">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">DETAIL CARD</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">TITLE:</label>
+              <span id="lb1" class="editable">Fix Spec</span>
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
+              <span id="lb2" class="editable">MUST Chang Database Diagram</span>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="control-label">Start Date</label>
+                  <div class='input-group date'>
+                    <input id="detailcard_startdate" type="datetime-local">
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label class="control-label">Due Date</label>
+                  <div class='input-group date'>
+                    <input id="detailcard_startdate" type="datetime-local">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-2">
+                    <label class="control-label">Priority: </label>
+                  </div>
+                  <div class="col-10">
+                    <button id="addPriority" type="button" class="btn btn-light">Priority</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-2">
+                    <label class="control-label">Done: </label>
+                  </div>
+                  <div class="col-10">
+                    <button id="addDone" type="button" class="btn btn-light">Done</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--USER-->
+            <label class="control-label">User: </label>
+            <div class="row mb-5">
+              <div class="col-11">
+                <img
+                  src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
+                  class="rounded-circle" width="30" height="30">
+              </div>
+              <div class="col-1">
+                <img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30">
+              </div>
+            </div>
+            <!--CHECKLIST-->
+            <label class="control-label mt-3">Checklist: </label>
+            <div class="row mt-2">
+              <div class="col-12">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="row">
+                    <div class="col-1 d-flex align-items-center">
+                       
+                      </div>
+                      <div class="col-1 d-flex align-items-center">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      </div>
+                      <div class="col-10">
+                        <span style="font-size: 9px;font-weight: bold;">Thong Ho</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-10">
+                <input type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Checklist">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-info" style="width: 100%;">Post</button>
+              </div>
+            </div>
+            <!--MESSAGE-->
+            <label class="control-label mt-3">Message: </label>
+            <div class="row mt-2">
+              <div class="col-12">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <div class="row">
+                      <div class="col-1 d-flex align-items-center">
+                        <img
+                          src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
+                          class="rounded-circle" width="30" height="30">
+                      </div>
+                      <div class="col-11">
+                        <span style="font-size: 9px;font-weight: bold;">Thong Ho</span>
+                        <p style="font-size: 9px;margin-bottom:-6px">Alo can you fix this Alo
+                          can
+                          you fix this
+                          Alocan you fix this Alo
+                          can you fix this Alo can you fix this Alo can you fix this Alo can
+                          you fix this Alo can you fix this Alo can you fix this</p>
+                        <span style="font-size: 9px;opacity: 0.5;">20-10-2021 15:00:00</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-10">
+                <input type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Message">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-info" style="width: 100%;">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="addCard">Submit</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script src="public/js/Sortable.js"></script>
   <script src="public/js/kanban.js"></script>
 </body>
