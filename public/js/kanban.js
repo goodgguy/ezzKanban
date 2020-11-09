@@ -198,6 +198,11 @@
         function handleAddcolumn() {
             $(btnAddfield).click(function () {
                 const value = $(addfield).val();
+                const check = checkXSS(value);
+                if (check != -1) {
+                    showAlert("Don't do that again");
+                    return;
+                }
                 if (value.trim() === "") {
                     showAlert("Title is empty");
                     return;
@@ -229,6 +234,11 @@
                     const titleChanged = $(inputEditCol).val();
                     if (titleChanged.trim() === "") {
                         showAlert("Title is empty");
+                        return;
+                    }
+                    const check = checkXSS(titleChanged);
+                    if (check != -1) {
+                        showAlert("Don't do that again");
                         return;
                     }
                     $.post(options.url + "editColumn", { column: IDcolumn, title: titleChanged })
@@ -324,6 +334,10 @@
                 card.description = $(description_addCard).val();
                 card.startdate = $(addcard_startdate).val();
                 card.duedate = $(addcard_duedate).val();
+                if (checkXSS(card.title) != -1 || checkXSS(card.description) != -1) {
+                    showAlert("Don't do that again");
+                    return;
+                }
                 if (card.title.trim() === "") {
                     showAlert("Your title is empty");
                     return;
@@ -357,6 +371,9 @@
                     }
                 });
             });
+        }
+        function checkXSS(val) {
+            return val.search("<[^>]*script")
         }
 
     };
