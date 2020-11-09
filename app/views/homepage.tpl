@@ -233,7 +233,7 @@
                     <label class="control-label">Priority: </label>
                   </div>
                   <div class="col-10">
-                    <button id="addPriority" type="button" class="btn btn-light">Priority</button>
+                    <button id="detailcard_priority" type="button" class="btn">Priority</button>
                   </div>
                 </div>
               </div>
@@ -243,7 +243,7 @@
                     <label class="control-label">Done: </label>
                   </div>
                   <div class="col-10">
-                    <button id="addDone" type="button" class="btn btn-light">Done</button>
+                    <button id="detailcard_done" type="button" class="btn">Done</button>
                   </div>
                 </div>
               </div>
@@ -329,7 +329,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="addCard">Submit</button>
+          {* <button type="button" class="btn btn-secondary" data-dismiss="modal" id="addCard">Submit</button> *}
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>

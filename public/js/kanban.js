@@ -28,7 +28,9 @@
             "col_board": "#board_",
             "board_title": "#board_title_",
             "row_title": "#row_title_",
-            "getEditCard": "#getEditCard"
+            "getEditCard": "#getEditCard",
+            "detailcard_priority": "#detailcard_priority",
+            "detailcard_done": "#detailcard_done"
 
         };
         options = $.extend({}, defaults, options);
@@ -61,6 +63,9 @@
 
         const row_title = options.row_title;
         const getEditCard = options.getEditCard;
+
+        const detailcard_priority = options.detailcard_priority;
+        const detailcard_done = options.detailcard_done;
 
         var IDCOL_ADDCARD;
         var DETAILCARD;
@@ -271,6 +276,12 @@
                     cache: false
                 }).done(function (data) {
                     DETAILCARD = data;
+                    if (DETAILCARD.priority === 1) {
+                        $(detailcard_priority).addClass("btn-danger");
+                    }
+                    if (DETAILCARD.status === 1) {
+                        $(detailcard_done).addClass("btn-success");
+                    }
                 });
                 $(getEditCard).modal();
             });
@@ -286,7 +297,6 @@
                 }).done(function (data) {
                     $("#" + data.idcol).empty();
                     addRow(data.idcol, data.card);
-
                 });
             });
         }
@@ -394,7 +404,23 @@
             });
         }
         function handleModalDetailCard() {
-            
+            $(detailcard_priority).on("click", function () {
+                $(this).toggleClass("btn-danger");
+                DETAILCARD.priority = DETAILCARD.priority === 1 ? 0 : 1;
+                $.ajax({
+                    url: options.url + "card/setPriority",
+                    type: "POST",
+                    dataType: "html",
+                    data: { priority: DETAILCARD.priority },
+                    cache: false
+                }).done(function (data) {
+                    console.log(data);
+                });
+            });
+            $(detailcard_done).on("click", function () {
+                $(this).toggleClass("btn-success");
+                DETAILCARD.status = DETAILCARD.status === 1 ? 0 : 1;
+            });
         }
         function checkXSS(val) {
             return val.search("<[^>]*script")
