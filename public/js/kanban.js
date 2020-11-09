@@ -411,15 +411,24 @@
                     url: options.url + "card/setPriority",
                     type: "POST",
                     dataType: "html",
-                    data: { priority: DETAILCARD.priority },
+                    data: { priority: DETAILCARD.priority, id: DETAILCARD.IDcard },
                     cache: false
                 }).done(function (data) {
-                    console.log(data);
+
                 });
             });
             $(detailcard_done).on("click", function () {
                 $(this).toggleClass("btn-success");
                 DETAILCARD.status = DETAILCARD.status === 1 ? 0 : 1;
+                $.ajax({
+                    url: options.url + "card/setStatus",
+                    type: "POST",
+                    dataType: "html",
+                    data: { priority: DETAILCARD.status, id: DETAILCARD.IDcard },
+                    cache: false
+                }).done(function (data) {
+
+                });
             });
         }
         function checkXSS(val) {

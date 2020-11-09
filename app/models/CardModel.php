@@ -21,16 +21,15 @@ class CardModel extends Database
         $stmt->bind_param("ii", $idColumn, $idCard);
         return $stmt->execute();
     }
-    public function addCard($title, $description, $startdate, $duedate, $priority,$idcol)
+    public function addCard($title, $description, $startdate, $duedate, $priority, $idcol)
     {
         $date = date("Y-m-d H:i:s");
-        $pri=($priority?1:0);
+        $pri = ($priority ? 1 : 0);
         $query = "INSERT INTO card (startdate,duedate,status,description,title,priority,create_date,IDcolumn) VALUE (?,?,0,?,?,?,?,?);";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssssisi", $startdate,$duedate,$description,$title,$pri,$date,$idcol);
-        $result=$stmt->execute();
-        if($result!=1)
-        {
+        $stmt->bind_param("ssssisi", $startdate, $duedate, $description, $title, $pri, $date, $idcol);
+        $result = $stmt->execute();
+        if ($result != 1) {
             return -1;
         }
         return $lastIDinserted = $this->conn->insert_id;
@@ -40,7 +39,7 @@ class CardModel extends Database
         $queryupdate = "DELETE FROM card WHERE IDcard = ?";
         $stmt = $this->conn->prepare($queryupdate);
         $stmt->bind_param("i", $idCard);
-        return $stmt->execute();   
+        return $stmt->execute();
     }
     public function getColIDCard($idCard)
     {
@@ -59,5 +58,19 @@ class CardModel extends Database
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_assoc();
+    }
+    public function setPriorityCard($id, $priority)
+    {
+        $queryupdate = "UPDATE card SET priority= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("ii", $priority, $id);
+        return $stmt->execute();
+    }
+    public function setStatusCard($id, $status)
+    {
+        $queryupdate = "UPDATE card SET `status`= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("ii", $status, $id);
+        return $stmt->execute();
     }
 }

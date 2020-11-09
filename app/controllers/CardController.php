@@ -46,10 +46,9 @@ class CardController extends Controller
         $startdate = UTIL::convertDate($_POST["startdate"]);
         $duedate = UTIL::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
-        $idcol=$_POST["idcol"];
-        $result=$this->__CardModel->addCard($title,$description,$startdate,$duedate,$priority,$idcol);
-        if($result!=-1)
-        {
+        $idcol = $_POST["idcol"];
+        $result = $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
+        if ($result != -1) {
             $cardList = $this->__CardModel->getCardByColumn($idcol);
             foreach ($cardList as &$card) {
                 $userList = $this->__UserModel->getUserByCard($card['IDcard']);
@@ -60,26 +59,38 @@ class CardController extends Controller
     }
     public function delete()
     {
-        $idCard=$_POST["card"];
-        $IDColumn= $this->__CardModel->getColIDCard($idCard);
+        $idCard = $_POST["card"];
+        $IDColumn = $this->__CardModel->getColIDCard($idCard);
         $this->__CardModel->deleteCard($idCard);
         $cardList = $this->__CardModel->getCardByColumn($IDColumn);
         foreach ($cardList as &$card) {
             $userList = $this->__UserModel->getUserByCard($card['IDcard']);
             $card['userList'] = $userList;
         }
-        $response=array(
-            "card"=>$cardList,
-            "idcol"=>$IDColumn,
+        $response = array(
+            "card" => $cardList,
+            "idcol" => $IDColumn,
         );
         echo json_encode($response);
     }
     public function getDetail()
     {
-        $card=$_POST['card'];
-        $cardDetail=$this->__CardModel->getCardbyID($card);
+        $card = $_POST['card'];
+        $cardDetail = $this->__CardModel->getCardbyID($card);
         $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
         $cardDetail['userList'] = $userList;
         echo json_encode($cardDetail);
+    }
+    public function setPriority()
+    {
+        $state = $_POST['priority'];
+        $id = $_POST['id'];
+        $this->__CardModel->setPriorityCard($id, $state);
+    }
+    public function setStatus()
+    {
+        $state = $_POST['priority'];
+        $id = $_POST['id'];
+        $this->__CardModel->setStatusCard($id, $state);
     }
 }
