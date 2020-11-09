@@ -21,7 +21,18 @@ class CardModel extends Database
         $stmt->bind_param("ii", $idColumn, $idCard);
         return $stmt->execute();
     }
-    public function addCard($title, $description, $startdate, $duedate, $priority)
+    public function addCard($title, $description, $startdate, $duedate, $priority,$idcol)
     {
+        $date = date("Y-m-d H:i:s");
+        $pri=($priority?1:0);
+        $query = "INSERT INTO card (startdate,duedate,status,description,title,priority,create_date,IDcolumn) VALUE (?,?,0,?,?,?,?,?);";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssssisi", $startdate,$duedate,$description,$title,$pri,$date,$idcol);
+        return $result=$stmt->execute();
+        if($result!=1)
+        {
+            return -1;
+        }
+        return $lastIDinserted = $this->conn->insert_id;
     }
 }

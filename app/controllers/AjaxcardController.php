@@ -46,5 +46,8 @@ class AjaxcardController extends Controller
         $startdate = UTIL::convertDate($_POST["startdate"]);
         $duedate = UTIL::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
+        $idcol=$_POST["idcol"];
+        $result=$this->__CardModel->addCard($title,$description,$startdate,$duedate,$priority,$idcol);
+        echo $result;
     }
 }

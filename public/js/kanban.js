@@ -139,7 +139,7 @@
         function addRow(idcol, cardlist) {
             $.each(cardlist, function (index, val) {
                 let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
-                <div class="card-body p-2" style="background-color: #${val.priority == 1 ? "28df99" : ""}">
+                <div class="card-body p-2" style="background-color: #${val.status == 1 ? "28df99" : ""}">
                     <div class="card-title">
                         <a href="" class="lead">${val.title}</a>
                         <a href="#">
@@ -231,7 +231,8 @@
                     description: "",
                     startdate: "",
                     duedate: "",
-                    priority: false
+                    priority: false,
+                    idcol: IDcolumn
                 };
                 $(getAddCard).modal();
                 $(priority_addCard).on('click', function () {
@@ -243,7 +244,6 @@
                     card.description = $(description_addCard).val();
                     card.startdate = $(addcard_startdate).val();
                     card.duedate = $(addcard_duedate).val();
-                    //HANDLE EXCEPTION
                     if (card.title.trim() === "") {
                         showAlert("Your title is empty");
                         return;
