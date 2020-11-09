@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-09 09:03:04
-  from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-08 19:04:51
+  from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa8a3580560a1_25333200',
+  'unifunc' => 'content_5fa7dee3bc06c3_18030122',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
+    '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
-      0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604887234,
+      0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
+      1 => 1604837088,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa8a3580560a1_25333200 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa7dee3bc06c3_18030122 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
