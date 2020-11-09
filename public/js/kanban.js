@@ -332,8 +332,7 @@
                     showAlert("Start date or duedate is empty");
                     return;
                 }
-                if(card.startdate.trim()>card.duedate.trim())
-                {
+                if (card.startdate.trim() > card.duedate.trim()) {
                     showAlert("Start date must before duedate");
                     return;
                 }
@@ -350,6 +349,10 @@
                         } else {
                             $("#" + IDCOL_ADDCARD).empty();
                             addRow(IDCOL_ADDCARD, data);
+                            $(title_addCard).val("");
+                            $(description_addCard).val("");
+                            $(addcard_startdate).val("");
+                            $(addcard_duedate).val("");
                         }
                     }
                 });
