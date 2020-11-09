@@ -57,6 +57,9 @@
         const col_board = options.col_board;
         const board_title = options.board_title;
 
+
+        var IDCOL_ADDCARD;
+
         init();
 
 
@@ -65,6 +68,7 @@
             addEventDragDropBoard();
             loadData();
             handleAddcolumn();
+            handleModalAddRow();
         }
         function addEventDragDropBoard() {
             var master = document.getElementById('master');
@@ -236,50 +240,8 @@
         }
         function handleAddRow(IDcolumn) {
             $(row_add + IDcolumn).on('click', function () {
-                let card = {
-                    title: "",
-                    description: "",
-                    startdate: "",
-                    duedate: "",
-                    priority: false,
-                    idcol: IDcolumn
-                };
+                IDCOL_ADDCARD = IDcolumn;
                 $(getAddCard).modal();
-                $(priority_addCard).on('click', function () {
-                    card.priority = !card.priority;
-                    $(this).toggleClass("btn-danger");
-                });
-                $(submit_addCard).on('click', function () {
-                    card.title = $(title_addCard).val();
-                    card.description = $(description_addCard).val();
-                    card.startdate = $(addcard_startdate).val();
-                    card.duedate = $(addcard_duedate).val();
-                    if (card.title.trim() === "") {
-                        showAlert("Your title is empty");
-                        return;
-                    }
-                    if (card.startdate.trim() === "" || card.duedate.trim() === "") {
-                        showAlert("Start date or duedate is empty");
-                        return;
-                    }
-                    $.ajax({
-                        url: options.url + "card/add",
-                        type: "POST",
-                        dataType: "json",
-                        data: card,
-                        cache: false
-                    }).done(function (data) {
-                        if (data.length > 0) {
-                            if (data == -1) {
-                                showAlert("Erorr");
-                            } else {
-                                $("#" + IDcolumn).empty();
-                                addRow(IDcolumn, data);
-                            }
-                        }
-                    });
-                });
-
             });
         }
         function handleDeleteRow(IDcard) {
@@ -342,6 +304,51 @@
             handleeditColumn(data, value);
             handleAddRow(data);
 
+        }
+        function handleModalAddRow() {
+            let priorityInit = false;
+            $(priority_addCard).on('click', function () {
+                priorityInit = !priorityInit;
+                $(this).toggleClass("btn-danger");
+            });
+            $(submit_addCard).on('click', function () {
+                let card = {
+                    title: "",
+                    description: "",
+                    startdate: "",
+                    duedate: "",
+                    priority: priorityInit,
+                    idcol: IDCOL_ADDCARD
+                };
+                card.title = $(title_addCard).val();
+                card.description = $(description_addCard).val();
+                card.startdate = $(addcard_startdate).val();
+                card.duedate = $(addcard_duedate).val();
+                if (card.title.trim() === "") {
+                    showAlert("Your title is empty");
+                    return;
+                }
+                if (card.startdate.trim() === "" || card.duedate.trim() === "") {
+                    showAlert("Start date or duedate is empty");
+                    return;
+                }
+                $.ajax({
+                    url: options.url + "card/add",
+                    type: "POST",
+                    dataType: "json",
+                    data: card,
+                    cache: false
+                }).done(function (data) {
+                    if (data.length > 0) {
+                        if (data == -1) {
+                            showAlert("Erorr");
+                        } else {
+                            $("#" + IDCOL_ADDCARD).empty();
+                            addRow(IDCOL_ADDCARD, data);
+                        }
+                    }
+                });
+            });
         }
 
     };
