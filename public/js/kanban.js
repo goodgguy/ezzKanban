@@ -252,12 +252,22 @@
                         showAlert("Start date or duedate is empty");
                         return;
                     }
-                    $.post(options.url + "card/add", card)
-                        .done(function (data) {
-                            if (data.length > 0) {
-                                console.log(data);
+                    $.ajax({
+                        url: options.url + "card/add",
+                        type: "POST",
+                        dataType: "json",
+                        data: card,
+                        cache: false
+                    }).done(function (data) {
+                        if (data.length > 0) {
+                            if (data == -1) {
+                                showAlert("Erorr");
+                            } else {
+                                $("#" + IDcolumn).empty();
+                                addRow(IDcolumn, data);
                             }
-                        });
+                        }
+                    });
                 });
 
             });

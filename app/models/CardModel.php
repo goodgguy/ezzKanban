@@ -24,11 +24,11 @@ class CardModel extends Database
     public function addCard($title, $description, $startdate, $duedate, $priority,$idcol)
     {
         $date = date("Y-m-d H:i:s");
-        $pri=($priority?1:0);
+        $pri=($priority===true?1:0);
         $query = "INSERT INTO card (startdate,duedate,status,description,title,priority,create_date,IDcolumn) VALUE (?,?,0,?,?,?,?,?);";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("ssssisi", $startdate,$duedate,$description,$title,$pri,$date,$idcol);
-        return $result=$stmt->execute();
+        $result=$stmt->execute();
         if($result!=1)
         {
             return -1;

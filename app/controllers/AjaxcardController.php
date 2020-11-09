@@ -48,6 +48,14 @@ class AjaxcardController extends Controller
         $priority = $_POST["priority"];
         $idcol=$_POST["idcol"];
         $result=$this->__CardModel->addCard($title,$description,$startdate,$duedate,$priority,$idcol);
-        echo $result;
+        if($result!=-1)
+        {
+            $cardList = $this->__CardModel->getCardByColumn($idcol);
+            foreach ($cardList as &$card) {
+                $userList = $this->__UserModel->getUserByCard($card['IDcard']);
+                $card['userList'] = $userList;
+            }
+            echo json_encode($cardList);
+        }
     }
 }
