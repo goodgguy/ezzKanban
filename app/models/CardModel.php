@@ -87,4 +87,18 @@ class CardModel extends Database
         $stmt->bind_param("si", $description, $id);
         return $stmt->execute();
     }
+    public function setStartdateCard($id, $startdate)
+    {
+        $queryupdate = "UPDATE card SET startdate= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("si", $startdate, $id);
+        return $stmt->execute();
+    }
+    public function setDuedateCard($id, $duedate)
+    {
+        $queryupdate = "UPDATE card SET duedate= ? WHERE IDcard=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("si", $duedate, $id);
+        return $stmt->execute();
+    }
 }

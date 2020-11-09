@@ -419,6 +419,34 @@
             });
         }
         function handleModalDetailCard() {
+            $(detailcard_startdate).change(function () {
+                if ($(this).val() > $(detailcard_duedate).val()) {
+                    $(this).val(convertDate(DETAILCARD.startdate));
+                } else {
+                    $.ajax({
+                        url: options.url + "card/setStartdate",
+                        type: "POST",
+                        dataType: "html",
+                        data: { startdate: $(this).val(), id: DETAILCARD.IDcard },
+                        cache: false
+                    }).done(function (data) {
+                    });
+                }
+            });
+            $(detailcard_duedate).change(function () {
+                if ($(this).val() < $(detailcard_startdate).val()) {
+                    $(this).val(convertDate(DETAILCARD.duedate));
+                } else {
+                    $.ajax({
+                        url: options.url + "card/setDuedate",
+                        type: "POST",
+                        dataType: "html",
+                        data: { duedate: $(this).val(), id: DETAILCARD.IDcard },
+                        cache: false
+                    }).done(function (data) {
+                    });
+                }
+            });
             $('.editable').each(function () {
                 let label = $(this);
                 label.after("<input type='text' style ='display:none' /> ");

@@ -23,4 +23,6 @@ $router->post('/card/setPriority', 'CardController@setPriority');
 $router->post('/card/setStatus', 'CardController@setStatus');
 $router->post('/card/setTitle', 'CardController@setTitle');
 $router->post('/card/setDescription', 'CardController@setDescription');
+$router->post('/card/setStartdate', 'CardController@setStartdate');
+$router->post('/card/setDuedate', 'CardController@setDuedate');
 $router->post('/column/changState', 'ColumnController@setPosition');
