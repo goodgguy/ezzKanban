@@ -25,7 +25,8 @@
             "priority_addCard": "#priority_addCard",
             "submit_addCard": "#submit_addCard",
             "row_del": "#row_del_",
-            "col_board": "#board_"
+            "col_board": "#board_",
+            "board_title": "#board_title_"
 
         };
         options = $.extend({}, defaults, options);
@@ -54,6 +55,7 @@
 
         const row_del = options.row_del;
         const col_board = options.col_board;
+        const board_title = options.board_title;
 
         init();
 
@@ -108,7 +110,7 @@
                 <div class="card-body" style="background-color: #ebecf0">
                     <div class="row">
                         <div class="col-sm-8 ">
-                            <h6 class="card-title text-uppercase text-truncate py-2">${val.title}</h6>
+                            <h6 id="board_title_${val.IDcolumn}" class="card-title text-uppercase text-truncate py-2">${val.title}</h6>
                         </div>
                         <div class="col-sm-4">
                             <a col_delete_id=${val.IDcolumn} id="col_del_${val.IDcolumn}">
@@ -227,9 +229,7 @@
                     }
                     $.post(options.url + "editColumn", { column: IDcolumn, title: titleChanged })
                         .done(function (data) {
-                            if (data.length > 0) {
-                                showAlert(data);
-                            }
+                            $(board_title + IDcolumn).text(titleChanged);
                         });
                 })
             });
