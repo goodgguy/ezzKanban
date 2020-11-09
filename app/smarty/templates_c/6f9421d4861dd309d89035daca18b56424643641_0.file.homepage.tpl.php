@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-10 00:46:27
+/* Smarty version 3.1.34-dev-7, created on 2020-11-10 01:41:06
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa98073d6ccd9_20643034',
+  'unifunc' => 'content_5fa98d420769c0_49976236',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604943985,
+      1 => 1604947187,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa98073d6ccd9_20643034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa98d420769c0_49976236 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -243,7 +243,7 @@ function content_5fa98073d6ccd9_20643034 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="form-group">
                   <label class="control-label">Due Date</label>
                   <div class='input-group date'>
-                    <input id="detailcard_startdate" type="datetime-local">
+                    <input id="detailcard_duedate" type="datetime-local">
                   </div>
                 </div>
               </div>

@@ -32,7 +32,10 @@
             "detailcard_priority": "#detailcard_priority",
             "detailcard_done": "#detailcard_done",
             "detailcard_title": "#detailcard_title",
-            "detailcard_description": "#detailcard_description"
+            "detailcard_description": "#detailcard_description",
+            "detailcard_startdate": "#detailcard_startdate",
+            "detailcard_duedate": "#detailcard_duedate"
+
 
         };
         options = $.extend({}, defaults, options);
@@ -70,6 +73,9 @@
         const detailcard_done = options.detailcard_done;
         const detailcard_title = options.detailcard_title;
         const detailcard_description = options.detailcard_description;
+        const detailcard_startdate = options.detailcard_startdate;
+        const detailcard_duedate = options.detailcard_duedate;
+
 
         var IDCOL_ADDCARD;
         var DETAILCARD;
@@ -288,6 +294,9 @@
                     }
                     $(detailcard_title).text(DETAILCARD.title);
                     $(detailcard_description).text(DETAILCARD.description);
+                    $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
+                    $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
+
                 });
                 $(getEditCard).modal();
             });
@@ -480,7 +489,9 @@
         function checkXSS(val) {
             return val.search("<[^>]*script")
         }
-
+        function convertDate(date) {
+            return date.replace(" ", "T");
+        }
     };
 
 }(jQuery));

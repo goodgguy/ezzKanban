@@ -221,7 +221,7 @@
                 <div class="form-group">
                   <label class="control-label">Due Date</label>
                   <div class='input-group date'>
-                    <input id="detailcard_startdate" type="datetime-local">
+                    <input id="detailcard_duedate" type="datetime-local">
                   </div>
                 </div>
               </div>
