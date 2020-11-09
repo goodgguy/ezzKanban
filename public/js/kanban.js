@@ -186,6 +186,10 @@
         function handleAddcolumn() {
             $(btnAddfield).click(function () {
                 const value = $(addfield).val();
+                if (value.trim() === "") {
+                    showAlert("Title is empty");
+                    return;
+                }
                 $.post(options.url + "addColumn", { column: value })
                     .done(function (data) {
                         $(textAlert).html(`<p>${data}</p>`);
@@ -215,6 +219,10 @@
                 $(getEditColumn).modal();
                 $(confirmEditCol).on("click", function () {
                     const titleChanged = $(inputEditCol).val();
+                    if (titleChanged.trim() === "") {
+                        showAlert("Title is empty");
+                        return;
+                    }
                     $.post(options.url + "editColumn", { column: IDcolumn, title: titleChanged })
                         .done(function (data) {
                             if (data.length > 0) {
