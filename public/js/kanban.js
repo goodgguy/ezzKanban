@@ -24,7 +24,7 @@
             "description_addCard": "#description_addCard",
             "priority_addCard": "#priority_addCard",
             "submit_addCard": "#submit_addCard",
-            "row_del": "#row_del_"
+            "row_del": "#row_del_",
 
         };
         options = $.extend({}, defaults, options);
@@ -210,9 +210,7 @@
                 $(confirmBtn).on("click", function () {
                     $.post(options.url + "deleteColumn", { column: id })
                         .done(function (data) {
-                            if (data.length > 0) {
-                                showAlert(data);
-                            }
+                            removeColumnfrBoard(IDcolumn);
                         });
                 });
             })
@@ -302,6 +300,9 @@
         function showAlert(text) {
             $(textAlert).html(`<p>${text}</p>`);
             $(modalAlert).modal();
+        }
+        function removeColumnfrBoard(IDcolumn) {
+            $("#board_" + IDcolumn).remove();
         }
     };
 
