@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-10 14:47:39
+/* Smarty version 3.1.34-dev-7, created on 2020-11-10 18:09:15
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5faa459b2dcff9_68006061',
+  'unifunc' => 'content_5faa74dbdccfc8_76773843',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604994427,
+      1 => 1605006419,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5faa459b2dcff9_68006061 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa74dbdccfc8_76773843 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -321,7 +321,7 @@ function content_5faa459b2dcff9_68006061 (Smarty_Internal_Template $_smarty_tpl)
             <label class="control-label mt-3">Message: </label>
             <div class="row mt-2">
               <div class="col-12">
-                <ul class="list-group">
+                <ul class="list-group" id="detailcard_listcomment">
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-1 d-flex align-items-center">

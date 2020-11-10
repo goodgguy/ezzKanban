@@ -9,6 +9,7 @@ class CardController extends Controller
     private $__CardModel;
     private $__UserModel;
     private $__ColumnModel;
+    private $__CommentModel;
     function __construct()
     {
         $this->__smarty = new Template();
@@ -16,6 +17,7 @@ class CardController extends Controller
         $this->__CardModel = $this->model('CardModel');
         $this->__ColumnModel = $this->model('ColumnModel');
         $this->__UserModel = $this->model('UserModel');
+        $this->__CommentModel=$this->model('CommentModel');
     }
     public function getData()
     {
@@ -78,7 +80,11 @@ class CardController extends Controller
         $card = $_POST['card'];
         $cardDetail = $this->__CardModel->getCardbyID($card);
         $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
+        $commentList=$this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
+
+
         $cardDetail['userList'] = $userList;
+        $cardDetail['commentList']=$commentList;
         echo json_encode($cardDetail);
     }
     public function setPriority()

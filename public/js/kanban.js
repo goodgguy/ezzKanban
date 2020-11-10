@@ -304,6 +304,7 @@
                 $(getAddCard).modal();
             });
         }
+        //=====================GET DATA TO EDIT ROW
         function handleEditRow(IDcard) {
             $(row_title + IDcard).on('click', function () {
                 $.ajax({
@@ -315,6 +316,7 @@
                 }).done(function (data) {
                     DETAILCARD = data;
                     showDetailRow();
+                    console.log(data);
                 });
                 $(getEditCard).modal();
             });

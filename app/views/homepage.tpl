@@ -299,7 +299,7 @@
             <label class="control-label mt-3">Message: </label>
             <div class="row mt-2">
               <div class="col-12">
-                <ul class="list-group">
+                <ul class="list-group" id="detailcard_listcomment">
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-1 d-flex align-items-center">
