@@ -525,6 +525,10 @@
                     showAlert("Start date must before duedate");
                     return;
                 }
+                if (card.description === "") {
+                    showAlert("Your description is empty");
+                    return;
+                }
                 $.ajax({
                     url: options.url + "card/add",
                     type: "POST",
