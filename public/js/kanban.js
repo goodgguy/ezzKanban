@@ -289,26 +289,29 @@
                     cache: false
                 }).done(function (data) {
                     DETAILCARD = data;
-                    if (DETAILCARD.priority === 1) {
-                        $(detailcard_priority).addClass("btn-danger");
-                    }
-                    else {
-                        $(detailcard_priority).removeClass("btn-danger");
-                    }
-                    if (DETAILCARD.status === 1) {
-                        $(detailcard_done).addClass("btn-success");
-                    }
-                    else {
-                        $(detailcard_done).removeClass("btn-success");
-                    }
-                    $(detailcard_title).text(DETAILCARD.title);
-                    $(detailcard_description).text(DETAILCARD.description);
-                    $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
-                    $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
+                    showDetailRow();
 
                 });
                 $(getEditCard).modal();
             });
+        }
+        function showDetailRow() {
+            if (DETAILCARD.priority === 1) {
+                $(detailcard_priority).addClass("btn-danger");
+            }
+            else {
+                $(detailcard_priority).removeClass("btn-danger");
+            }
+            if (DETAILCARD.status === 1) {
+                $(detailcard_done).addClass("btn-success");
+            }
+            else {
+                $(detailcard_done).removeClass("btn-success");
+            }
+            $(detailcard_title).text(DETAILCARD.title);
+            $(detailcard_description).text(DETAILCARD.description);
+            $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
+            $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
         }
         function handleDeleteRow(IDcard) {
             $(row_del + IDcard).on("click", function () {
