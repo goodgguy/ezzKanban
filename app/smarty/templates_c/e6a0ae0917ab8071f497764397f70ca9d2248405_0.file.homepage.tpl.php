@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-09 19:12:18
+/* Smarty version 3.1.34-dev-7, created on 2020-11-10 09:59:25
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa93222a15b55_03421658',
+  'unifunc' => 'content_5faa020ded6227_92194580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604923937,
+      1 => 1604977080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa93222a15b55_03421658 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa020ded6227_92194580 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -224,11 +224,11 @@ function content_5fa93222a15b55_03421658 (Smarty_Internal_Template $_smarty_tpl)
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
-              <span id="lb1" class="editable">Fix Spec</span>
+              <span id="detailcard_title" class="editable"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <span id="lb2" class="editable">MUST Chang Database Diagram</span>
+              <span id="detailcard_description" class="editable"></span>
             </div>
             <div class="row">
               <div class="col-6">
@@ -243,7 +243,7 @@ function content_5fa93222a15b55_03421658 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="form-group">
                   <label class="control-label">Due Date</label>
                   <div class='input-group date'>
-                    <input id="detailcard_startdate" type="datetime-local">
+                    <input id="detailcard_duedate" type="datetime-local">
                   </div>
                 </div>
               </div>
@@ -255,7 +255,7 @@ function content_5fa93222a15b55_03421658 (Smarty_Internal_Template $_smarty_tpl)
                     <label class="control-label">Priority: </label>
                   </div>
                   <div class="col-10">
-                    <button id="addPriority" type="button" class="btn btn-light">Priority</button>
+                    <button id="detailcard_priority" type="button" class="btn">Priority</button>
                   </div>
                 </div>
               </div>
@@ -265,7 +265,7 @@ function content_5fa93222a15b55_03421658 (Smarty_Internal_Template $_smarty_tpl)
                     <label class="control-label">Done: </label>
                   </div>
                   <div class="col-10">
-                    <button id="addDone" type="button" class="btn btn-light">Done</button>
+                    <button id="detailcard_done" type="button" class="btn">Done</button>
                   </div>
                 </div>
               </div>
@@ -351,8 +351,7 @@ function content_5fa93222a15b55_03421658 (Smarty_Internal_Template $_smarty_tpl)
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="addCard">Submit</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

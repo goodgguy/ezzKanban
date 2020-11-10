@@ -289,8 +289,14 @@
                     if (DETAILCARD.priority === 1) {
                         $(detailcard_priority).addClass("btn-danger");
                     }
+                    else {
+                        $(detailcard_priority).removeClass("btn-danger");
+                    }
                     if (DETAILCARD.status === 1) {
                         $(detailcard_done).addClass("btn-success");
+                    }
+                    else {
+                        $(detailcard_done).removeClass("btn-success");
                     }
                     $(detailcard_title).text(DETAILCARD.title);
                     $(detailcard_description).text(DETAILCARD.description);
@@ -377,7 +383,7 @@
                     idcol: IDCOL_ADDCARD
                 };
                 card.title = $(title_addCard).val();
-                card.description = $(description_addCard).val();
+                card.description = $(description_addCard).val().trim();
                 card.startdate = $(addcard_startdate).val();
                 card.duedate = $(addcard_duedate).val();
                 if (checkXSS(card.title) != -1 || checkXSS(card.description) != -1) {
