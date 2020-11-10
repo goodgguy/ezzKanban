@@ -2,7 +2,7 @@
 
     $.fn.boardMn = function (options) {
         let defaults = {
-            "url": "http://localhost:8080/ezzKanban/",
+            "url": "http://10.192.0.210:8080/ezzKanban/",
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
@@ -241,7 +241,7 @@
         function addUser(idcard, userlist) {
             $.each(userlist, function (index, val) {
                 let str = `<img src="public/img/${val.image}"
-            class="rounded-circle" width="30" height="30" id="user_img_${val.IDuser}">`;
+            class="rounded-circle" width="30" height="30" id="user_img_${val.IDuser}_${idcard}">`;
                 $("#user_" + idcard).append(str);
             });
         }
@@ -340,6 +340,7 @@
             listUserDetailRow();
             listuserNotInDetailRow();
         }
+        //SHOW LIST USER ROW AND HANDLE DELETE
         function listUserDetailRow() {
             $(detailcard_listuser).empty();
             $.each(DETAILCARD.userList, function (index, val) {
@@ -357,7 +358,7 @@
                     }).done(function (data) {
                         $(user_in + val.IDuser).remove();
                         listuserNotInDetailRow();
-                        $(user_img + val.IDuser).remove();
+                        $(user_img + val.IDuser + "_" + DETAILCARD.IDcard).remove();
                     });
                 })
             });
