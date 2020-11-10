@@ -394,7 +394,7 @@
               </div>
             </div>
           </li>`;
-            let strUserin = `<img
+            let strUserin = `<img id="user_in_${user.IDuser}"
             src="public/img/${user.image}"
             class="rounded-circle" width="30" height="30">`;
             let strUserOnBoard = `<img src="public/img/${user.image}" id="user_img_${user.IDuser}_${DETAILCARD.IDcard}"
@@ -411,6 +411,19 @@
                     $(user_notin + user.IDuser).remove();
                     $(detailcard_listuser).append(strUserin);
                     $(userlist_cardOnboard + DETAILCARD.IDcard).append(strUserOnBoard);
+                    $(user_in + user.IDuser).on('click', function () {
+                        $.ajax({
+                            url: options.url + "card/delUser",
+                            type: "POST",
+                            dataType: "html",
+                            data: { cardID: DETAILCARD.IDcard, userID: user.IDuser },
+                            cache: false
+                        }).done(function (data) {
+                            $(user_in + user.IDuser).remove();
+                            listuserNotInDetailRow();
+                            $(user_img + user.IDuser + "_" + DETAILCARD.IDcard).remove();
+                        });
+                    })
                 });
             })
         }
