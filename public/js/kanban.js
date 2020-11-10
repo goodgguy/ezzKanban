@@ -2,7 +2,7 @@
 
     $.fn.boardMn = function (options) {
         let defaults = {
-            "url": "http://localhost:8080/ezzKanban/",
+            "url": "http://10.192.0.210:8080/ezzKanban/",
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
@@ -34,7 +34,17 @@
             "detailcard_title": "#detailcard_title",
             "detailcard_description": "#detailcard_description",
             "detailcard_startdate": "#detailcard_startdate",
-            "detailcard_duedate": "#detailcard_duedate"
+            "detailcard_duedate": "#detailcard_duedate",
+            "card_priority": "#card_priority_",
+            "row_status": "#row_status_",
+            "detailcard_listuser": "#detailcard_listuser",
+            "detailcard_addUser": "#detailcard_addUser",
+            "detailcard_listUserNotIn": "#detailcard_listUserNotIn",
+            "user_notin_add": "#user_notin_add_",
+            "user_notin": "#user_notin_",
+            "userlist_cardOnboard": "#user_",
+            "user_in": "#user_in_",
+            "user_img": "#user_img_"
 
 
         };
@@ -68,15 +78,26 @@
 
         const row_title = options.row_title;
         const getEditCard = options.getEditCard;
+        const row_status = options.row_status;
 
+        const userlist_cardOnboard = options.userlist_cardOnboard;
+        const user_img = options.user_img;
+
+        //DETAIL CARD
         const detailcard_priority = options.detailcard_priority;
         const detailcard_done = options.detailcard_done;
         const detailcard_title = options.detailcard_title;
         const detailcard_description = options.detailcard_description;
         const detailcard_startdate = options.detailcard_startdate;
         const detailcard_duedate = options.detailcard_duedate;
+        const detailcard_listuser = options.detailcard_listuser;
+        const detailcard_addUser = options.detailcard_addUser;
+        const detailcard_listUserNotIn = options.detailcard_listUserNotIn;
+        const user_notin_add = options.user_notin_add;
+        const user_notin = options.user_notin;
+        const user_in = options.user_in;
 
-
+        const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
         var DETAILCARD;
 
@@ -87,9 +108,16 @@
         function init() {
             addEventDragDropBoard();
             loadData();
+            initButton();
             handleAddcolumn();
             handleModalAddRow();
             handleModalDetailCard();
+        }
+        function initButton() {
+            $(detailcard_listUserNotIn).hide();
+            $(detailcard_addUser).click(function () {
+                $(detailcard_listUserNotIn).toggle();
+            });
         }
         function addEventDragDropBoard() {
             var master = document.getElementById('master');
@@ -171,7 +199,7 @@
         function addRow(idcol, cardlist) {
             $.each(cardlist, function (index, val) {
                 let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
-                <div class="card-body p-2" style="background-color: #${val.status == 1 ? "28df99" : ""}">
+                <div class="card-body p-2" id="row_status_${val.IDcard}" style="background-color: #${val.status == 1 ? "28df99" : ""}">
                     <div class="card-title">
                         <a id="row_title_${val.IDcard}" class="lead">${val.title}</a>
                         <a id="row_del_${val.IDcard}">
@@ -181,7 +209,7 @@
                     <p>
                         <span class="badge badge-warning">${val.create_date}</span>
                     </p>
-                    <span class="badge badge-danger float-right">${val.priority == 1 ? "PRIORITY" : ""}</span>
+                    <span id="card_priority_${val.IDcard}" class="badge badge-danger float-right">${val.priority == 1 ? "PRIORITY" : ""}</span>
                 </div>
                 <div id="user_${val.IDcard}" class="card-body p-3">
                     
@@ -213,7 +241,7 @@
         function addUser(idcard, userlist) {
             $.each(userlist, function (index, val) {
                 let str = `<img src="public/img/${val.image}"
-            class="rounded-circle" width="30" height="30">`;
+            class="rounded-circle" width="30" height="30" id="user_img_${val.IDuser}_${idcard}">`;
                 $("#user_" + idcard).append(str);
             });
         }
@@ -286,26 +314,105 @@
                     cache: false
                 }).done(function (data) {
                     DETAILCARD = data;
-                    if (DETAILCARD.priority === 1) {
-                        $(detailcard_priority).addClass("btn-danger");
-                    }
-                    else {
-                        $(detailcard_priority).removeClass("btn-danger");
-                    }
-                    if (DETAILCARD.status === 1) {
-                        $(detailcard_done).addClass("btn-success");
-                    }
-                    else {
-                        $(detailcard_done).removeClass("btn-success");
-                    }
-                    $(detailcard_title).text(DETAILCARD.title);
-                    $(detailcard_description).text(DETAILCARD.description);
-                    $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
-                    $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
-
+                    showDetailRow();
                 });
                 $(getEditCard).modal();
             });
+        }
+        //========================HANDLE SHOW DETAIL ROW
+        function showDetailRow() {
+            if (DETAILCARD.priority === 1) {
+                $(detailcard_priority).addClass("btn-danger");
+            }
+            else {
+                $(detailcard_priority).removeClass("btn-danger");
+            }
+            if (DETAILCARD.status === 1) {
+                $(detailcard_done).addClass("btn-success");
+            }
+            else {
+                $(detailcard_done).removeClass("btn-success");
+            }
+            $(detailcard_title).text(DETAILCARD.title);
+            $(detailcard_description).text(DETAILCARD.description);
+            $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
+            $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
+            listUserDetailRow();
+            listuserNotInDetailRow();
+        }
+        //SHOW LIST USER ROW AND HANDLE DELETE
+        function listUserDetailRow() {
+            $(detailcard_listuser).empty();
+            $.each(DETAILCARD.userList, function (index, val) {
+                let str = `<img id="user_in_${val.IDuser}"
+            src="public/img/${val.image}"
+            class="rounded-circle" width="30" height="30">`;
+                $(detailcard_listuser).append(str);
+                $(user_in + val.IDuser).on('click', function () {
+                    $.ajax({
+                        url: options.url + "card/delUser",
+                        type: "POST",
+                        dataType: "html",
+                        data: { cardID: DETAILCARD.IDcard, userID: val.IDuser },
+                        cache: false
+                    }).done(function (data) {
+                        $(user_in + val.IDuser).remove();
+                        listuserNotInDetailRow();
+                        $(user_img + val.IDuser + "_" + DETAILCARD.IDcard).remove();
+                    });
+                })
+            });
+
+        }
+        function listuserNotInDetailRow() {
+            $.ajax({
+                url: options.url + "card/getUsernotIn",
+                type: "POST",
+                dataType: "json",
+                data: { card: DETAILCARD.IDcard },
+                cache: false
+            }).done(function (data) {
+                $(detailcard_listUserNotIn).empty();
+                $.each(data, function (index, val) {
+                    addUserNotIn(val);
+                })
+            });
+        }
+        function addUserNotIn(user) {
+            let str = `<li id="user_notin_${user.IDuser}" class="list-group-item">
+            <div class="row">
+              <div class="col-1 d-flex align-items-center">
+                <img
+                  src="public/img/${user.image}"
+                  class="rounded-circle" width="30" height="30">
+              </div>
+              <div class="col-10">
+                <span style="font-size: 9px;font-weight: bold;">${user.username}</span>
+              </div>
+              <div class="col-1">
+                <button type="button" class="btn btn-link" id="user_notin_add_${user.IDuser}" id_user_notin=${user.IDuser}>ADD</button>
+              </div>
+            </div>
+          </li>`;
+            let strUserin = `<img
+            src="public/img/${user.image}"
+            class="rounded-circle" width="30" height="30">`;
+            let strUserOnBoard = `<img src="public/img/${user.image}" id="user_img_${user.IDuser}_${DETAILCARD.IDcard}"
+            class="rounded-circle" width="30" height="30">`;
+            $(detailcard_listUserNotIn).append(str);
+            $(user_notin_add + user.IDuser).on("click", function () {
+                $.ajax({
+                    url: options.url + "card/addUser",
+                    type: "POST",
+                    dataType: "html",
+                    data: { cardID: DETAILCARD.IDcard, userID: user.IDuser },
+                    cache: false
+                }).done(function (data) {
+                    $(user_notin + user.IDuser).remove();
+                    $(detailcard_listuser).append(strUserin);
+                    $(userlist_cardOnboard + DETAILCARD.IDcard).append(strUserOnBoard);
+                });
+            })
         }
         function handleDeleteRow(IDcard) {
             $(row_del + IDcard).on("click", function () {
@@ -367,6 +474,7 @@
             handleAddRow(data);
 
         }
+        //===========================MODAL ADDROW
         function handleModalAddRow() {
             let priorityInit = false;
             $(priority_addCard).on('click', function () {
@@ -424,6 +532,7 @@
                 });
             });
         }
+        //===================MODAL DETAIL CARD
         function handleModalDetailCard() {
             $(detailcard_startdate).change(function () {
                 if ($(this).val() > $(detailcard_duedate).val()) {
@@ -478,6 +587,7 @@
                                 cache: false
                             }).done(function (data) {
                             });
+                            $(row_title + DETAILCARD.IDcard).text($(this).val());
                         } else {
                             $.ajax({
                                 url: options.url + "card/setDescription",
@@ -505,6 +615,7 @@
                 }).done(function (data) {
 
                 });
+                $(card_priority + DETAILCARD.IDcard).text(DETAILCARD.priority === 1 ? "PRIORITY" : "");
             });
             $(detailcard_done).on("click", function () {
                 $(this).toggleClass("btn-success");
@@ -516,8 +627,9 @@
                     data: { priority: DETAILCARD.status, id: DETAILCARD.IDcard },
                     cache: false
                 }).done(function (data) {
-
+                    $(row_status + DETAILCARD.IDcard).css('background-color', DETAILCARD.status === 1 ? "#28df99" : "");
                 });
+
             });
         }
         function checkXSS(val) {

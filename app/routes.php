@@ -25,4 +25,7 @@ $router->post('/card/setTitle', 'CardController@setTitle');
 $router->post('/card/setDescription', 'CardController@setDescription');
 $router->post('/card/setStartdate', 'CardController@setStartdate');
 $router->post('/card/setDuedate', 'CardController@setDuedate');
+$router->post('/card/getUsernotIn', 'CardController@getUsernotIn');
+$router->post('/card/addUser', 'CardController@addUser');
+$router->post('/card/delUser', 'CardController@delUser');
 $router->post('/column/changState', 'ColumnController@setPosition');

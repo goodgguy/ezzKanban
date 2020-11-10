@@ -101,4 +101,19 @@ class CardModel extends Database
         $stmt->bind_param("si", $duedate, $id);
         return $stmt->execute();
     }
+    public function addUserCard($userID,$cardID)
+    {
+        $queryupdate = "INSERT INTO user_card (IDcard,IDuser) VALUE (?,?);";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("ii", $cardID, $userID);
+        return $stmt->execute();
+    }
+    public function delUserCard($userID,$cardID)
+    {
+        $queryupdate = "  DELETE FROM user_card
+        WHERE IDcard = ? AND IDuser=?";
+        $stmt = $this->conn->prepare($queryupdate);
+        $stmt->bind_param("ii", $cardID, $userID);
+        return $stmt->execute();
+    }
 }

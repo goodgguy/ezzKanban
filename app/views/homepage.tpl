@@ -251,13 +251,19 @@
             <!--USER-->
             <label class="control-label">User: </label>
             <div class="row mb-5">
-              <div class="col-11">
-                <img
-                  src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
-                  class="rounded-circle" width="30" height="30">
+              <div id="detailcard_listuser" class="col-11">
+                <!--LIST USER-->
               </div>
               <div class="col-1">
-                <img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30">
+                <a id="detailcard_addUser"><img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30"></a>
+              </div>
+            </div>
+            <!--LIST USER NOT IN-->
+            <div class="row mt-2">
+              <div class="col-12">
+                <ul class="list-group" id="detailcard_listUserNotIn">
+                  <!--LI USER NOT IN-->
+                </ul>
               </div>
             </div>
             <!--CHECKLIST-->
@@ -267,8 +273,8 @@
                 <ul class="list-group">
                   <li class="list-group-item">
                     <div class="row">
-                    <div class="col-1 d-flex align-items-center">
-                       
+                      <div class="col-1 d-flex align-items-center">
+
                       </div>
                       <div class="col-1 d-flex align-items-center">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -283,8 +289,7 @@
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Checklist">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
               </div>
               <div class="col-2">
                 <button type="button" class="btn btn-info" style="width: 100%;">Post</button>
@@ -319,8 +324,7 @@
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Message">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
               </div>
               <div class="col-2">
                 <button type="button" class="btn btn-info" style="width: 100%;">Send</button>
