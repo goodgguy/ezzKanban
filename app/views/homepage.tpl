@@ -251,10 +251,8 @@
             <!--USER-->
             <label class="control-label">User: </label>
             <div class="row mb-5">
-              <div class="col-11">
-                <img
-                  src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
-                  class="rounded-circle" width="30" height="30">
+              <div id="detailcard_listuser" class="col-11">
+                <!--LIST USER-->
               </div>
               <div class="col-1">
                 <img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30">

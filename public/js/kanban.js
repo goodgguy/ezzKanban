@@ -36,7 +36,8 @@
             "detailcard_startdate": "#detailcard_startdate",
             "detailcard_duedate": "#detailcard_duedate",
             "card_priority": "#card_priority_",
-            "row_status": "#row_status_"
+            "row_status": "#row_status_",
+            "detailcard_listuser": "#detailcard_listuser"
 
 
         };
@@ -78,6 +79,7 @@
         const detailcard_description = options.detailcard_description;
         const detailcard_startdate = options.detailcard_startdate;
         const detailcard_duedate = options.detailcard_duedate;
+        const detailcard_listuser = options.detailcard_listuser;
 
         const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
@@ -312,6 +314,16 @@
             $(detailcard_description).text(DETAILCARD.description);
             $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
             $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
+            listUserDetailRow();
+        }
+        function listUserDetailRow() {
+            $.each(DETAILCARD.userList, function (index, val) {
+                let str = `<img
+            src="public/img/${val.image}"
+            class="rounded-circle" width="30" height="30">`;
+                $(detailcard_listuser).append(str);
+            });
+
         }
         function handleDeleteRow(IDcard) {
             $(row_del + IDcard).on("click", function () {

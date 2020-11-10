@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-10 09:59:25
+/* Smarty version 3.1.34-dev-7, created on 2020-11-10 13:02:53
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5faa020ded6227_92194580',
+  'unifunc' => 'content_5faa2d0d744030_34564942',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604977080,
+      1 => 1604988156,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5faa020ded6227_92194580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faa2d0d744030_34564942 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -273,10 +273,8 @@ function content_5faa020ded6227_92194580 (Smarty_Internal_Template $_smarty_tpl)
             <!--USER-->
             <label class="control-label">User: </label>
             <div class="row mb-5">
-              <div class="col-11">
-                <img
-                  src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
-                  class="rounded-circle" width="30" height="30">
+              <div id="detailcard_listuser" class="col-11">
+                <!--LIST USER-->
               </div>
               <div class="col-1">
                 <img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30">
