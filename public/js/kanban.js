@@ -478,6 +478,7 @@
                                 cache: false
                             }).done(function (data) {
                             });
+                            $(row_title + DETAILCARD.IDcard).text($(this).val());
                         } else {
                             $.ajax({
                                 url: options.url + "card/setDescription",
