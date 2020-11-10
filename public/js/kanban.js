@@ -397,7 +397,7 @@
             let strUserin = `<img
             src="public/img/${user.image}"
             class="rounded-circle" width="30" height="30">`;
-            let strUserOnBoard = `<img src="public/img/${user.image}"
+            let strUserOnBoard = `<img src="public/img/${user.image}" id="user_img_${user.IDuser}_${DETAILCARD.IDcard}"
             class="rounded-circle" width="30" height="30">`;
             $(detailcard_listUserNotIn).append(str);
             $(user_notin_add + user.IDuser).on("click", function () {
