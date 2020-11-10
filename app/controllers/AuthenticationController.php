@@ -29,7 +29,7 @@ class AuthenticationController extends Controller
                 $_SESSION["create_date"] = $user["create_date"];
                 $_SESSION["username"] = $user["username"];
                 $_SESSION["iduser"] = $user["IDuser"];
-                header("Location:http://localhost:8080/ezzKanban/home");
+                header("Location:".URL_SERVER."home");
                 return;
             }
         }else
@@ -85,7 +85,7 @@ class AuthenticationController extends Controller
         unset($_SESSION["create_date"]);
         unset($_SESSION["username"]);
         unset($_SESSION["iduser"]);
-        header("Location:http://localhost:8080/ezzKanban/login");
+        header("Location:".URL_SERVER."login");
         return;
     }
 }

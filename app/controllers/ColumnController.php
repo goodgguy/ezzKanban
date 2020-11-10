@@ -3,7 +3,7 @@
 
 require_once './app/setup.php';
 
-class AjaxcolumnController extends Controller
+class ColumnController extends Controller
 {
     private $__smarty;
     private $__ColumnModel;

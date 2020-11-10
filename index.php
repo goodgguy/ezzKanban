@@ -2,6 +2,7 @@
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 define('PATH_ROOT', __DIR__);
+require_once PATH_ROOT . '/app/resource/resource.php';
 require_once PATH_ROOT . '/core/http/Route.php';
 $router = new Route();
 include_once PATH_ROOT . '/app/routes.php';

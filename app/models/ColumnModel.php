@@ -20,7 +20,7 @@ class ColumnModel extends Database
         $lastIDinserted = $this->conn->insert_id;
         $queryupdate = "UPDATE `column` SET `index`= IDcolumn WHERE IDcolumn=" . $lastIDinserted;
         if (mysqli_query($this->conn, $queryupdate)) {
-            return "Success";
+            return $lastIDinserted;
         } else {
             return "Erorr" . mysqli_error($this->conn);
         }
