@@ -317,6 +317,7 @@
             listUserDetailRow();
         }
         function listUserDetailRow() {
+            $(detailcard_listuser).empty();
             $.each(DETAILCARD.userList, function (index, val) {
                 let str = `<img
             src="public/img/${val.image}"
