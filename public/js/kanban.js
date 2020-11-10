@@ -34,7 +34,9 @@
             "detailcard_title": "#detailcard_title",
             "detailcard_description": "#detailcard_description",
             "detailcard_startdate": "#detailcard_startdate",
-            "detailcard_duedate": "#detailcard_duedate"
+            "detailcard_duedate": "#detailcard_duedate",
+            "card_priority": "#card_priority_",
+            "row_status": "#row_status_"
 
 
         };
@@ -68,6 +70,7 @@
 
         const row_title = options.row_title;
         const getEditCard = options.getEditCard;
+        const row_status = options.row_status;
 
         const detailcard_priority = options.detailcard_priority;
         const detailcard_done = options.detailcard_done;
@@ -76,7 +79,7 @@
         const detailcard_startdate = options.detailcard_startdate;
         const detailcard_duedate = options.detailcard_duedate;
 
-
+        const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
         var DETAILCARD;
 
@@ -171,7 +174,7 @@
         function addRow(idcol, cardlist) {
             $.each(cardlist, function (index, val) {
                 let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
-                <div class="card-body p-2" style="background-color: #${val.status == 1 ? "28df99" : ""}">
+                <div class="card-body p-2" id="row_status_${val.IDcard}" style="background-color: #${val.status == 1 ? "28df99" : ""}">
                     <div class="card-title">
                         <a id="row_title_${val.IDcard}" class="lead">${val.title}</a>
                         <a id="row_del_${val.IDcard}">
@@ -181,7 +184,7 @@
                     <p>
                         <span class="badge badge-warning">${val.create_date}</span>
                     </p>
-                    <span class="badge badge-danger float-right">${val.priority == 1 ? "PRIORITY" : ""}</span>
+                    <span id="card_priority_${val.IDcard}" class="badge badge-danger float-right">${val.priority == 1 ? "PRIORITY" : ""}</span>
                 </div>
                 <div id="user_${val.IDcard}" class="card-body p-3">
                     
@@ -506,6 +509,7 @@
                 }).done(function (data) {
 
                 });
+                $(card_priority + DETAILCARD.IDcard).text(DETAILCARD.priority === 1 ? "PRIORITY" : "");
             });
             $(detailcard_done).on("click", function () {
                 $(this).toggleClass("btn-success");
@@ -517,8 +521,9 @@
                     data: { priority: DETAILCARD.status, id: DETAILCARD.IDcard },
                     cache: false
                 }).done(function (data) {
-
+                    $(row_status + DETAILCARD.IDcard).css('background-color', DETAILCARD.status === 1 ? "#28df99" : "");
                 });
+
             });
         }
         function checkXSS(val) {
