@@ -42,4 +42,17 @@ class UserModel extends Database
         }
         return $list;
     }
+    public function getUserNotinCard($idCard)
+    {
+        $query = "  SELECT * FROM USER WHERE IDuser NOT IN (SELECT IDuser FROM user_card WHERE IDcard=?);";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $idCard);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $list = array();
+        while($listitem = $result->fetch_assoc()){
+            $list[] = $listitem;
+        }
+        return $list;
+    }
 }

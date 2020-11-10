@@ -119,4 +119,22 @@ class CardController extends Controller
         $duedate = substr($duedate, 0, 19);
         $this->__CardModel->setDuedateCard($id, $duedate);
     }
+    public function getUsernotIn()
+    {
+        $idCard=$_POST['card'];
+        $result=$this->__UserModel->getUserNotinCard($idCard);
+        echo json_encode($result);
+    }
+    public function addUser()
+    {
+        $idCard=$_POST['cardID'];
+        $idUser=$_POST['userID'];
+        echo $this->__CardModel->addUserCard($idUser,$idCard);
+    }
+    public function delUser()
+    {
+        $idCard=$_POST['cardID'];
+        $idUser=$_POST['userID'];
+        echo $this->__CardModel->delUserCard($idUser,$idCard);
+    }
 }

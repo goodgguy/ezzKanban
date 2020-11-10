@@ -255,7 +255,15 @@
                 <!--LIST USER-->
               </div>
               <div class="col-1">
-                <img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30">
+                <a id="detailcard_addUser"><img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30"></a>
+              </div>
+            </div>
+            <!--LIST USER NOT IN-->
+            <div class="row mt-2">
+              <div class="col-12">
+                <ul class="list-group" id="detailcard_listUserNotIn">
+                  <!--LI USER NOT IN-->
+                </ul>
               </div>
             </div>
             <!--CHECKLIST-->
@@ -265,8 +273,8 @@
                 <ul class="list-group">
                   <li class="list-group-item">
                     <div class="row">
-                    <div class="col-1 d-flex align-items-center">
-                       
+                      <div class="col-1 d-flex align-items-center">
+
                       </div>
                       <div class="col-1 d-flex align-items-center">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -281,8 +289,7 @@
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Checklist">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
               </div>
               <div class="col-2">
                 <button type="button" class="btn btn-info" style="width: 100%;">Post</button>
@@ -317,8 +324,7 @@
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Message">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
               </div>
               <div class="col-2">
                 <button type="button" class="btn btn-info" style="width: 100%;">Send</button>
