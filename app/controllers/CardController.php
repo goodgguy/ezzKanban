@@ -17,7 +17,7 @@ class CardController extends Controller
         $this->__CardModel = $this->model('CardModel');
         $this->__ColumnModel = $this->model('ColumnModel');
         $this->__UserModel = $this->model('UserModel');
-        $this->__CommentModel=$this->model('CommentModel');
+        $this->__CommentModel = $this->model('CommentModel');
     }
     public function getData()
     {
@@ -80,11 +80,13 @@ class CardController extends Controller
         $card = $_POST['card'];
         $cardDetail = $this->__CardModel->getCardbyID($card);
         $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
-        $commentList=$this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
-
-
+        $commentList = $this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
+        foreach ($commentList as &$comment) {
+            $user = $this->__UserModel->getuserById($comment['IDuser']);
+            $comment['user'] = $user;
+        }
         $cardDetail['userList'] = $userList;
-        $cardDetail['commentList']=$commentList;
+        $cardDetail['commentList'] = $commentList;
         echo json_encode($cardDetail);
     }
     public function setPriority()
@@ -127,20 +129,20 @@ class CardController extends Controller
     }
     public function getUsernotIn()
     {
-        $idCard=$_POST['card'];
-        $result=$this->__UserModel->getUserNotinCard($idCard);
+        $idCard = $_POST['card'];
+        $result = $this->__UserModel->getUserNotinCard($idCard);
         echo json_encode($result);
     }
     public function addUser()
     {
-        $idCard=$_POST['cardID'];
-        $idUser=$_POST['userID'];
-        echo $this->__CardModel->addUserCard($idUser,$idCard);
+        $idCard = $_POST['cardID'];
+        $idUser = $_POST['userID'];
+        echo $this->__CardModel->addUserCard($idUser, $idCard);
     }
     public function delUser()
     {
-        $idCard=$_POST['cardID'];
-        $idUser=$_POST['userID'];
-        echo $this->__CardModel->delUserCard($idUser,$idCard);
+        $idCard = $_POST['cardID'];
+        $idUser = $_POST['userID'];
+        echo $this->__CardModel->delUserCard($idUser, $idCard);
     }
 }

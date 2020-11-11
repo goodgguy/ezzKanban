@@ -1,7 +1,8 @@
 <?php
 class CommentModel extends Database
 {
-    public function getCommentByIDCard($idCard){
+    public function getCommentByIDCard($idCard)
+    {
         $query = "SELECT * FROM `comment` WHERE IDcard=?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $idCard);

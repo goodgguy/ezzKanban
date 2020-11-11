@@ -10,13 +10,13 @@ class UserModel extends Database
         }
         mysqli_free_result($result);
     }
-    public function addUser($email, $password, $filename,$username)
+    public function addUser($email, $password, $filename, $username)
     {
         $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
         $date = date("Y-m-d H:i:s");
         $query = "insert into user (email,password,image,create_date,activated,username) value (?,?,?,?,1,?);";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("sssss", $email, $passwordHashed, $filename, $date,$username);
+        $stmt->bind_param("sssss", $email, $passwordHashed, $filename, $date, $username);
         return $stmt->execute(); //1 if successs
 
     }
@@ -37,7 +37,7 @@ class UserModel extends Database
         $stmt->execute();
         $result = $stmt->get_result();
         $list = array();
-        while($listitem = $result->fetch_assoc()){
+        while ($listitem = $result->fetch_assoc()) {
             $list[] = $listitem;
         }
         return $list;
@@ -50,9 +50,18 @@ class UserModel extends Database
         $stmt->execute();
         $result = $stmt->get_result();
         $list = array();
-        while($listitem = $result->fetch_assoc()){
+        while ($listitem = $result->fetch_assoc()) {
             $list[] = $listitem;
         }
         return $list;
+    }
+    public function getuserById($idUser)
+    {
+        $query = "SELECT * FROM ql_kanban.user where IDuser = ?;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $idUser);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
     }
 }

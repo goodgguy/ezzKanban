@@ -377,6 +377,9 @@
             });
 
         }
+        function listCommentDetailRow() {
+
+        }
         function listuserNotInDetailRow() {
             $.ajax({
                 url: options.url + "card/getUsernotIn",
