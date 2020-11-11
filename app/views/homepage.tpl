@@ -270,29 +270,17 @@
             <label class="control-label mt-3">Checklist: </label>
             <div class="row mt-2">
               <div class="col-12">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class="col-1 d-flex align-items-center">
-
-                      </div>
-                      <div class="col-1 d-flex align-items-center">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      </div>
-                      <div class="col-10">
-                        <span style="font-size: 9px;font-weight: bold;">Thong Ho</span>
-                      </div>
-                    </div>
-                  </li>
+                <ul class="list-group" id="detailcard_listChecklist">
+                  <!--LIST CHECK LIST-->
                 </ul>
               </div>
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
+                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
               </div>
               <div class="col-2">
-                <button type="button" class="btn btn-info" style="width: 100%;">Post</button>
+                <button id="detailcard_addChecklist" type="button" class="btn btn-info" style="width: 100%;">Post</button>
               </div>
             </div>
             <!--MESSAGE-->

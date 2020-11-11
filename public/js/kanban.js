@@ -47,8 +47,10 @@
             "user_img": "#user_img_",
             "detailcard_listcomment": "#detailcard_listcomment",
             "detailcard_senMessage": "#detailcard_senMessage",
-            "detailcard_inputmessage": "#detailcard_inputmessage"
-
+            "detailcard_inputmessage": "#detailcard_inputmessage",
+            "detailcard_listChecklist": "#detailcard_listChecklist",
+            "detailcard_addChecklist": "#detailcard_addChecklist",
+            "detailcard_inputChecklist": "#detailcard_inputChecklist"
 
         };
         options = $.extend({}, defaults, options);
@@ -102,6 +104,9 @@
         const detailcard_listcomment = options.detailcard_listcomment;
         const detailcard_senMessage = options.detailcard_senMessage;
         const detailcard_inputmessage = options.detailcard_inputmessage;
+        const detailcard_listChecklist = options.detailcard_listChecklist;
+        const detailcard_addChecklist = options.detailcard_addChecklist;
+        const detailcard_inputChecklist = options.detailcard_inputChecklist;
 
         const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
@@ -123,6 +128,7 @@
             submitmodalAddCloumn();
             submitDeleteColumn();
             handleAddCommentDetailRow();
+            handleAddChecklist();
         }
         function initButton() {
             $(detailcard_listUserNotIn).hide();
@@ -360,6 +366,7 @@
             listUserDetailRow();
             listuserNotInDetailRow();
             listCommentDetailRow();
+            listChecklistDetailRow(DETAILCARD.checklistList);
         }
         //SHOW LIST USER ROW AND HANDLE DELETE
         function listUserDetailRow() {
@@ -385,6 +392,49 @@
             });
 
         }
+        //===========CARD DETAIL CHECKLIST
+        function listChecklistDetailRow(checklistList) {
+            $(detailcard_listChecklist).empty();
+            $.each(checklistList, function (index, val) {
+                modalChecklist(val.IDchecklist, val.content);
+            });
+        }
+        function modalChecklist(idcheck, content) {
+            let str = `<li class="list-group-item" id="detailcard_boxchecklist_${idcheck}">
+            <div class="row">
+              <div class="col-1 d-flex align-items-center">
+
+              </div>
+              <div class="col-1 d-flex align-items-center">
+                <input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}">
+              </div>
+              <div class="col-8">
+                <span style="font-size: 9px;font-weight: bold;">${content}</span>
+              </div>
+              <div class="col-1">
+                <button id="detailcard_deleteChecklist_${idcheck}" type="button" class="btn btn-link">Delete</button>
+              </div>
+              <div class="col-1 d-flex align-items-center">
+              </div>
+            </div>
+          </li>`;
+            $(detailcard_listChecklist).append(str);
+        }
+        function handleAddChecklist() {
+            $(detailcard_addChecklist).on('click', function () {
+                let content = $(detailcard_inputChecklist).val();
+                $.ajax({
+                    url: options.url + "card/addChecklist",
+                    type: "POST",
+                    dataType: "json",
+                    data: { card: DETAILCARD.IDcard, contentchecklist: content },
+                    cache: false
+                }).done(function (data) {
+                    listChecklistDetailRow(data);
+                });
+            });
+        }
+        //===========CARD DETAIL COMMENT
         function listCommentDetailRow() {
             $(detailcard_listcomment).empty();
             $.each(DETAILCARD.commentList, function (index, val) {

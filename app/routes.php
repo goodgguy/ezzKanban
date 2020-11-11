@@ -29,4 +29,5 @@ $router->post('/card/getUsernotIn', 'CardController@getUsernotIn');
 $router->post('/card/addUser', 'CardController@addUser');
 $router->post('/card/delUser', 'CardController@delUser');
 $router->post('/card/addMessage', 'CardController@addMessage');
+$router->post('/card/addChecklist', 'CardController@addChecklist');
 $router->post('/column/changState', 'ColumnController@setPosition');

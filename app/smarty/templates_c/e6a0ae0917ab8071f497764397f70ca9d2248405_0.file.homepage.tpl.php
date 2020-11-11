@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-11 17:17:54
+/* Smarty version 3.1.34-dev-7, created on 2020-11-11 18:35:51
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fabba523a7631_03305603',
+  'unifunc' => 'content_5fabcc97521dc1_99648261',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605089835,
+      1 => 1605094455,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fabba523a7631_03305603 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -292,29 +292,17 @@ function content_5fabba523a7631_03305603 (Smarty_Internal_Template $_smarty_tpl)
             <label class="control-label mt-3">Checklist: </label>
             <div class="row mt-2">
               <div class="col-12">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class="col-1 d-flex align-items-center">
-
-                      </div>
-                      <div class="col-1 d-flex align-items-center">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      </div>
-                      <div class="col-10">
-                        <span style="font-size: 9px;font-weight: bold;">Thong Ho</span>
-                      </div>
-                    </div>
-                  </li>
+                <ul class="list-group" id="detailcard_listChecklist">
+                  <!--LIST CHECK LIST-->
                 </ul>
               </div>
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
+                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
               </div>
               <div class="col-2">
-                <button type="button" class="btn btn-info" style="width: 100%;">Post</button>
+                <button id="detailcard_addChecklist" type="button" class="btn btn-info" style="width: 100%;">Post</button>
               </div>
             </div>
             <!--MESSAGE-->
