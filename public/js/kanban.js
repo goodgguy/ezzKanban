@@ -2,7 +2,7 @@
 
     $.fn.boardMn = function (options) {
         let defaults = {
-            "url": "http://10.192.0.210:8080/ezzKanban/",
+            "url": "http://localhost:8080/ezzKanban/",
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
@@ -100,6 +100,7 @@
         const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
         var DETAILCARD;
+        var IDCOLUMN_EDIT;
 
         init();
 
@@ -112,6 +113,7 @@
             handleAddcolumn();
             handleModalAddRow();
             handleModalDetailCard();
+            submitmodalAddCloumn();
         }
         function initButton() {
             $(detailcard_listUserNotIn).hide();
@@ -280,23 +282,27 @@
             $(col_edit + IDcolumn).on("click", function () {
                 $(inputEditCol).val(title);
                 $(getEditColumn).modal();
-                $(confirmEditCol).on("click", function () {
-                    const titleChanged = $(inputEditCol).val();
-                    if (titleChanged.trim() === "") {
-                        showAlert("Title is empty");
-                        return;
-                    }
-                    const check = checkXSS(titleChanged);
-                    if (check != -1) {
-                        showAlert("Don't do that again");
-                        return;
-                    }
-                    $.post(options.url + "editColumn", { column: IDcolumn, title: titleChanged })
-                        .done(function (data) {
-                            $(board_title + IDcolumn).text(titleChanged);
-                        });
-                })
+                IDCOLUMN_EDIT = IDcolumn;
+
             });
+        }
+        function submitmodalAddCloumn() {
+            $(confirmEditCol).on("click", function () {
+                const titleChanged = $(inputEditCol).val();
+                if (titleChanged.trim() === "") {
+                    showAlert("Title is empty");
+                    return;
+                }
+                const check = checkXSS(titleChanged);
+                if (check != -1) {
+                    showAlert("Don't do that again");
+                    return;
+                }
+                $.post(options.url + "editColumn", { column: IDCOLUMN_EDIT, title: titleChanged })
+                    .done(function (data) {
+                        $(board_title + IDCOLUMN_EDIT).text(titleChanged);
+                    });
+            })
         }
         function handleAddRow(IDcolumn) {
             $(row_add + IDcolumn).on('click', function () {
