@@ -186,10 +186,10 @@
             <div class="card bg-light">
                 <div class="card-body" style="background-color: #ebecf0">
                     <div class="row">
-                        <div class="col-sm-8 ">
+                        <div class="col-sm-7 ">
                             <h6 id="board_title_${val.IDcolumn}" class="card-title text-uppercase text-truncate py-2">${val.title}</h6>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <a col_delete_id=${val.IDcolumn} id="col_del_${val.IDcolumn}">
                                 <img src="https://i.ibb.co/2SLrtRP/delete.png" class="rounded-circle float-right"
                                     width="25" height="25">
