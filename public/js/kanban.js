@@ -2,7 +2,7 @@
 
     $.fn.boardMn = function (options) {
         let defaults = {
-            "url": "http://10.192.0.210:8080/ezzKanban/",
+            "url": "http://localhost:8080/ezzKanban/",
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
@@ -50,7 +50,10 @@
             "detailcard_inputmessage": "#detailcard_inputmessage",
             "detailcard_listChecklist": "#detailcard_listChecklist",
             "detailcard_addChecklist": "#detailcard_addChecklist",
-            "detailcard_inputChecklist": "#detailcard_inputChecklist"
+            "detailcard_inputChecklist": "#detailcard_inputChecklist",
+            "detailcard_check": "#detailcard_check_",
+            "detailcard_deleteChecklist": "#detailcard_deleteChecklist_",
+            "detailcard_boxchecklist": "#detailcard_boxchecklist_"
 
         };
         options = $.extend({}, defaults, options);
@@ -107,6 +110,10 @@
         const detailcard_listChecklist = options.detailcard_listChecklist;
         const detailcard_addChecklist = options.detailcard_addChecklist;
         const detailcard_inputChecklist = options.detailcard_inputChecklist;
+        const detailcard_check = options.detailcard_check;
+        const detailcard_deleteChecklist = options.detailcard_deleteChecklist;
+        const detailcard_boxchecklist = options.detailcard_boxchecklist;
+
 
         const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
@@ -396,17 +403,51 @@
         function listChecklistDetailRow(checklistList) {
             $(detailcard_listChecklist).empty();
             $.each(checklistList, function (index, val) {
-                modalChecklist(val.IDchecklist, val.content);
+                modelChecklist(val.IDchecklist, val.content, val.status);
+                handleCheckedList(val.IDchecklist);
+                handleDeleteChecklist(val.IDchecklist);
             });
         }
-        function modalChecklist(idcheck, content) {
+        function handleDeleteChecklist(IDchecklist) {
+            $(detailcard_deleteChecklist + IDchecklist).on('click', function () {
+                $.ajax({
+                    url: options.url + "card/deleteChecklist",
+                    type: "POST",
+                    dataType: "json",
+                    data: { id: IDchecklist },
+                    cache: false
+                }).done(function (data) {
+                });
+                $(detailcard_boxchecklist + IDchecklist).remove();
+            });
+
+        }
+        function handleCheckedList(idChecklist) {
+            $(detailcard_check + idChecklist).on('change', function () {
+                let status;
+                if ($(this).is(':checked')) {
+                    status = 1;
+                } else {
+                    status = 0;
+                }
+                $.ajax({
+                    url: options.url + "card/setChecklist",
+                    type: "POST",
+                    dataType: "json",
+                    data: { id: idChecklist, statusChecklist: status },
+                    cache: false
+                }).done(function (data) {
+                });
+            })
+        }
+        function modelChecklist(idcheck, content, status) {
             let str = `<li class="list-group-item" id="detailcard_boxchecklist_${idcheck}">
             <div class="row">
               <div class="col-1 d-flex align-items-center">
 
               </div>
               <div class="col-1 d-flex align-items-center">
-                <input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}">
+                <input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}" ${status === 1 ? "checked" : ""}>
               </div>
               <div class="col-8">
                 <span style="font-size: 9px;font-weight: bold;">${content}</span>

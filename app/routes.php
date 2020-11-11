@@ -30,4 +30,6 @@ $router->post('/card/addUser', 'CardController@addUser');
 $router->post('/card/delUser', 'CardController@delUser');
 $router->post('/card/addMessage', 'CardController@addMessage');
 $router->post('/card/addChecklist', 'CardController@addChecklist');
+$router->post('/card/setChecklist', 'CardController@setChecklist');
+$router->post('/card/deleteChecklist', 'CardController@deleteChecklist');
 $router->post('/column/changState', 'ColumnController@setPosition');

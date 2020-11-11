@@ -10,7 +10,7 @@ class CardController extends Controller
     private $__UserModel;
     private $__ColumnModel;
     private $__CommentModel;
-    private $__Checklist;
+    private $__ChecklistModal;
     function __construct()
     {
         $this->__smarty = new Template();
@@ -19,7 +19,7 @@ class CardController extends Controller
         $this->__ColumnModel = $this->model('ColumnModel');
         $this->__UserModel = $this->model('UserModel');
         $this->__CommentModel = $this->model('CommentModel');
-        $this->__Checklist = $this->model('ChecklistModel');
+        $this->__ChecklistModal = $this->model('ChecklistModel');
     }
     public function getData()
     {
@@ -90,11 +90,11 @@ class CardController extends Controller
             $comment['user'] = $user;
         }
 
-        $checklistList=$this->__Checklist->getChecklistByCard($cardDetail['IDcard']);
+        $checklistList = $this->__ChecklistModal->getChecklistByCard($cardDetail['IDcard']);
 
         $cardDetail['userList'] = $userList;
         $cardDetail['commentList'] = $commentList;
-        $cardDetail['checklistList']=$checklistList;
+        $cardDetail['checklistList'] = $checklistList;
         echo json_encode($cardDetail);
     }
     public function setPriority()
@@ -155,10 +155,10 @@ class CardController extends Controller
     }
     public function addMessage()
     {
-        $idCard=$_POST['card'];
-        $message=$_POST['mess'];
-        $user=$_SESSION['iduser'];
-        $this->__CommentModel->addComment($idCard, $message,$user);
+        $idCard = $_POST['card'];
+        $message = $_POST['mess'];
+        $user = $_SESSION['iduser'];
+        $this->__CommentModel->addComment($idCard, $message, $user);
         $commentList = $this->__CommentModel->getCommentByIDCard($idCard);
         foreach ($commentList as &$comment) {
             $user = $this->__UserModel->getuserById($comment['IDuser']);
@@ -168,11 +168,21 @@ class CardController extends Controller
     }
     public function addChecklist()
     {
-        $idCard=$_POST['card'];
-        $content=$_POST['contentchecklist'];
-        $this->__Checklist->addChecklist($idCard,$content);
-        $checklistList=$this->__Checklist->getChecklistByCard($idCard);
+        $idCard = $_POST['card'];
+        $content = $_POST['contentchecklist'];
+        $this->__ChecklistModal->addChecklist($idCard, $content);
+        $checklistList = $this->__ChecklistModal->getChecklistByCard($idCard);
         echo json_encode($checklistList);
-        
+    }
+    public function setChecklist()
+    {
+        $idChecklist = $_POST['id'];
+        $statusChecklist = $_POST['statusChecklist'];
+        $this->__ChecklistModal->setStatusChecklist($statusChecklist, $idChecklist);
+    }
+    public function deleteChecklist()
+    {
+        $idChecklist = $_POST['id'];
+        $this->__ChecklistModal->deleteChecklist($idChecklist);
     }
 }
