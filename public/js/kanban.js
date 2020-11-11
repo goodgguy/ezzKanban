@@ -2,7 +2,7 @@
 
     $.fn.boardMn = function (options) {
         let defaults = {
-            "url": "http://localhost:8080/ezzKanban/",
+            "url": "http://10.192.0.210:8080/ezzKanban/",
             "addfield": "#addcolumn",
             "btnAddfield": "#btnAddcolumn",
             "board": "#master",
