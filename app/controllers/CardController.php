@@ -80,11 +80,15 @@ class CardController extends Controller
         $card = $_POST['card'];
         $cardDetail = $this->__CardModel->getCardbyID($card);
         $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
+
+
         $commentList = $this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
         foreach ($commentList as &$comment) {
             $user = $this->__UserModel->getuserById($comment['IDuser']);
             $comment['user'] = $user;
         }
+
+
         $cardDetail['userList'] = $userList;
         $cardDetail['commentList'] = $commentList;
         echo json_encode($cardDetail);
@@ -144,5 +148,18 @@ class CardController extends Controller
         $idCard = $_POST['cardID'];
         $idUser = $_POST['userID'];
         echo $this->__CardModel->delUserCard($idUser, $idCard);
+    }
+    public function addMessage()
+    {
+        $idCard=$_POST['card'];
+        $message=$_POST['mess'];
+        $user=$_SESSION['iduser'];
+        $this->__CommentModel->addComment($idCard, $message,$user);
+        $commentList = $this->__CommentModel->getCommentByIDCard($idCard);
+        foreach ($commentList as &$comment) {
+            $user = $this->__UserModel->getuserById($comment['IDuser']);
+            $comment['user'] = $user;
+        }
+        echo json_encode($commentList);
     }
 }

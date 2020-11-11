@@ -300,34 +300,16 @@
             <div class="row mt-2">
               <div class="col-12">
                 <ul class="list-group" id="detailcard_listcomment">
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class="col-1 d-flex align-items-center">
-                        <img
-                          src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
-                          class="rounded-circle" width="30" height="30">
-                      </div>
-                      <div class="col-11">
-                        <span style="font-size: 9px;font-weight: bold;">Thong Ho</span>
-                        <p style="font-size: 9px;margin-bottom:-6px">Alo can you fix this Alo
-                          can
-                          you fix this
-                          Alocan you fix this Alo
-                          can you fix this Alo can you fix this Alo can you fix this Alo can
-                          you fix this Alo can you fix this Alo can you fix this</p>
-                        <span style="font-size: 9px;opacity: 0.5;">20-10-2021 15:00:00</span>
-                      </div>
-                    </div>
-                  </li>
+                  <!--LIST COMMENT-->
                 </ul>
               </div>
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
               </div>
               <div class="col-2">
-                <button type="button" class="btn btn-info" style="width: 100%;">Send</button>
+                <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
               </div>
             </div>
           </form>

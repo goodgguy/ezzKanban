@@ -44,7 +44,10 @@
             "user_notin": "#user_notin_",
             "userlist_cardOnboard": "#user_",
             "user_in": "#user_in_",
-            "user_img": "#user_img_"
+            "user_img": "#user_img_",
+            "detailcard_listcomment": "#detailcard_listcomment",
+            "detailcard_senMessage": "#detailcard_senMessage",
+            "detailcard_inputmessage": "#detailcard_inputmessage"
 
 
         };
@@ -96,6 +99,9 @@
         const user_notin_add = options.user_notin_add;
         const user_notin = options.user_notin;
         const user_in = options.user_in;
+        const detailcard_listcomment = options.detailcard_listcomment;
+        const detailcard_senMessage = options.detailcard_senMessage;
+        const detailcard_inputmessage = options.detailcard_inputmessage;
 
         const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
@@ -116,6 +122,7 @@
             handleModalDetailCard();
             submitmodalAddCloumn();
             submitDeleteColumn();
+            handleAddCommentDetailRow();
         }
         function initButton() {
             $(detailcard_listUserNotIn).hide();
@@ -327,7 +334,7 @@
                 }).done(function (data) {
                     DETAILCARD = data;
                     showDetailRow();
-                    console.log(data);
+                    // console.log(data);
                 });
                 $(getEditCard).modal();
             });
@@ -352,6 +359,7 @@
             $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
             listUserDetailRow();
             listuserNotInDetailRow();
+            listCommentDetailRow();
         }
         //SHOW LIST USER ROW AND HANDLE DELETE
         function listUserDetailRow() {
@@ -378,7 +386,44 @@
 
         }
         function listCommentDetailRow() {
-
+            $(detailcard_listcomment).empty();
+            $.each(DETAILCARD.commentList, function (index, val) {
+                modalMessage(val.user.image, val.user.username, val.content, val.create_date);
+            });
+        }
+        function handleAddCommentDetailRow() {
+            $(detailcard_senMessage).on('click', function () {
+                let message = $(detailcard_inputmessage).val();
+                $.ajax({
+                    url: options.url + "card/addMessage",
+                    type: "POST",
+                    dataType: "json",
+                    data: { card: DETAILCARD.IDcard, mess: message },
+                    cache: false
+                }).done(function (data) {
+                    $(detailcard_listcomment).empty();
+                    $.each(data, function (index, val) {
+                        modalMessage(val.user.image, val.user.username, val.content, val.create_date);
+                    });
+                });
+            })
+        }
+        function modalMessage(image, username, content, create_date) {
+            let str = `<li class="list-group-item">
+                <div class="row">
+                  <div class="col-1 d-flex align-items-center">
+                    <img
+                      src="public/img/${image}"
+                      class="rounded-circle" width="30" height="30">
+                  </div>
+                  <div class="col-11">
+                    <span style="font-size: 9px;font-weight: bold;">${username}</span>
+                    <p style="font-size: 9px;margin-bottom:-6px">${content}</p>
+                    <span style="font-size: 9px;opacity: 0.5;">${create_date}</span>
+                  </div>
+                </div>
+              </li>`;
+            $(detailcard_listcomment).append(str);
         }
         function listuserNotInDetailRow() {
             $.ajax({

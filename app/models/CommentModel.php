@@ -14,4 +14,12 @@ class CommentModel extends Database
         }
         return $list;
     }
+    public function addComment($idCard,$content,$idUser)
+    {
+        $date = date("Y-m-d H:i:s");
+        $query = "INSERT INTO `comment` (content,create_date,IDcard,IDuser) VALUE (?,?,?,?);";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssii", $content, $date, $idCard, $idUser);
+        return $stmt->execute(); 
+    }
 }

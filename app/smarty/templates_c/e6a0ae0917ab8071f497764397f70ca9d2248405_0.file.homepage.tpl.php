@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-10 18:09:15
+/* Smarty version 3.1.34-dev-7, created on 2020-11-11 17:17:54
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5faa74dbdccfc8_76773843',
+  'unifunc' => 'content_5fabba523a7631_03305603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605006419,
+      1 => 1605089835,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5faa74dbdccfc8_76773843 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fabba523a7631_03305603 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -322,34 +322,16 @@ function content_5faa74dbdccfc8_76773843 (Smarty_Internal_Template $_smarty_tpl)
             <div class="row mt-2">
               <div class="col-12">
                 <ul class="list-group" id="detailcard_listcomment">
-                  <li class="list-group-item">
-                    <div class="row">
-                      <div class="col-1 d-flex align-items-center">
-                        <img
-                          src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
-                          class="rounded-circle" width="30" height="30">
-                      </div>
-                      <div class="col-11">
-                        <span style="font-size: 9px;font-weight: bold;">Thong Ho</span>
-                        <p style="font-size: 9px;margin-bottom:-6px">Alo can you fix this Alo
-                          can
-                          you fix this
-                          Alocan you fix this Alo
-                          can you fix this Alo can you fix this Alo can you fix this Alo can
-                          you fix this Alo can you fix this Alo can you fix this</p>
-                        <span style="font-size: 9px;opacity: 0.5;">20-10-2021 15:00:00</span>
-                      </div>
-                    </div>
-                  </li>
+                  <!--LIST COMMENT-->
                 </ul>
               </div>
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
               </div>
               <div class="col-2">
-                <button type="button" class="btn btn-info" style="width: 100%;">Send</button>
+                <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
               </div>
             </div>
           </form>
