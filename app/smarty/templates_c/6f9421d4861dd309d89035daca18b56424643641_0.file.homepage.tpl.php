@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-10 01:55:55
+/* Smarty version 3.1.34-dev-7, created on 2020-11-11 10:08:48
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa990bbc61b88_16929365',
+  'unifunc' => 'content_5fab55c0132e01_73691342',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1604948060,
+      1 => 1605064029,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa990bbc61b88_16929365 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fab55c0132e01_73691342 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -273,13 +273,19 @@ function content_5fa990bbc61b88_16929365 (Smarty_Internal_Template $_smarty_tpl)
             <!--USER-->
             <label class="control-label">User: </label>
             <div class="row mb-5">
-              <div class="col-11">
-                <img
-                  src="https://scontent.fvca1-2.fna.fbcdn.net/v/t1.0-9/86242645_2689070104539612_3453552974733770752_n.jpg?_nc_cat=107&ccb=2&_nc_sid=09cbfe&_nc_ohc=4Ml-zYQcpK0AX96bjrK&_nc_ht=scontent.fvca1-2.fna&oh=2eb41ad9abfb84d9e1a5ff7d64947502&oe=5FCD65CE"
-                  class="rounded-circle" width="30" height="30">
+              <div id="detailcard_listuser" class="col-11">
+                <!--LIST USER-->
               </div>
               <div class="col-1">
-                <img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30">
+                <a id="detailcard_addUser"><img src="https://i.ibb.co/yhDtBJj/add-user.png" width="30" height="30"></a>
+              </div>
+            </div>
+            <!--LIST USER NOT IN-->
+            <div class="row mt-2">
+              <div class="col-12">
+                <ul class="list-group" id="detailcard_listUserNotIn">
+                  <!--LI USER NOT IN-->
+                </ul>
               </div>
             </div>
             <!--CHECKLIST-->
@@ -289,8 +295,8 @@ function content_5fa990bbc61b88_16929365 (Smarty_Internal_Template $_smarty_tpl)
                 <ul class="list-group">
                   <li class="list-group-item">
                     <div class="row">
-                    <div class="col-1 d-flex align-items-center">
-                       
+                      <div class="col-1 d-flex align-items-center">
+
                       </div>
                       <div class="col-1 d-flex align-items-center">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -305,8 +311,7 @@ function content_5fa990bbc61b88_16929365 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Checklist">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
               </div>
               <div class="col-2">
                 <button type="button" class="btn btn-info" style="width: 100%;">Post</button>
@@ -316,7 +321,7 @@ function content_5fa990bbc61b88_16929365 (Smarty_Internal_Template $_smarty_tpl)
             <label class="control-label mt-3">Message: </label>
             <div class="row mt-2">
               <div class="col-12">
-                <ul class="list-group">
+                <ul class="list-group" id="detailcard_listcomment">
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-1 d-flex align-items-center">
@@ -341,8 +346,7 @@ function content_5fa990bbc61b88_16929365 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="row">
               <div class="col-10">
-                <input type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Message">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
               </div>
               <div class="col-2">
                 <button type="button" class="btn btn-info" style="width: 100%;">Send</button>
