@@ -101,6 +101,7 @@
         var IDCOL_ADDCARD;
         var DETAILCARD;
         var IDCOLUMN_EDIT;
+        var IDCOLUMN_DELETE;
 
         init();
 
@@ -114,6 +115,7 @@
             handleModalAddRow();
             handleModalDetailCard();
             submitmodalAddCloumn();
+            submitDeleteColumn();
         }
         function initButton() {
             $(detailcard_listUserNotIn).hide();
@@ -268,15 +270,18 @@
         function handledeleteColumn(IDcolumn) {
             $(col_del + IDcolumn).on("click", function () {
                 let id = $(this).attr("col_delete_id");
+                IDCOLUMN_DELETE = id;
                 $(textConfirmDel).html(`<p>Are you sure you want to delete this column</p>`);
                 $(getConfirmDel).modal();
-                $(confirmBtn).on("click", function () {
-                    $.post(options.url + "deleteColumn", { column: id })
-                        .done(function (data) {
-                            removeColumnfrBoard(IDcolumn);
-                        });
-                });
             })
+        }
+        function submitDeleteColumn() {
+            $(confirmBtn).on("click", function () {
+                $.post(options.url + "deleteColumn", { column: IDCOLUMN_DELETE })
+                    .done(function (data) {
+                        removeColumnfrBoard(IDCOLUMN_DELETE);
+                    });
+            });
         }
         function handleeditColumn(IDcolumn, title) {
             $(col_edit + IDcolumn).on("click", function () {
