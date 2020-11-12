@@ -6,39 +6,28 @@ require_once './app/resource/resource.php';
 class CardController extends Controller
 {
     private $__smarty;
-    private $__CardModel;
-    private $__UserModel;
-    private $__ColumnModel;
-    private $__CommentModel;
-    private $__ChecklistModal;
+    private $__CardService;
+    private $__CommentService;
+    private $__ChecklistService;
+
     function __construct()
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
-        $this->__CardModel = $this->model('CardModel');
-        $this->__ColumnModel = $this->model('ColumnModel');
-        $this->__UserModel = $this->model('UserModel');
-        $this->__CommentModel = $this->model('CommentModel');
-        $this->__ChecklistModal = $this->model('ChecklistModel');
+        $this->__CardService = $this->service('CardService');
+        $this->__CommentService = $this->service('CommentService');
+        $this->__ChecklistService=$this->service('ChecklistService');
     }
     public function getData()
     {
-        $columnList = $this->__ColumnModel->getAllColumn();
-        foreach ($columnList as &$column) {
-            $cardList = $this->__CardModel->getCardByColumn($column['IDcolumn']);
-            foreach ($cardList as &$card) {
-                $userList = $this->__UserModel->getUserByCard($card['IDcard']);
-                $card['userList'] = $userList;
-            }
-            $column['cardlist'] = $cardList;
-        }
+        $columnList = $this->__CardService->getAllData();
         echo json_encode($columnList);
     }
     public function setPosition()
     {
         $toColumn = $_POST["toColumn"];
         $idCard = $_POST["idCard"];
-        $result = $this->__CardModel->setStateCard($toColumn, $idCard);
+        $result = $this->__CardService->setPositionCard($toColumn, $idCard);
         if ($result == 1) {
             return "Erorr";
         }
@@ -51,26 +40,18 @@ class CardController extends Controller
         $duedate = dateService::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
         $idcol = $_POST["idcol"];
-        $result = $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
+        $result = $this->__CardService->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
         if ($result != -1) {
-            $cardList = $this->__CardModel->getCardByColumn($idcol);
-            foreach ($cardList as &$card) {
-                $userList = $this->__UserModel->getUserByCard($card['IDcard']);
-                $card['userList'] = $userList;
-            }
+            $cardList = $this->__CardService->getCardListByColumn($idcol);
             echo json_encode($cardList);
         }
     }
     public function delete()
     {
         $idCard = $_POST["card"];
-        $IDColumn = $this->__CardModel->getColIDCard($idCard);
-        $this->__CardModel->deleteCard($idCard);
-        $cardList = $this->__CardModel->getCardByColumn($IDColumn);
-        foreach ($cardList as &$card) {
-            $userList = $this->__UserModel->getUserByCard($card['IDcard']);
-            $card['userList'] = $userList;
-        }
+        $IDColumn = $this->__CardService->getColumnByIdCard($idCard);
+        $this->__CardService->deleteCard($idCard);
+        $cardList = $cardList = $this->__CardService->getCardListByColumn($IDColumn);
         $response = array(
             "card" => $cardList,
             "idcol" => $IDColumn,
@@ -79,110 +60,90 @@ class CardController extends Controller
     }
     public function getDetail()
     {
-        $card = $_POST['card'];
-        $cardDetail = $this->__CardModel->getCardbyID($card);
-        $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
-
-
-        $commentList = $this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
-        foreach ($commentList as &$comment) {
-            $user = $this->__UserModel->getuserById($comment['IDuser']);
-            $comment['user'] = $user;
-        }
-
-        $checklistList = $this->__ChecklistModal->getChecklistByCard($cardDetail['IDcard']);
-
-        $cardDetail['userList'] = $userList;
-        $cardDetail['commentList'] = $commentList;
-        $cardDetail['checklistList'] = $checklistList;
+        $idCard = $_POST['card'];
+        $cardDetail = $this->__CardService->getDetailCard($idCard);
         echo json_encode($cardDetail);
     }
     public function setPriority()
     {
         $state = $_POST['priority'];
         $id = $_POST['id'];
-        $this->__CardModel->setPriorityCard($id, $state);
+        $this->__CardService->setPriorityCard($id, $state);
     }
     public function setStatus()
     {
         $state = $_POST['priority'];
         $id = $_POST['id'];
-        $this->__CardModel->setStatusCard($id, $state);
+        $this->__CardService->setStatusCard($id, $state);
     }
     public function setTitle()
     {
         $title = $_POST["title"];
         $id = $_POST["id"];
-        $this->__CardModel->setTitleCard($id, $title);
+        $this->__CardService->setTitleCard($id, $title);
     }
     public function setDescription()
     {
         $title = $_POST["description"];
         $id = $_POST["id"];
-        $this->__CardModel->setDescription($id, $title);
+        $this->__CardService->setDescriptionCard($id, $title);
     }
     public function setStartdate()
     {
         $startdate = dateService::convertDate($_POST["startdate"]);
         $id = $_POST["id"];
-        $startdate = substr($startdate, 0, 19);
-        $this->__CardModel->setStartdateCard($id, $startdate);
+        $this->__CardService->setStartdateCard($id, $startdate);
     }
     public function setDuedate()
     {
         $duedate = dateService::convertDate($_POST["duedate"]);
         $id = $_POST["id"];
-        $duedate = substr($duedate, 0, 19);
-        $this->__CardModel->setDuedateCard($id, $duedate);
+        $this->__CardService->setDuedateCard($id, $duedate);
     }
     public function getUsernotIn()
     {
         $idCard = $_POST['card'];
-        $result = $this->__UserModel->getUserNotinCard($idCard);
+        $result = $this->__CardService->getUserNotinCard($idCard);
         echo json_encode($result);
     }
     public function addUser()
     {
         $idCard = $_POST['cardID'];
         $idUser = $_POST['userID'];
-        echo $this->__CardModel->addUserCard($idUser, $idCard);
+        echo $this->__CardService->addUserCard($idUser, $idCard);
     }
     public function delUser()
     {
         $idCard = $_POST['cardID'];
         $idUser = $_POST['userID'];
-        echo $this->__CardModel->delUserCard($idUser, $idCard);
+        echo $this->__CardService->delUserCard($idUser, $idCard);
     }
     public function addMessage()
     {
         $idCard = $_POST['card'];
         $message = $_POST['mess'];
         $user = $_SESSION['iduser'];
-        $this->__CommentModel->addComment($idCard, $message, $user);
-        $commentList = $this->__CommentModel->getCommentByIDCard($idCard);
-        foreach ($commentList as &$comment) {
-            $user = $this->__UserModel->getuserById($comment['IDuser']);
-            $comment['user'] = $user;
-        }
+        $this->__CommentService->addCommentByCard($idCard, $message, $user);
+        $commentList = $this->__CommentService->getListCommentByCard($idCard);
         echo json_encode($commentList);
     }
     public function addChecklist()
     {
         $idCard = $_POST['card'];
         $content = $_POST['contentchecklist'];
-        $this->__ChecklistModal->addChecklist($idCard, $content);
-        $checklistList = $this->__ChecklistModal->getChecklistByCard($idCard);
+        $this->__ChecklistService->addChecklist($idCard, $content);
+        $checklistList = $this->__ChecklistService->getChecklistByCard($idCard);
         echo json_encode($checklistList);
     }
     public function setChecklist()
     {
         $idChecklist = $_POST['id'];
         $statusChecklist = $_POST['statusChecklist'];
-        $this->__ChecklistModal->setStatusChecklist($statusChecklist, $idChecklist);
+        $this->__ChecklistService->setStatusChecklist($statusChecklist, $idChecklist);
     }
     public function deleteChecklist()
     {
         $idChecklist = $_POST['id'];
-        $this->__ChecklistModal->deleteChecklist($idChecklist);
+        $this->__ChecklistService->deleteChecklist($idChecklist);
     }
 }

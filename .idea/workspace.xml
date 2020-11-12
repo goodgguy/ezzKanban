@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ColumnController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ColumnController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/ColumnService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ColumnService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/snakecase/fileService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/snakecase/fileService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/CardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/CardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/CardService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/ChecklistService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ChecklistService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/CommentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/CommentService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
       <workItem from="1604985855409" duration="23000" />
       <workItem from="1605083854826" duration="4000" />
       <workItem from="1605149108027" duration="41000" />
-      <workItem from="1605149150070" duration="6179000" />
+      <workItem from="1605149150070" duration="13562000" />
     </task>
     <servers />
   </component>
@@ -82,9 +81,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604486638442" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604544805564">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605166251156">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604544805564" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605166251156" />
   </component>
 </project>
