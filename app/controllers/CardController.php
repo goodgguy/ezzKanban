@@ -47,8 +47,8 @@ class CardController extends Controller
     {
         $title = $_POST["title"];
         $description = $_POST["description"];
-        $startdate = UTIL::convertDate($_POST["startdate"]);
-        $duedate = UTIL::convertDate($_POST["duedate"]);
+        $startdate = dateService::convertDate($_POST["startdate"]);
+        $duedate = dateService::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
         $idcol = $_POST["idcol"];
         $result = $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
@@ -123,14 +123,14 @@ class CardController extends Controller
     }
     public function setStartdate()
     {
-        $startdate = UTIL::convertDate($_POST["startdate"]);
+        $startdate = dateService::convertDate($_POST["startdate"]);
         $id = $_POST["id"];
         $startdate = substr($startdate, 0, 19);
         $this->__CardModel->setStartdateCard($id, $startdate);
     }
     public function setDuedate()
     {
-        $duedate = UTIL::convertDate($_POST["duedate"]);
+        $duedate = dateService::convertDate($_POST["duedate"]);
         $id = $_POST["id"];
         $duedate = substr($duedate, 0, 19);
         $this->__CardModel->setDuedateCard($id, $duedate);

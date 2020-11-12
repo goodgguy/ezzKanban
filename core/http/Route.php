@@ -62,7 +62,8 @@ class Route
     {
         require_once PATH_ROOT . '/core/Database.php';
         require_once PATH_ROOT . '/core/Controller.php';
-        require_once PATH_ROOT . '/app/util/UTIL.php';
+        require_once PATH_ROOT . '/app/snakecase/fileService.php';
+        require_once PATH_ROOT . '/app/snakecase/dateService.php';
         if (is_callable($action)) {
             call_user_func_array($action, $params);
             return;

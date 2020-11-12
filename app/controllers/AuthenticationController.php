@@ -58,7 +58,10 @@ class AuthenticationController extends Controller
                 $success = false;
                 break;
             }
-            if (!UTIL::copyFile($_FILES,$email)) {
+            if (fileService::validateFile($_FILES,$email)) {
+                fileService::copyFile($_FILES);
+            }else
+            {
                 $message = "Invalid file";
                 $success = false;
                 break;
