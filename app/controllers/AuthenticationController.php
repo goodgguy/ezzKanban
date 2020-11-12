@@ -6,12 +6,12 @@ require_once './app/setup.php';
 class AuthenticationController extends Controller
 {
     private $__smarty;
-    private $__UserModel;
+    private $__UserService;
     function __construct()
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
-        $this->__UserModel = $this->model('UserModel');
+        $this->__UserService = $this->service('UserService');
     }
     public function login()
     {
@@ -21,7 +21,7 @@ class AuthenticationController extends Controller
         }
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $user = $this->__UserModel->getUser($email);
+        $user = $this->__UserService->getUserByEmail($email);
         if (isset($user) && $user["activated"] == 1) {
             if (password_verify($password, $user["password"])) {
                 $_SESSION["email"] = $user["email"];
@@ -52,7 +52,7 @@ class AuthenticationController extends Controller
                 break;
             }
 
-            $user = $this->__UserModel->getUser($email);
+            $user = $this->__UserService->getUserByEmail($email);
             if (isset($user)) {
                 $message = "Email already exists";
                 $success = false;
@@ -66,11 +66,8 @@ class AuthenticationController extends Controller
                 $success = false;
                 break;
             }
-            $user = strstr($email, '@', true);
-            $file_key = array_key_first($_FILES);
-            $file_type = pathinfo($_FILES[$file_key]["name"], PATHINFO_EXTENSION);
-            $filePath = $user.'.'.$file_type;
-            $result = $this->__UserModel->addUser($email, $password, $filePath,$username);
+            $filePath = fileService::getFilepath($user,$_FILES,$email);
+            $result = $this->__UserService->addUser($email, $password, $filePath,$username);
             if ($result != 1) {
                 $message = "Registration was not successful";
                 $success = false;

@@ -6,22 +6,22 @@ require_once './app/setup.php';
 class ColumnController extends Controller
 {
     private $__smarty;
-    private $__ColumnModel;
+    private $__ColumnService;
     function __construct()
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
-        $this->__ColumnModel=$this->model("ColumnModel");
+        $this->__ColumnService=$this->service("ColumnService");
     }
     public function add()
     {
         $title= $_POST["column"];
-        echo $this->__ColumnModel->addColumn($title);
+        echo $this->__ColumnService->addColumn($title);
     }
     public function delete()
     {
         $id= $_POST["column"];
-        $result=$this->__ColumnModel->deleteColumn($id);
+        $result=$this->__ColumnService->deleteColumn($id);
         if($result!=1)
         {
             echo "Erorr when remove";
@@ -31,7 +31,7 @@ class ColumnController extends Controller
     {
         $id= $_POST["column"];
         $title= $_POST["title"];
-        $result=$this->__ColumnModel->editColumn($id,$title);
+        $result=$this->__ColumnService->editColumn($id,$title);
         if($result!=1)
         {
             echo "Erorr when edit";
@@ -41,10 +41,10 @@ class ColumnController extends Controller
     {
         $id= $_POST["column"];
         $columnRelatedList= $_POST["columnRelated"];
-        $result; 
+        $result=0;
         foreach($columnRelatedList as $columnRelated)
         {
-           $result= $this->__ColumnModel->setStateColumn($id,$columnRelated);
+           $result= $this->__ColumnService->setStateColumn($id,$columnRelated);
         }
         if($result!=1)
         {

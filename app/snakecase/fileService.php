@@ -53,4 +53,11 @@ class fileService
         }
         return $allowUpload;
     }
+    public static function getFilepath($user,$file,$email)
+    {
+        $user = strstr($email, '@', true);
+        $file_key = array_key_first($file);
+        $file_type = pathinfo($file[$file_key]["name"], PATHINFO_EXTENSION);
+        return $user.'.'.$file_type;
+    }
 }
