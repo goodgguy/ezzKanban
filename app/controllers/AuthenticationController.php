@@ -16,7 +16,7 @@ class AuthenticationController extends Controller
     public function login()
     {
         if (empty($_POST)) {
-            $this->__smarty->display('signin_up.tpl');
+            $this->__smarty->display('signin.tpl');
             return;
         }
         $email = $_POST["email"];
@@ -35,16 +35,21 @@ class AuthenticationController extends Controller
         }else
         {
             $this->__smarty->assign("message","Login failed");
-            $this->__smarty->display("signin_up.tpl");
+            $this->__smarty->display("signin.tpl");
         }
     }
     public function register()
     {
+        if(empty($_POST))
+        {
+            $this->__smarty->display('signup.tpl');
+            return;
+        }
         $email = $_POST["email"];
         $password = $_POST["password"];
         $username = $_POST["username"];
         $isSuccess = true;
-        $message = '';
+        $message = 'Successful !!! Welcome';
         while (1) {
             if (empty($_POST) || empty($_FILES)) {
                 $message = "Must require data!";
@@ -76,7 +81,7 @@ class AuthenticationController extends Controller
             break;
         }
         $this->__smarty->assign("message",$message);
-        $this->__smarty->display("signin_up.tpl");
+        $this->__smarty->display("signup.tpl");
     }
     public function logout()
     {

@@ -57,7 +57,7 @@
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>
                            <div class="form-group mt-4">
-                              <p class="text-center"><a href="#" id="signup">Don't have a login? Sign up</a></p>
+                              <p class="text-center"><a href="register" id="signup">Don't have a login? Sign up</a></p>
                            </div>
                        {if isset($message)}
                            <span style="color: #ff0000" >{$message}</span>
@@ -66,44 +66,6 @@
                  
 				</div>
             </div>
-            <div id="second">
-                <div class="myform form ">
-                      <div class="logo mb-3">
-                         <div class="col-md-12 text-center">
-                            <h1 >Signup</h1>
-                         </div>
-                      </div>
-                      <form  action="register" name="registration" method="post" enctype="multipart/form-data">
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
-                         </div>
-                          <div class="form-group">
-                              <label for="exampleInputEmail1">Display name</label>
-                              <input type="text"  name="username" class="form-control" id="username" placeholder="Display name">
-                          </div>
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Password</label>
-                            <input type="password"  name="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter Password">
-                         </div>
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Confirm password</label>
-                            <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
-                         </div>
-                          <input type="file" name="fileToUpload" id="fileToUpload" required style="visibility:hidden;">
-                          <label for="fileToUpload">Choose Avatar (Click here) allow: .jpg .png .jpeg .gif</label>
-                         <div class="col-md-12 text-center mb-3 mt-2">
-                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
-                         </div>
-                         <div class="col-md-12 ">
-                            <div class="form-group">
-                               <p class="text-center"><a href="#" id="signin">Already have an account? Sign in here</a></p>
-                            </div>
-                         </div>
-                          </div>
-                      </form>
-                   </div>
-			</div>
 		</div>
       </div>   
 </body>

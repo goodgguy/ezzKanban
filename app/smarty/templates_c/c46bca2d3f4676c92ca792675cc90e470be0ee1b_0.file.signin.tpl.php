@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-06 22:29:41
-  from 'C:\xampp\htdocs\ezzKanban\app\views\signin.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-12 17:34:30
+  from 'C:\Apache24\htdocs\ezzKanban\app\views\signin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa56be5df9238_91500925',
+  'unifunc' => 'content_5fad0fb6b2f071_87152179',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '8f0aacf467e4caec08437b8e4e3fafff29d96b7e' => 
+    'c46bca2d3f4676c92ca792675cc90e470be0ee1b' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\signin.tpl',
-      1 => 1604492799,
+      0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin.tpl',
+      1 => 1605177266,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa56be5df9238_91500925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fad0fb6b2f071_87152179 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +94,7 @@ function content_5fa56be5df9238_91500925 (Smarty_Internal_Template $_smarty_tpl)
                               <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                            </div>
                            <div class="form-group mt-4">
-                              <p class="text-center"><a href="#" id="signup">Don't have a login? Sign up</a></p>
+                              <p class="text-center"><a href="register" id="signup">Don't have a login? Sign up</a></p>
                            </div>
                        <?php if ((isset($_smarty_tpl->tpl_vars['message']->value))) {?>
                            <span style="color: #ff0000" ><?php echo $_smarty_tpl->tpl_vars['message']->value;?>
@@ -104,44 +104,6 @@ function content_5fa56be5df9238_91500925 (Smarty_Internal_Template $_smarty_tpl)
                  
 				</div>
             </div>
-            <div id="second">
-                <div class="myform form ">
-                      <div class="logo mb-3">
-                         <div class="col-md-12 text-center">
-                            <h1 >Signup</h1>
-                         </div>
-                      </div>
-                      <form  action="register" name="registration" method="post" enctype="multipart/form-data">
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email"  name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
-                         </div>
-                          <div class="form-group">
-                              <label for="exampleInputEmail1">Display name</label>
-                              <input type="text"  name="username" class="form-control" id="username" placeholder="Display name">
-                          </div>
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Password</label>
-                            <input type="password"  name="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter Password">
-                         </div>
-                         <div class="form-group">
-                            <label for="exampleInputEmail1">Confirm password</label>
-                            <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
-                         </div>
-                          <input type="file" name="fileToUpload" id="fileToUpload" required style="visibility:hidden;">
-                          <label for="fileToUpload">Choose Avatar (Click here) allow: .jpg .png .jpeg .gif</label>
-                         <div class="col-md-12 text-center mb-3 mt-2">
-                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
-                         </div>
-                         <div class="col-md-12 ">
-                            <div class="form-group">
-                               <p class="text-center"><a href="#" id="signin">Already have an account? Sign in here</a></p>
-                            </div>
-                         </div>
-                          </div>
-                      </form>
-                   </div>
-			</div>
 		</div>
       </div>   
 </body>

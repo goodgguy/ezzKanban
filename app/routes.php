@@ -7,6 +7,7 @@ $router->get('/login', 'AuthenticationController@login');
 $router->get('/home', 'HomeController@index');
 $router->get('/logout', 'AuthenticationController@logout');
 $router->get('/getboard', 'CardController@getData');
+$router->get('/register', 'AuthenticationController@register');
 
 
 //POST

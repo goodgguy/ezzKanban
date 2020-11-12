@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.34-dev-7, created on 2020-11-04 13:31:12
-  from 'C:\Apache24\htdocs\ezzKanban\app\views\signin_up.tpl' */
+  from 'C:\Apache24\htdocs\ezzKanban\app\views\signin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     '5b4a95ae478df364c55bb10583a5a2fc800f6d4c' => 
     array (
-      0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin_up.tpl',
+      0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signin.tpl',
       1 => 1604471470,
       2 => 'file',
     ),
