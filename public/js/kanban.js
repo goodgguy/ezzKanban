@@ -606,7 +606,7 @@
                 <div class="card-body" style="background-color: #ebecf0">
                     <div class="row">
                         <div class="col-sm-7 ">
-                            <h6 class="card-title text-uppercase text-truncate py-2">${value}</h6>
+                            <h6 id="board_title_${data}" class="card-title text-uppercase text-truncate py-2">${value}</h6>
                         </div>
                         <div class="col-sm-5">
                             <a col_delete_id=${data} id="col_del_${data}">
