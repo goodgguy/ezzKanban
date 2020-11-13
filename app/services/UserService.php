@@ -12,8 +12,7 @@ class UserService extends Controller
     public function getUserByEmail($email)
     {
         $user = $this->__UserModel->getUser($email);
-        if(!empty($user))
-        {
+        if (!empty($user)) {
             return fillterdataService::encodeDataArray($user);
         }
     }
@@ -21,5 +20,10 @@ class UserService extends Controller
     public function addUser($email, $password, $filePath, $username)
     {
         return $this->__UserModel->addUser($email, $password, $filePath, $username);
+    }
+
+    public function getUserById($idUser)
+    {
+        return $this->__UserModel->getuserById($idUser);
     }
 }

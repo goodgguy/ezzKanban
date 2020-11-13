@@ -15,12 +15,16 @@ class CommentService extends Controller
         return $this->__CommentModel->addComment($idCard, $message, $user);
     }
 
-    public function getListCommentByCard($idCard)
+    public function getCommentByIdCard($idCard)
     {
-        $this->__UserModel = $this->model('UserModel');
-        $commentList = $this->__CommentModel->getCommentByIDCard($idCard);
+        return $this->__CommentModel->getCommentByIDCard($idCard);
+    }
+
+    public function getListCommentByCard($idCard, $userService)
+    {
+        $commentList = $this->getCommentByIdCard($idCard);
         foreach ($commentList as &$comment) {
-            $user = $this->__UserModel->getuserById($comment['IDuser']);
+            $user = $userService->getuserById($comment['IDuser']);
             $comment['user'] = $user;
         }
         return $commentList;

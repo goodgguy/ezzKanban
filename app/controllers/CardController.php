@@ -136,11 +136,12 @@ class CardController extends Controller
 
     public function addMessage()
     {
+        $userService = $this->service('UserService');
         $idCard = $_POST['card'];
         $message = $_POST['mess'];
         $user = $_SESSION['iduser'];
         $this->__CommentService->addCommentByCard($idCard, $message, $user);
-        $commentList = $this->__CommentService->getListCommentByCard($idCard);
+        $commentList = $this->__CommentService->getListCommentByCard($idCard, $userService);
         echo json_encode($commentList);
     }
 
