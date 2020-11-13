@@ -6,12 +6,12 @@ class ChecklistService extends Controller
 
     public function __construct()
     {
-        $this->__ChecklistModal = $this->model('ChecklistModel');
+        return $this->__ChecklistModal = $this->model('ChecklistModel');
     }
 
     public function addChecklist($idCard, $content)
     {
-        $this->__ChecklistModal->addChecklist($idCard, $content);
+        return $this->__ChecklistModal->addChecklist($idCard, $content);
     }
 
     public function getChecklistByCard($idCard)
@@ -21,12 +21,12 @@ class ChecklistService extends Controller
 
     public function setStatusChecklist($statusChecklist, $idChecklist)
     {
-        $this->__ChecklistModal->setStatusChecklist($statusChecklist, $idChecklist);
+        return $this->__ChecklistModal->setStatusChecklist($statusChecklist, $idChecklist);
     }
 
     public function deleteChecklist($idChecklist)
     {
-        $this->__ChecklistModal->deleteChecklist($idChecklist);
+        return $this->__ChecklistModal->deleteChecklist($idChecklist);
     }
 
 }

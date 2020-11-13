@@ -6,7 +6,7 @@ class UserService extends Controller
 
     function __construct()
     {
-        $this->__UserModel = $this->model('UserModel');
+        return $this->__UserModel = $this->model('UserModel');
     }
 
     public function getUserByEmail($email)

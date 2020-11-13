@@ -6,7 +6,7 @@ class ColumnService extends Controller
 
     function __construct()
     {
-        $this->__ColumnModel = $this->model("ColumnModel");
+        return $this->__ColumnModel = $this->model("ColumnModel");
     }
 
     public function addColumn($title)

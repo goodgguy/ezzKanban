@@ -8,6 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/CardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/CardService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/ChecklistService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ChecklistService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/ColumnService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ColumnService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/CommentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/CommentService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/UserService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

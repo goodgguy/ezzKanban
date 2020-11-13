@@ -82,34 +82,34 @@ class CardService extends Controller
 
     public function setPriorityCard($id, $state)
     {
-        $this->__CardModel->setPriorityCard($id, $state);
+        return $this->__CardModel->setPriorityCard($id, $state);
     }
 
     public function setStatusCard($id, $state)
     {
-        $this->__CardModel->setStatusCard($id, $state);
+        return $this->__CardModel->setStatusCard($id, $state);
     }
 
     public function setTitleCard($id, $title)
     {
-        $this->__CardModel->setTitleCard($id, $title);
+        return $this->__CardModel->setTitleCard($id, $title);
     }
 
     public function setDescriptionCard($id, $title)
     {
-        $this->__CardModel->setDescription($id, $title);
+        return $this->__CardModel->setDescription($id, $title);
     }
 
     public function setStartdateCard($id, $startdate)
     {
         $startdate = substr($startdate, 0, 19);
-        $this->__CardModel->setStartdateCard($id, $startdate);
+        return $this->__CardModel->setStartdateCard($id, $startdate);
     }
 
     public function setDuedateCard($id, $duedate)
     {
         $duedate = substr($duedate, 0, 19);
-        $this->__CardModel->setDuedateCard($id, $duedate);
+        return $this->__CardModel->setDuedateCard($id, $duedate);
     }
 
     public function getUserNotinCard($idCard)

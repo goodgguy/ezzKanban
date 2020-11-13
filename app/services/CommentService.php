@@ -7,12 +7,12 @@ class CommentService extends Controller
 
     public function __construct()
     {
-        $this->__CommentModel = $this->model('CommentModel');
+        return $this->__CommentModel = $this->model('CommentModel');
     }
 
     public function addCommentByCard($idCard, $message, $user)
     {
-        $this->__CommentModel->addComment($idCard, $message, $user);
+        return $this->__CommentModel->addComment($idCard, $message, $user);
     }
 
     public function getListCommentByCard($idCard)
