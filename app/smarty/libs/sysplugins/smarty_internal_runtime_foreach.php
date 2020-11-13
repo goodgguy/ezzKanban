@@ -107,7 +107,7 @@ class Smarty_Internal_Runtime_Foreach
     }
 
     /**
-     * [snakecase function] counts an array, arrayAccess/traversable or PDOStatement object
+     * [commonservices function] counts an array, arrayAccess/traversable or PDOStatement object
      *
      * @param mixed $value
      *

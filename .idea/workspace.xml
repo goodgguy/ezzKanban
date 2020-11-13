@@ -5,33 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AuthenticationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/CardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/ColumnController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ColumnController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CardModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CardModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/ChecklistModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ChecklistModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/ColumnModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ColumnModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CommentModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CommentModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/CardService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/CardService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/ChecklistService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ChecklistService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/ColumnService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ColumnService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/CommentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/CommentService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/setup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/snakecase/dateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/snakecase/dateService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/snakecase/fileService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/snakecase/fileService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/smarty/libs/sysplugins/smarty_internal_runtime_foreach.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/smarty/libs/sysplugins/smarty_internal_runtime_foreach.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/snakecase/dateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/commonservices/dateService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/snakecase/fileService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/commonservices/fileService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/http/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/http/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/kanban.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/kanban.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/signup_in.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/signup_in.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Sortable.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Sortable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/kanban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/signup_in.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/signup_in.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

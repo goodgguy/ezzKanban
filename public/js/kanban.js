@@ -287,7 +287,7 @@
                     showAlert("Title is empty");
                     return;
                 }
-                $.post(options.url + "addColumn", {column: value})
+                $.post(options.url + "addColumn", {title: value})
                     .done(function (data) {
                         addOneBoard(data, value);
                     });

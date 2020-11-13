@@ -17,7 +17,7 @@ class ColumnController extends Controller
 
     public function add()
     {
-        $title = $_POST["column"];
+        $title = $_POST["title"];
         echo $this->__ColumnService->addColumn($title);
     }
 
