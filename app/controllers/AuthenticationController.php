@@ -50,35 +50,40 @@ class AuthenticationController extends Controller
         $password = $_POST["password"];
         $username = $_POST["username"];
         $isSuccess = true;
-        $message = 'Successful !!! Welcome';
+        $message = '';
         while (1) {
             if (empty($_POST) || empty($_FILES)) {
                 $message = "Must require data!";
-                $success = false;
+                $isSuccess = false;
                 break;
             }
 
             $user = $this->__UserService->getUserByEmail($email);
             if (isset($user)) {
                 $message = "Email already exists";
-                $success = false;
+                $isSuccess = false;
                 break;
             }
             if (fileService::validateFile($_FILES, $email)) {
                 fileService::copyFile($_FILES);
             } else {
                 $message = "Invalid file";
-                $success = false;
+                $isSuccess = false;
                 break;
             }
             $filePath = fileService::getFilepath($user, $_FILES, $email);
             $result = $this->__UserService->addUser($email, $password, $filePath, $username);
             if ($result != 1) {
                 $message = "Registration was not successful";
-                $success = false;
+                $isSuccess = false;
                 break;
             }
             break;
+        }
+        if($isSuccess)
+        {
+            $this->__smarty->display("signin.tpl");
+            return;
         }
         $this->__smarty->assign("message", $message);
         $this->__smarty->display("signup.tpl");
