@@ -26,7 +26,6 @@ class AuthenticationController extends Controller
         $user = $this->__UserService->getUserByEmail($email);
         if (isset($user) && $user["activated"] == 1) {
             if (password_verify($password, $user["password"])) {
-                $user = fillterdataService::encodeDataArray($user);
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["image"] = $user["image"];
                 $_SESSION["create_date"] = $user["create_date"];

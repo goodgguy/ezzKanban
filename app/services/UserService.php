@@ -11,7 +11,7 @@ class UserService extends Controller
 
     public function getUserByEmail($email)
     {
-        return $this->__UserModel->getUser($email);
+        return fillterdataService::encodeDataArray($this->__UserModel->getUser($email));
     }
 
     public function addUser($email, $password, $filePath, $username)
