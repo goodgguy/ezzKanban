@@ -16,8 +16,7 @@ class ChecklistService extends Controller
 
     public function getChecklistByCard($idCard)
     {
-        $checklistList = $this->__ChecklistModal->getChecklistByCard($idCard);
-        return $checklistList;
+        return $this->__ChecklistModal->getChecklistByCard($idCard);
     }
 
     public function setStatusChecklist($statusChecklist, $idChecklist)

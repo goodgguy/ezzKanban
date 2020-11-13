@@ -31,13 +31,12 @@ class CardService extends Controller
 
     public function setPositionCard($toColumn, $idCard)
     {
-        $result = $this->__CardModel->setStateCard($toColumn, $idCard);
-        return $result;
+        return $this->__CardModel->setStateCard($toColumn, $idCard);
     }
 
     public function addCard($title, $description, $startdate, $duedate, $priority, $idcol)
     {
-        $result = $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
+        $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
     }
 
     public function getCardListByColumn($idcol)
@@ -53,8 +52,7 @@ class CardService extends Controller
 
     public function getColumnByIdCard($idCard)
     {
-        $IDColumn = $this->__CardModel->getColIDCard($idCard);
-        return $IDColumn;
+        return $this->__CardModel->getColIDCard($idCard);
     }
 
     public function deleteCard($idCard)
@@ -117,8 +115,7 @@ class CardService extends Controller
     public function getUserNotinCard($idCard)
     {
         $this->__UserModel = $this->model('UserModel');
-        $result = $this->__UserModel->getUserNotinCard($idCard);
-        return $result;
+        return $this->__UserModel->getUserNotinCard($idCard);
     }
 
     public function addUserCard($idUser, $idCard)
