@@ -122,8 +122,6 @@
         var IDCOLUMN_DELETE;
 
         init();
-
-
         //cache=false;
         function init() {
             addEventDragDropBoard();
