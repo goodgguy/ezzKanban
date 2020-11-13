@@ -1,5 +1,6 @@
 <?php
 require('./app/smarty/libs/Smarty.class.php');
+
 class Template extends Smarty
 {
 

@@ -1,4 +1,5 @@
 <?php
+
 class CardService extends Controller
 {
     private $__CardModel;
@@ -6,6 +7,7 @@ class CardService extends Controller
     private $__UserModel;
     private $__CommentModel;
     private $__ChecklistModal;
+
     public function __construct()
     {
         $this->__CardModel = $this->model('CardModel');
@@ -27,7 +29,7 @@ class CardService extends Controller
         return $columnList;
     }
 
-    public function setPositionCard($toColumn,$idCard)
+    public function setPositionCard($toColumn, $idCard)
     {
         $result = $this->__CardModel->setStateCard($toColumn, $idCard);
         return $result;
@@ -79,42 +81,51 @@ class CardService extends Controller
         $cardDetail['checklistList'] = $checklistList;
         return $cardDetail;
     }
+
     public function setPriorityCard($id, $state)
     {
         $this->__CardModel->setPriorityCard($id, $state);
     }
+
     public function setStatusCard($id, $state)
     {
         $this->__CardModel->setStatusCard($id, $state);
     }
+
     public function setTitleCard($id, $title)
     {
         $this->__CardModel->setTitleCard($id, $title);
     }
+
     public function setDescriptionCard($id, $title)
     {
         $this->__CardModel->setDescription($id, $title);
     }
+
     public function setStartdateCard($id, $startdate)
     {
         $startdate = substr($startdate, 0, 19);
         $this->__CardModel->setStartdateCard($id, $startdate);
     }
+
     public function setDuedateCard($id, $duedate)
     {
         $duedate = substr($duedate, 0, 19);
         $this->__CardModel->setDuedateCard($id, $duedate);
     }
+
     public function getUserNotinCard($idCard)
     {
         $this->__UserModel = $this->model('UserModel');
         $result = $this->__UserModel->getUserNotinCard($idCard);
         return $result;
     }
+
     public function addUserCard($idUser, $idCard)
     {
         return $this->__CardModel->addUserCard($idUser, $idCard);
     }
+
     public function delUserCard($idUser, $idCard)
     {
         return $this->__CardModel->delUserCard($idUser, $idCard);

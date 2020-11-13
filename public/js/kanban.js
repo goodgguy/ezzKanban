@@ -122,6 +122,7 @@
         var IDCOLUMN_DELETE;
 
         init();
+
         //cache=false;
         function init() {
             addEventDragDropBoard();
@@ -152,7 +153,7 @@
                 onEnd: function (evt) {
                     let idCol = evt.item.id;
                     idCol = idCol.split("_").pop();
-                    $.post(options.url + "column/changState", { column: idCol, columnRelated: idColListRelated })
+                    $.post(options.url + "column/changState", {column: idCol, columnRelated: idColListRelated})
                         .done(function (data) {
                             if (data.length > 0) {
                             }
@@ -256,7 +257,7 @@
                 onEnd: function (evt) {
                     let idCard = evt.item.id;
                     idCard = idCard.split("_").pop();
-                    $.post(options.url + "card/changState", { toColumn: evt.to.id, idCard: idCard })
+                    $.post(options.url + "card/changState", {toColumn: evt.to.id, idCard: idCard})
                         .done(function (data) {
                             // if (data.length > 0) {
                             //     //RELOAD();
@@ -286,7 +287,7 @@
                     showAlert("Title is empty");
                     return;
                 }
-                $.post(options.url + "addColumn", { column: value })
+                $.post(options.url + "addColumn", {column: value})
                     .done(function (data) {
                         addOneBoard(data, value);
                     });
@@ -304,7 +305,7 @@
 
         function submitDeleteColumn() {
             $(confirmBtn).on("click", function () {
-                $.post(options.url + "deleteColumn", { column: IDCOLUMN_DELETE })
+                $.post(options.url + "deleteColumn", {column: IDCOLUMN_DELETE})
                     .done(function (data) {
                         removeColumnfrBoard(IDCOLUMN_DELETE);
                     });
@@ -332,7 +333,7 @@
                     showAlert("Don't do that again");
                     return;
                 }
-                $.post(options.url + "editColumn", { column: IDCOLUMN_EDIT, title: titleChanged })
+                $.post(options.url + "editColumn", {column: IDCOLUMN_EDIT, title: titleChanged})
                     .done(function (data) {
                         $(board_title + IDCOLUMN_EDIT).text(titleChanged);
                     });
@@ -353,7 +354,7 @@
                     url: options.url + "card/getDetail",
                     type: "POST",
                     dataType: "json",
-                    data: { card: IDcard },
+                    data: {card: IDcard},
                     cache: false
                 }).done(function (data) {
                     DETAILCARD = data;
@@ -368,14 +369,12 @@
         function showDetailRow() {
             if (DETAILCARD.priority === 1) {
                 $(detailcard_priority).addClass("btn-danger");
-            }
-            else {
+            } else {
                 $(detailcard_priority).removeClass("btn-danger");
             }
             if (DETAILCARD.status === 1) {
                 $(detailcard_done).addClass("btn-success");
-            }
-            else {
+            } else {
                 $(detailcard_done).removeClass("btn-success");
             }
             $(detailcard_title).text(DETAILCARD.title);
@@ -401,7 +400,7 @@
                         url: options.url + "card/delUser",
                         type: "POST",
                         dataType: "html",
-                        data: { cardID: DETAILCARD.IDcard, userID: val.IDuser },
+                        data: {cardID: DETAILCARD.IDcard, userID: val.IDuser},
                         cache: false
                     }).done(function (data) {
                         $(user_in + val.IDuser).remove();
@@ -429,7 +428,7 @@
                     url: options.url + "card/deleteChecklist",
                     type: "POST",
                     dataType: "json",
-                    data: { id: IDchecklist },
+                    data: {id: IDchecklist},
                     cache: false
                 }).done(function (data) {
                 });
@@ -450,7 +449,7 @@
                     url: options.url + "card/setChecklist",
                     type: "POST",
                     dataType: "json",
-                    data: { id: idChecklist, statusChecklist: status },
+                    data: {id: idChecklist, statusChecklist: status},
                     cache: false
                 }).done(function (data) {
                 });
@@ -486,7 +485,7 @@
                     url: options.url + "card/addChecklist",
                     type: "POST",
                     dataType: "json",
-                    data: { card: DETAILCARD.IDcard, contentchecklist: content },
+                    data: {card: DETAILCARD.IDcard, contentchecklist: content},
                     cache: false
                 }).done(function (data) {
                     listChecklistDetailRow(data);
@@ -509,7 +508,7 @@
                     url: options.url + "card/addMessage",
                     type: "POST",
                     dataType: "json",
-                    data: { card: DETAILCARD.IDcard, mess: message },
+                    data: {card: DETAILCARD.IDcard, mess: message},
                     cache: false
                 }).done(function (data) {
                     $(detailcard_listcomment).empty();
@@ -543,7 +542,7 @@
                 url: options.url + "card/getUsernotIn",
                 type: "POST",
                 dataType: "json",
-                data: { card: DETAILCARD.IDcard },
+                data: {card: DETAILCARD.IDcard},
                 cache: false
             }).done(function (data) {
                 $(detailcard_listUserNotIn).empty();
@@ -580,7 +579,7 @@
                     url: options.url + "card/addUser",
                     type: "POST",
                     dataType: "html",
-                    data: { cardID: DETAILCARD.IDcard, userID: user.IDuser },
+                    data: {cardID: DETAILCARD.IDcard, userID: user.IDuser},
                     cache: false
                 }).done(function (data) {
                     $(user_notin + user.IDuser).remove();
@@ -591,7 +590,7 @@
                             url: options.url + "card/delUser",
                             type: "POST",
                             dataType: "html",
-                            data: { cardID: DETAILCARD.IDcard, userID: user.IDuser },
+                            data: {cardID: DETAILCARD.IDcard, userID: user.IDuser},
                             cache: false
                         }).done(function (data) {
                             $(user_in + user.IDuser).remove();
@@ -609,7 +608,7 @@
                     url: options.url + "card/delete",
                     type: "POST",
                     dataType: "json",
-                    data: { card: IDcard },
+                    data: {card: IDcard},
                     cache: false
                 }).done(function (data) {
                     $("#" + data.idcol).empty();
@@ -740,7 +739,7 @@
                         url: options.url + "card/setStartdate",
                         type: "POST",
                         dataType: "html",
-                        data: { startdate: $(this).val(), id: DETAILCARD.IDcard },
+                        data: {startdate: $(this).val(), id: DETAILCARD.IDcard},
                         cache: false
                     }).done(function (data) {
                     });
@@ -754,7 +753,7 @@
                         url: options.url + "card/setDuedate",
                         type: "POST",
                         dataType: "html",
-                        data: { duedate: $(this).val(), id: DETAILCARD.IDcard },
+                        data: {duedate: $(this).val(), id: DETAILCARD.IDcard},
                         cache: false
                     }).done(function (data) {
                     });
@@ -781,7 +780,7 @@
                                 url: options.url + "card/setTitle",
                                 type: "POST",
                                 dataType: "html",
-                                data: { title: $(this).val(), id: DETAILCARD.IDcard },
+                                data: {title: $(this).val(), id: DETAILCARD.IDcard},
                                 cache: false
                             }).done(function (data) {
                             });
@@ -791,7 +790,7 @@
                                 url: options.url + "card/setDescription",
                                 type: "POST",
                                 dataType: "html",
-                                data: { description: $(this).val(), id: DETAILCARD.IDcard },
+                                data: {description: $(this).val(), id: DETAILCARD.IDcard},
                                 cache: false
                             }).done(function (data) {
                             });
@@ -808,7 +807,7 @@
                     url: options.url + "card/setPriority",
                     type: "POST",
                     dataType: "html",
-                    data: { priority: DETAILCARD.priority, id: DETAILCARD.IDcard },
+                    data: {priority: DETAILCARD.priority, id: DETAILCARD.IDcard},
                     cache: false
                 }).done(function (data) {
 
@@ -822,7 +821,7 @@
                     url: options.url + "card/setStatus",
                     type: "POST",
                     dataType: "html",
-                    data: { priority: DETAILCARD.status, id: DETAILCARD.IDcard },
+                    data: {priority: DETAILCARD.status, id: DETAILCARD.IDcard},
                     cache: false
                 }).done(function (data) {
                     $(row_status + DETAILCARD.IDcard).css('background-color', DETAILCARD.status === 1 ? "#28df99" : "");

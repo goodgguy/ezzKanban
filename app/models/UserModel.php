@@ -1,4 +1,5 @@
 <?php
+
 class UserModel extends Database
 {
     public function getAllUser()
@@ -7,6 +8,7 @@ class UserModel extends Database
         $result = mysqli_query($this->con, $query);
         mysqli_free_result($result);
     }
+
     public function addUser($email, $password, $filename, $username)
     {
         $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
@@ -17,6 +19,7 @@ class UserModel extends Database
         return $stmt->execute(); //1 if successs
 
     }
+
     public function getUser($email)
     {
         $query = "SELECT * FROM ql_kanban.user where email like ?;";
@@ -26,6 +29,7 @@ class UserModel extends Database
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
     public function getUserByCard($idCard)
     {
         $query = "SELECT * FROM user_card INNER JOIN USER ON user_card.IDuser=USER.IDuser WHERE Idcard=?;";
@@ -39,6 +43,7 @@ class UserModel extends Database
         }
         return $list;
     }
+
     public function getUserNotinCard($idCard)
     {
         $query = "  SELECT * FROM USER WHERE IDuser NOT IN (SELECT IDuser FROM user_card WHERE IDcard=?);";
@@ -52,6 +57,7 @@ class UserModel extends Database
         }
         return $list;
     }
+
     public function getuserById($idUser)
     {
         $query = "SELECT * FROM ql_kanban.user where IDuser = ?;";

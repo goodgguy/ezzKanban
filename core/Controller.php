@@ -1,4 +1,5 @@
 <?php
+
 class Controller
 {
     public function model($model)
@@ -6,6 +7,7 @@ class Controller
         require_once "./app/models/" . $model . ".php";
         return new $model;
     }
+
     public function service($service)
     {
         require_once "./app/services/" . $service . ".php";

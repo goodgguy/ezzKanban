@@ -1,16 +1,20 @@
 <?php
+
 class CommentService extends Controller
 {
     private $__CommentModel;
     private $__UserModel;
+
     public function __construct()
     {
         $this->__CommentModel = $this->model('CommentModel');
     }
+
     public function addCommentByCard($idCard, $message, $user)
     {
         $this->__CommentModel->addComment($idCard, $message, $user);
     }
+
     public function getListCommentByCard($idCard)
     {
         $this->__UserModel = $this->model('UserModel');

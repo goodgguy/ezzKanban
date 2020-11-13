@@ -1,4 +1,5 @@
 <?php
+
 class ChecklistModel extends Database
 {
     public function getChecklistByCard($idCard)
@@ -14,6 +15,7 @@ class ChecklistModel extends Database
         }
         return $list;
     }
+
     public function addChecklist($idCard, $content)
     {
         $query = "INSERT INTO `checklist` (content,STATUS,IDcard) VALUE (?,0,?);";
@@ -21,6 +23,7 @@ class ChecklistModel extends Database
         $stmt->bind_param("si", $content, $idCard);
         return $stmt->execute();
     }
+
     public function setStatusChecklist($status, $IDchecklist)
     {
         $queryupdate = "UPDATE checklist SET status = ? WHERE IDchecklist=?";
@@ -28,6 +31,7 @@ class ChecklistModel extends Database
         $stmt->bind_param("si", $status, $IDchecklist);
         return $stmt->execute();
     }
+
     public function deleteChecklist($idChecklist)
     {
         $queryupdate = "DELETE FROM checklist WHERE IDchecklist=?";

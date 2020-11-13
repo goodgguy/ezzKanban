@@ -1,4 +1,5 @@
 <?php
+
 class ColumnModel extends Database
 {
     public function getAllColumn()
@@ -11,6 +12,7 @@ class ColumnModel extends Database
         }
         return $list;
     }
+
     public function addColumn($title)
     {
         $query = "INSERT INTO `Column` (title,`index`,activated) VALUE (?,-1,1);";
@@ -25,6 +27,7 @@ class ColumnModel extends Database
             return "Erorr" . mysqli_error($this->conn);
         }
     }
+
     public function deleteColumn($id)
     {
         $queryupdate = "UPDATE `column` SET activated= 0 WHERE IDcolumn=?";
@@ -32,6 +35,7 @@ class ColumnModel extends Database
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
+
     public function editColumn($id, $title)
     {
         $queryupdate = "UPDATE `column` SET title= ? WHERE IDcolumn=?";
@@ -39,6 +43,7 @@ class ColumnModel extends Database
         $stmt->bind_param("si", $title, $id);
         return $stmt->execute();
     }
+
     public function setStateColumn($idCol, $idColRelated)
     {
         $queryupdate = "UPDATE `column` a

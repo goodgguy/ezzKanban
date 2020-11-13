@@ -58,6 +58,7 @@ class Route
         echo '404 - Not Found';
         return;
     }
+
     private function __call_action_route($action, $params)
     {
         require_once PATH_ROOT . '/core/Database.php';
@@ -74,8 +75,7 @@ class Route
                 if ($disroute["controller"] != $action[0] && $disroute["action"] != $action[1] && empty($_SESSION)) {
                     $action[0] = "AuthenticationController";
                     $action[1] = "login";
-                }
-                else if ($disroute["controller"] == $action[0] && $disroute["action"] == $action[1] && !empty($_SESSION)) {
+                } else if ($disroute["controller"] == $action[0] && $disroute["action"] == $action[1] && !empty($_SESSION)) {
                     $action[0] = "HomeController";
                     $action[1] = "index";
                 }
@@ -86,6 +86,7 @@ class Route
             return;
         }
     }
+
     private function __setDisRoute($controller, $action)
     {
         return [

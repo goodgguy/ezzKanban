@@ -1,4 +1,5 @@
 <?php
+
 class Database
 {
     public $conn;
@@ -6,6 +7,7 @@ class Database
     protected $username = DB_USERNAME;
     protected $password = DB_PASSWORD;
     protected $dbname = DB_NAME;
+
     function __construct()
     {
         $this->conn = mysqli_connect($this->servername, $this->username, $this->password);

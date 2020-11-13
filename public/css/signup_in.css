@@ -2,17 +2,17 @@ body {
     padding-top: 4.2rem;
     padding-bottom: 4.2rem;
     background: rgba(0, 0, 0, 0.76);
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none !important;
-  }
-  
-  h1, h2, h3 {
+}
+
+h1, h2, h3 {
     font-family: "Kaushan Script", cursive;
-  }
-  
-  .myform {
+}
+
+.myform {
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -27,26 +27,26 @@ body {
     border-radius: 1.1rem;
     outline: 0;
     max-width: 500px;
-  }
-  
-  .tx-tfm {
+}
+
+.tx-tfm {
     text-transform: uppercase;
-  }
-  
-  .mybtn {
+}
+
+.mybtn {
     border-radius: 50px;
-  }
-  
-  .login-or {
+}
+
+.login-or {
     position: relative;
     color: #0c0c0c;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-  
-  .span-or {
+}
+
+.span-or {
     display: block;
     position: absolute;
     left: 50%;
@@ -56,15 +56,15 @@ body {
     width: 29%;
     text-align: center;
     font-weight: bold;
-  }
-  
-  .hr-or {
+}
+
+.hr-or {
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-  }
-  
-  .google {
+}
+
+.google {
     color: #000;
     width: 100%;
     height: 40px;
@@ -72,15 +72,16 @@ body {
     outline: none;
     border: 1px solid lightgrey;
     font-weight: bold;
-  }
-  
-  form .error {
+}
+
+form .error {
     color: #ff0000;
-  }
-  
-  #second {
+}
+
+#second {
     display: none;
-  }
-  label{
-    font-weight:bold;
-  }
+}
+
+label {
+    font-weight: bold;
+}

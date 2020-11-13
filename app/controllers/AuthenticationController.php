@@ -7,12 +7,14 @@ class AuthenticationController extends Controller
 {
     private $__smarty;
     private $__UserService;
+
     function __construct()
     {
         $this->__smarty = new Template();
         $this->__smarty->caching = false;
         $this->__UserService = $this->service('UserService');
     }
+
     public function login()
     {
         if (empty($_POST)) {
@@ -29,19 +31,18 @@ class AuthenticationController extends Controller
                 $_SESSION["create_date"] = $user["create_date"];
                 $_SESSION["username"] = $user["username"];
                 $_SESSION["iduser"] = $user["IDuser"];
-                header("Location:".URL_SERVER."home");
+                header("Location:" . URL_SERVER . "home");
                 return;
             }
-        }else
-        {
-            $this->__smarty->assign("message","Login failed");
+        } else {
+            $this->__smarty->assign("message", "Login failed");
             $this->__smarty->display("signin.tpl");
         }
     }
+
     public function register()
     {
-        if(empty($_POST))
-        {
+        if (empty($_POST)) {
             $this->__smarty->display('signup.tpl');
             return;
         }
@@ -63,16 +64,15 @@ class AuthenticationController extends Controller
                 $success = false;
                 break;
             }
-            if (fileService::validateFile($_FILES,$email)) {
+            if (fileService::validateFile($_FILES, $email)) {
                 fileService::copyFile($_FILES);
-            }else
-            {
+            } else {
                 $message = "Invalid file";
                 $success = false;
                 break;
             }
-            $filePath = fileService::getFilepath($user,$_FILES,$email);
-            $result = $this->__UserService->addUser($email, $password, $filePath,$username);
+            $filePath = fileService::getFilepath($user, $_FILES, $email);
+            $result = $this->__UserService->addUser($email, $password, $filePath, $username);
             if ($result != 1) {
                 $message = "Registration was not successful";
                 $success = false;
@@ -80,9 +80,10 @@ class AuthenticationController extends Controller
             }
             break;
         }
-        $this->__smarty->assign("message",$message);
+        $this->__smarty->assign("message", $message);
         $this->__smarty->display("signup.tpl");
     }
+
     public function logout()
     {
         unset($_SESSION["email"]);
@@ -90,7 +91,7 @@ class AuthenticationController extends Controller
         unset($_SESSION["create_date"]);
         unset($_SESSION["username"]);
         unset($_SESSION["iduser"]);
-        header("Location:".URL_SERVER."login");
+        header("Location:" . URL_SERVER . "login");
         return;
     }
 }

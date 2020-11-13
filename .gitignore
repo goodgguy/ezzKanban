@@ -1,2 +1,2 @@
-cache/
-templates_c/
+app/smarty/cache/
+app/smarty/templates_c/
