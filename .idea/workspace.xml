@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd2ddbf5-bc65-4d8e-90ed-9cfe4f7cda9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/setup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/setup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/kanban.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/kanban.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +50,7 @@
       <workItem from="1605083854826" duration="4000" />
       <workItem from="1605149108027" duration="41000" />
       <workItem from="1605149150070" duration="13562000" />
-      <workItem from="1605238485690" duration="769000" />
+      <workItem from="1605238485690" duration="1130000" />
     </task>
     <servers />
   </component>

@@ -135,12 +135,14 @@
             handleAddCommentDetailRow();
             handleAddChecklist();
         }
+
         function initButton() {
             $(detailcard_listUserNotIn).hide();
             $(detailcard_addUser).click(function () {
                 $(detailcard_listUserNotIn).toggle();
             });
         }
+
         function addEventDragDropBoard() {
             var master = document.getElementById('master');
             let idColListRelated = [];
@@ -166,6 +168,7 @@
                 }
             });
         }
+
         function loadData() {
             $(board).empty();
             $.ajax({
@@ -179,6 +182,7 @@
                 })
             });
         }
+
         function addColumn(val) {
             let str = `<div id="board_${val.IDcolumn}" class="col-sm-6 col-md-4 col-xl-3 list-columm">
             <div class="card bg-light">
@@ -243,6 +247,7 @@
                 handleEditRow(val.IDcard);
             });
         }
+
         function handleDragdropCard(idcol) {
             let col = $("#" + idcol).get(0);
             new Sortable(col, {
@@ -260,6 +265,7 @@
                 },
             });
         }
+
         function addUser(idcard, userlist) {
             $.each(userlist, function (index, val) {
                 let str = `<img src="public/img/${val.image}"
@@ -267,6 +273,7 @@
                 $("#user_" + idcard).append(str);
             });
         }
+
         function handleAddcolumn() {
             $(btnAddfield).click(function () {
                 const value = $(addfield).val();
@@ -285,6 +292,7 @@
                     });
             });
         }
+
         function handledeleteColumn(IDcolumn) {
             $(col_del + IDcolumn).on("click", function () {
                 let id = $(this).attr("col_delete_id");
@@ -293,6 +301,7 @@
                 $(getConfirmDel).modal();
             })
         }
+
         function submitDeleteColumn() {
             $(confirmBtn).on("click", function () {
                 $.post(options.url + "deleteColumn", { column: IDCOLUMN_DELETE })
@@ -301,6 +310,7 @@
                     });
             });
         }
+
         function handleeditColumn(IDcolumn, title) {
             $(col_edit + IDcolumn).on("click", function () {
                 $(inputEditCol).val(title);
@@ -309,6 +319,7 @@
 
             });
         }
+
         function submitmodalAddCloumn() {
             $(confirmEditCol).on("click", function () {
                 const titleChanged = $(inputEditCol).val();
@@ -327,12 +338,14 @@
                     });
             })
         }
+
         function handleAddRow(IDcolumn) {
             $(row_add + IDcolumn).on('click', function () {
                 IDCOL_ADDCARD = IDcolumn;
                 $(getAddCard).modal();
             });
         }
+
         //=====================GET DATA TO EDIT ROW
         function handleEditRow(IDcard) {
             $(row_title + IDcard).on('click', function () {
@@ -350,6 +363,7 @@
                 $(getEditCard).modal();
             });
         }
+
         //========================HANDLE SHOW DETAIL ROW
         function showDetailRow() {
             if (DETAILCARD.priority === 1) {
@@ -373,6 +387,7 @@
             listCommentDetailRow();
             listChecklistDetailRow(DETAILCARD.checklistList);
         }
+
         //SHOW LIST USER ROW AND HANDLE DELETE
         function listUserDetailRow() {
             $(detailcard_listuser).empty();
@@ -397,6 +412,7 @@
             });
 
         }
+
         //===========CARD DETAIL CHECKLIST
         function listChecklistDetailRow(checklistList) {
             $(detailcard_listChecklist).empty();
@@ -406,6 +422,7 @@
                 handleDeleteChecklist(val.IDchecklist);
             });
         }
+
         function handleDeleteChecklist(IDchecklist) {
             $(detailcard_deleteChecklist + IDchecklist).on('click', function () {
                 $.ajax({
@@ -420,6 +437,7 @@
             });
 
         }
+
         function handleCheckedList(idChecklist) {
             $(detailcard_check + idChecklist).on('change', function () {
                 let status;
@@ -438,6 +456,7 @@
                 });
             })
         }
+
         function modelChecklist(idcheck, content, status) {
             let str = `<li class="list-group-item" id="detailcard_boxchecklist_${idcheck}">
             <div class="row">
@@ -459,6 +478,7 @@
           </li>`;
             $(detailcard_listChecklist).append(str);
         }
+
         function handleAddChecklist() {
             $(detailcard_addChecklist).on('click', function () {
                 let content = $(detailcard_inputChecklist).val();
@@ -473,6 +493,7 @@
                 });
             });
         }
+
         //===========CARD DETAIL COMMENT
         function listCommentDetailRow() {
             $(detailcard_listcomment).empty();
@@ -480,6 +501,7 @@
                 modalMessage(val.user.image, val.user.username, val.content, val.create_date);
             });
         }
+
         function handleAddCommentDetailRow() {
             $(detailcard_senMessage).on('click', function () {
                 let message = $(detailcard_inputmessage).val();
@@ -497,6 +519,7 @@
                 });
             })
         }
+
         function modalMessage(image, username, content, create_date) {
             let str = `<li class="list-group-item">
                 <div class="row">
@@ -514,6 +537,7 @@
               </li>`;
             $(detailcard_listcomment).append(str);
         }
+
         function listuserNotInDetailRow() {
             $.ajax({
                 url: options.url + "card/getUsernotIn",
@@ -528,6 +552,7 @@
                 })
             });
         }
+
         function addUserNotIn(user) {
             let str = `<li id="user_notin_${user.IDuser}" class="list-group-item">
             <div class="row">
@@ -577,6 +602,7 @@
                 });
             })
         }
+
         function handleDeleteRow(IDcard) {
             $(row_del + IDcard).on("click", function () {
                 $.ajax({
@@ -591,13 +617,16 @@
                 });
             });
         }
+
         function showAlert(text) {
             $(textAlert).html(`<p>${text}</p>`);
             $(modalAlert).modal();
         }
+
         function removeColumnfrBoard(IDcolumn) {
             $(col_board + IDcolumn).remove();
         }
+
         function addOneBoard(data, value) {
             let str = `<div id="board_${data}" class="col-sm-6 col-md-4 col-xl-3 list-columm">
             <div class="card bg-light">
@@ -637,6 +666,7 @@
             handleAddRow(data);
 
         }
+
         //===========================MODAL ADDROW
         function handleModalAddRow() {
             let priorityInit = false;
@@ -699,6 +729,7 @@
                 });
             });
         }
+
         //===================MODAL DETAIL CARD
         function handleModalDetailCard() {
             $(detailcard_startdate).change(function () {
@@ -799,9 +830,11 @@
 
             });
         }
+
         function checkXSS(val) {
             return val.search("<[^>]*script")
         }
+
         function convertDate(date) {
             return date.replace(" ", "T");
         }
