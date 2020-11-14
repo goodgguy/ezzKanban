@@ -119,11 +119,12 @@
             <div class="form-group">
               <label for="recipient-name" class="col-form-label"><b>TITLE:</b></label>
               <input type="text" class="form-control" id="inputEditCol">
+              <span id="warnEditCol" style="color:#d50000"></span>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button id="confirmEditCol" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button id="confirmEditCol" type="button" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -277,10 +278,12 @@
             </div>
             <div class="row">
               <div class="col-10">
-                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
+                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Checklist">
               </div>
               <div class="col-2">
-                <button id="detailcard_addChecklist" type="button" class="btn btn-info" style="width: 100%;">Post</button>
+                <button id="detailcard_addChecklist" type="button" class="btn btn-info"
+                  style="width: 100%;">Post</button>
               </div>
             </div>
             <!--MESSAGE-->
@@ -294,7 +297,8 @@
             </div>
             <div class="row">
               <div class="col-10">
-                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Message">
               </div>
               <div class="col-2">
                 <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>

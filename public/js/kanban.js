@@ -53,7 +53,8 @@
             "detailcard_inputChecklist": "#detailcard_inputChecklist",
             "detailcard_check": "#detailcard_check_",
             "detailcard_deleteChecklist": "#detailcard_deleteChecklist_",
-            "detailcard_boxchecklist": "#detailcard_boxchecklist_"
+            "detailcard_boxchecklist": "#detailcard_boxchecklist_",
+            "warnEditCol": "#warnEditCol"
 
         };
         options = $.extend({}, defaults, options);
@@ -90,6 +91,8 @@
 
         const userlist_cardOnboard = options.userlist_cardOnboard;
         const user_img = options.user_img;
+
+        const warnEditCol = options.warnEditCol;
 
         //DETAIL CARD
         const detailcard_priority = options.detailcard_priority;
@@ -308,8 +311,9 @@
             });
         }
 
-        function handleeditColumn(IDcolumn, title) {
+        function handleeditColumn(IDcolumn) {
             $(col_edit + IDcolumn).on("click", function () {
+                let title = $(board_title + IDcolumn).text();
                 $(inputEditCol).val(title);
                 $(getEditColumn).modal();
                 IDCOLUMN_EDIT = IDcolumn;
@@ -320,10 +324,10 @@
             $(confirmEditCol).on("click", function () {
                 const titleChanged = $(inputEditCol).val();
                 if (titleChanged.trim() === "") {
-                    showAlert("Title is empty");
+                    $(warnEditCol).text('Title is empty');
                     return;
                 }
-
+                $(getEditColumn).modal('toggle');
                 $.post(options.url + "editColumn", { column: IDCOLUMN_EDIT, title: titleChanged })
                     .done(function (data) {
                         $(board_title + IDCOLUMN_EDIT).text(titleChanged);

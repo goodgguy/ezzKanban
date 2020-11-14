@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-11 19:46:52
+/* Smarty version 3.1.34-dev-7, created on 2020-11-14 15:02:07
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fabdd3ccefdb8_04525466',
+  'unifunc' => 'content_5faf8effe2d775_53618055',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605098704,
+      1 => 1605340847,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fabdd3ccefdb8_04525466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faf8effe2d775_53618055 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -141,11 +141,12 @@ function content_5fabdd3ccefdb8_04525466 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group">
               <label for="recipient-name" class="col-form-label"><b>TITLE:</b></label>
               <input type="text" class="form-control" id="inputEditCol">
+              <span id="warnEditCol" style="color:#d50000"></span>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button id="confirmEditCol" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button id="confirmEditCol" type="button" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -299,10 +300,12 @@ function content_5fabdd3ccefdb8_04525466 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="row">
               <div class="col-10">
-                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
+                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Checklist">
               </div>
               <div class="col-2">
-                <button id="detailcard_addChecklist" type="button" class="btn btn-info" style="width: 100%;">Post</button>
+                <button id="detailcard_addChecklist" type="button" class="btn btn-info"
+                  style="width: 100%;">Post</button>
               </div>
             </div>
             <!--MESSAGE-->
@@ -316,7 +319,8 @@ function content_5fabdd3ccefdb8_04525466 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="row">
               <div class="col-10">
-                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Message">
               </div>
               <div class="col-2">
                 <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
