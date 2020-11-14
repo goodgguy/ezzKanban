@@ -54,7 +54,10 @@
             "detailcard_check": "#detailcard_check_",
             "detailcard_deleteChecklist": "#detailcard_deleteChecklist_",
             "detailcard_boxchecklist": "#detailcard_boxchecklist_",
-            "warnEditCol": "#warnEditCol"
+            "warnEditCol": "#warnEditCol",
+            "title_warn_addcard": "#title_warn_addcard",
+            "descrip_warn_addcard": "#descrip_warn_addcard",
+            "date_warn_addcard": "#date_warn_addcard"
 
         };
         options = $.extend({}, defaults, options);
@@ -80,20 +83,20 @@
         const description_addCard = options.description_addCard;
         const priority_addCard = options.priority_addCard;
         const submit_addCard = options.submit_addCard;
-
         const row_del = options.row_del;
         const col_board = options.col_board;
         const board_title = options.board_title;
-
         const row_title = options.row_title;
         const getEditCard = options.getEditCard;
         const row_status = options.row_status;
-
         const userlist_cardOnboard = options.userlist_cardOnboard;
         const user_img = options.user_img;
-
+        //WARNING EDITCOL
         const warnEditCol = options.warnEditCol;
-
+        //WARNING ADD ROW
+        const title_warn_addcard = options.title_warn_addcard;
+        const descrip_warn_addcard = options.descrip_warn_addcard;
+        const date_warn_addcard = options.date_warn_addcard;
         //DETAIL CARD
         const detailcard_priority = options.detailcard_priority;
         const detailcard_done = options.detailcard_done;
@@ -682,20 +685,7 @@
                 card.startdate = $(addcard_startdate).val();
                 card.duedate = $(addcard_duedate).val();
 
-                if (card.title.trim() === "") {
-                    showAlert("Your title is empty");
-                    return;
-                }
-                if (card.startdate.trim() === "" || card.duedate.trim() === "") {
-                    showAlert("Start date or duedate is empty");
-                    return;
-                }
-                if (card.startdate.trim() > card.duedate.trim()) {
-                    showAlert("Start date must before duedate");
-                    return;
-                }
-                if (card.description === "") {
-                    showAlert("Your description is empty");
+                if (!validateAddRowForm(card)) {
                     return;
                 }
                 $.ajax({
@@ -715,6 +705,7 @@
                             $(description_addCard).val("");
                             $(addcard_startdate).val("");
                             $(addcard_duedate).val("");
+                            $(getAddCard).modal('toggle');
                         }
                     }
                 });
@@ -825,6 +816,32 @@
 
         function convertDate(date) {
             return date.replace(" ", "T");
+        }
+        function validateAddRowForm(card) {
+            let check = true;
+            if (card.title.trim() === "") {
+                $(title_warn_addcard).text("Your Title is empty")
+                check = false;
+            } else {
+                $(title_warn_addcard).text("")
+            }
+            if (card.startdate.trim() === "" || card.duedate.trim() === "") {
+                $(date_warn_addcard).text("Your start date and due date is empty")
+                check = false;
+            }
+            else if (card.startdate.trim() > card.duedate.trim()) {
+                $(date_warn_addcard).text("Start date must before duedate")
+                check = false;
+            } else {
+                $(date_warn_addcard).text("")
+            }
+            if (card.description === "") {
+                $(descrip_warn_addcard).text("Your description is empty")
+                check = false;
+            } else {
+                $(descrip_warn_addcard).text("")
+            }
+            return check;
         }
     };
 

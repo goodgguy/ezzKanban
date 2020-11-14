@@ -147,10 +147,12 @@
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
               <input id="title_addCard" type="text" class="form-control" id="recipient-name">
+              <span id="title_warn_addcard" style="color:#d50000"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <input id="description_addCard" type="text" class="form-control" id="recipient-name">
+              <textarea id="description_addCard" type="text" class="form-control" id="recipient-name"></textarea>
+              <span id="descrip_warn_addcard" style="color:#d50000"></span>
             </div>
             <div class="row">
               <div class="col-6">
@@ -170,6 +172,7 @@
                 </div>
               </div>
             </div>
+            <span id="date_warn_addcard" style="color:#d50000" class="mb-2"></span>
             <div class="row">
               <div class="col-1">
                 <label class="control-label">Priority: </label>
@@ -181,7 +184,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit_addCard">Submit</button>
+          <button type="button" class="btn btn-secondary" id="submit_addCard">Submit</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>

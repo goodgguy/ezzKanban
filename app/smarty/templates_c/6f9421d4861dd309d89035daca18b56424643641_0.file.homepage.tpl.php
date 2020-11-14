@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-14 15:02:07
+/* Smarty version 3.1.34-dev-7, created on 2020-11-14 15:45:17
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5faf8effe2d775_53618055',
+  'unifunc' => 'content_5faf991d9bd136_10947008',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605340847,
+      1 => 1605343453,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5faf8effe2d775_53618055 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faf991d9bd136_10947008 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -169,10 +169,12 @@ function content_5faf8effe2d775_53618055 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
               <input id="title_addCard" type="text" class="form-control" id="recipient-name">
+              <span id="title_warn_addcard" style="color:#d50000"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <input id="description_addCard" type="text" class="form-control" id="recipient-name">
+              <textarea id="description_addCard" type="text" class="form-control" id="recipient-name"></textarea>
+              <span id="descrip_warn_addcard" style="color:#d50000"></span>
             </div>
             <div class="row">
               <div class="col-6">
@@ -192,6 +194,7 @@ function content_5faf8effe2d775_53618055 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
               </div>
             </div>
+            <span id="date_warn_addcard" style="color:#d50000" class="mb-2"></span>
             <div class="row">
               <div class="col-1">
                 <label class="control-label">Priority: </label>
@@ -203,7 +206,7 @@ function content_5faf8effe2d775_53618055 (Smarty_Internal_Template $_smarty_tpl)
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit_addCard">Submit</button>
+          <button type="button" class="btn btn-secondary" id="submit_addCard">Submit</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
