@@ -22,7 +22,8 @@ class CardController extends Controller
 
     public function getData()
     {
-        $columnList = $this->__CardService->getAllData();
+        $columnService = $this->service('ColumnService');
+        $columnList = $this->__CardService->getAllData($columnService);
         echo json_encode($columnList);
     }
 

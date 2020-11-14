@@ -28,4 +28,9 @@ class ColumnService extends Controller
     {
         return $this->__ColumnModel->setStateColumn($id, $columnRelated);
     }
+
+    public function getAllColumn()
+    {
+        return $this->__ColumnModel->getAllColumn();
+    }
 }

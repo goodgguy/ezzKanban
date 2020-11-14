@@ -13,15 +13,13 @@ class CardService extends Controller
         $this->__CardModel = $this->model('CardModel');
     }
 
-    public function getAllData()
+    public function getAllData($columnService)
     {
-        $this->__UserModel = $this->model('UserModel');
-        $this->__ColumnModel = $this->model('ColumnModel');
-        $columnList = $this->__ColumnModel->getAllColumn();
+        $columnList = $columnService->getAllColumn();
         foreach ($columnList as &$column) {
-            $cardList = $this->__CardModel->getCardByColumn($column['IDcolumn']);
+            $cardList = $this->getCardByColumn($column['IDcolumn']);
             foreach ($cardList as &$card) {
-                $userList = $this->__UserModel->getUserByCard($card['IDcard']);
+                $userList = $this->getUserByCard($card['IDcard']);
                 $card['userList'] = $userList;
             }
             $column['cardlist'] = $cardList;
