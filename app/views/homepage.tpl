@@ -219,6 +219,7 @@
                   <div class='input-group date'>
                     <input id="detailcard_startdate" type="datetime-local">
                   </div>
+                  <span id="warn_startdate_DetailRow" style="color:#d50000"></span>
                 </div>
               </div>
               <div class="col-6">
@@ -227,6 +228,7 @@
                   <div class='input-group date'>
                     <input id="detailcard_duedate" type="datetime-local">
                   </div>
+                  <span id="warn_duedate_DetailRow" style="color:#d50000"></span>
                 </div>
               </div>
             </div>
@@ -283,6 +285,7 @@
               <div class="col-10">
                 <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
                   placeholder="Checklist">
+                  <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_addChecklist" type="button" class="btn btn-info"
@@ -302,6 +305,7 @@
               <div class="col-10">
                 <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
                   placeholder="Message">
+                  <span id="warn_message_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>

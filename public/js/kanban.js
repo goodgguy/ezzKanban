@@ -57,7 +57,11 @@
             "warnEditCol": "#warnEditCol",
             "title_warn_addcard": "#title_warn_addcard",
             "descrip_warn_addcard": "#descrip_warn_addcard",
-            "date_warn_addcard": "#date_warn_addcard"
+            "date_warn_addcard": "#date_warn_addcard",
+            "warn_startdate_DetailRow": "#warn_startdate_DetailRow",
+            "warn_checklist_DetailRow": "#warn_checklist_DetailRow",
+            "warn_message_DetailRow": "#warn_message_DetailRow",
+            "warn_duedate_DetailRow": "#warn_duedate_DetailRow"
 
         };
         options = $.extend({}, defaults, options);
@@ -97,6 +101,11 @@
         const title_warn_addcard = options.title_warn_addcard;
         const descrip_warn_addcard = options.descrip_warn_addcard;
         const date_warn_addcard = options.date_warn_addcard;
+        //WRANING DETAIL ROW
+        const warn_duedate_DetailRow = options.warn_duedate_DetailRow;
+        const warn_startdate_DetailRow = options.warn_startdate_DetailRow;
+        const warn_checklist_DetailRow = options.warn_checklist_DetailRow;
+        const warn_message_DetailRow = options.warn_message_DetailRow;
         //DETAIL CARD
         const detailcard_priority = options.detailcard_priority;
         const detailcard_done = options.detailcard_done;
@@ -502,6 +511,11 @@
         function handleAddCommentDetailRow() {
             $(detailcard_senMessage).on('click', function () {
                 let message = $(detailcard_inputmessage).val();
+                if (message === "") {
+                    $(warn_message_DetailRow).text("Message is empty");
+                    return;
+                }
+                $(warn_message_DetailRow).text("");
                 $.ajax({
                     url: options.url + "card/addMessage",
                     type: "POST",
@@ -717,7 +731,9 @@
             $(detailcard_startdate).change(function () {
                 if ($(this).val() > $(detailcard_duedate).val()) {
                     $(this).val(convertDate(DETAILCARD.startdate));
+                    $(warn_startdate_DetailRow).text("Startdate must before duedate");
                 } else {
+                    $(warn_startdate_DetailRow).text("");
                     $.ajax({
                         url: options.url + "card/setStartdate",
                         type: "POST",
@@ -731,7 +747,9 @@
             $(detailcard_duedate).change(function () {
                 if ($(this).val() < $(detailcard_startdate).val()) {
                     $(this).val(convertDate(DETAILCARD.duedate));
+                    $(warn_duedate_DetailRow).text("Duedate must after startdate");
                 } else {
+                    $(warn_duedate_DetailRow).text("");
                     $.ajax({
                         url: options.url + "card/setDuedate",
                         type: "POST",
