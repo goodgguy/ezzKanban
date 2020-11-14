@@ -488,6 +488,11 @@
         function handleAddChecklist() {
             $(detailcard_addChecklist).on('click', function () {
                 let content = $(detailcard_inputChecklist).val();
+                if (content === "") {
+                    $(warn_checklist_DetailRow).text("Content is empty");
+                    return;
+                }
+                $(warn_checklist_DetailRow).text("");
                 $.ajax({
                     url: options.url + "card/addChecklist",
                     type: "POST",
