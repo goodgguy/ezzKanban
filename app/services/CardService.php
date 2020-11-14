@@ -39,15 +39,25 @@ class CardService extends Controller
         $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
     }
 
-    public function getCardListByColumn($idcol)
+    public function getCardListByColumn($idCol)
     {
-        $this->__UserModel = $this->model('UserModel');
-        $cardList = $this->__CardModel->getCardByColumn($idcol);
+        $cardList = $this->getCardByColumn($idCol);
         foreach ($cardList as &$card) {
-            $userList = $this->__UserModel->getUserByCard($card['IDcard']);
+            $userList = $this->getUserByCard($card['IDcard']);
             $card['userList'] = $userList;
         }
         return $cardList;
+    }
+
+    public function getUserByCard($idCard)
+    {
+        $this->__UserModel = $this->model('UserModel');
+        return $this->__UserModel->getUserByCard($idCard);
+    }
+
+    public function getCardByColumn($idCol)
+    {
+        return $this->__CardModel->getCardByColumn($idCol);
     }
 
     public function getColumnByIdCard($idCard)
