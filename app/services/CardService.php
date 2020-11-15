@@ -68,18 +68,14 @@ class CardService extends Controller
         $this->__CardModel->deleteCard($idCard);
     }
 
-    public function getDetailCard($idCard)
+    public function getDetailCard($idCard, $CommentService, $UserService, $ChecklistService)
     {
         $this->__UserModel = $this->model('UserModel');
         $this->__CommentModel = $this->model('CommentModel');
         $this->__ChecklistModal = $this->model('ChecklistModel');
         $cardDetail = $this->getCardDetailWithUser($idCard);
-        $commentList = $this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
-        foreach ($commentList as &$comment) {
-            $user = $this->__UserModel->getuserById($comment['IDuser']);
-            $comment['user'] = $user;
-        }
-        $checklistList = $this->__ChecklistModal->getChecklistByCard($cardDetail['IDcard']);
+        $commentList = $CommentService->getListCommentByCard($idCard, $UserService);
+        $checklistList = $ChecklistService->getChecklistByCard($cardDetail['IDcard']);
         $cardDetail['commentList'] = $commentList;
         $cardDetail['checklistList'] = $checklistList;
         return $cardDetail;

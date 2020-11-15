@@ -67,8 +67,11 @@ class CardController extends Controller
 
     public function getDetail()
     {
+        $CommentService = $this->service("CommentService");
+        $UserService = $this->service("UserService");
+        $ChecklistService = $this->service("ChecklistService");
         $idCard = $_POST['card'];
-        $cardDetail = $this->__CardService->getDetailCard($idCard);
+        $cardDetail = $this->__CardService->getDetailCard($idCard, $CommentService, $UserService, $ChecklistService);
         echo json_encode($cardDetail);
     }
 
