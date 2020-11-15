@@ -31,6 +31,6 @@ class ColumnService extends Controller
 
     public function getAllColumn()
     {
-        return $this->__ColumnModel->getAllColumn();
+        return fillterdataService::encodeDataArrayList($this->__ColumnModel->getAllColumn());
     }
 }
