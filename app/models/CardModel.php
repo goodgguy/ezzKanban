@@ -130,4 +130,22 @@ class CardModel extends Database
         $stmt->bind_param("ii", $cardID, $userID);
         return $stmt->execute();
     }
+
+    public function getCardDetailWithUser($idCard)
+    {
+        $query = "select c.IDcard,c.startdate,c.duedate,c.status,c.description,c.title,c.priority,c.IDcolumn,
+        u.IDuser,u.email,u.image,u.create_date,u.username
+        from card c 
+        left join user_card uc on (c.IDcard = uc.IDcard)
+        left join user u on (uc.IDuser = u.IDuser) where c.IDcard=?;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $idCard);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $list = array();
+        while ($listitem = $result->fetch_assoc()) {
+            $list[] = $listitem;
+        }
+        return $list;
+    }
 }
