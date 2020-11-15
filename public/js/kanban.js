@@ -61,7 +61,8 @@
             "warn_startdate_DetailRow": "#warn_startdate_DetailRow",
             "warn_checklist_DetailRow": "#warn_checklist_DetailRow",
             "warn_message_DetailRow": "#warn_message_DetailRow",
-            "warn_duedate_DetailRow": "#warn_duedate_DetailRow"
+            "warn_duedate_DetailRow": "#warn_duedate_DetailRow",
+            "detailcard_liststatus": "#detailcard_liststatus"
 
         };
         options = $.extend({}, defaults, options);
@@ -129,6 +130,7 @@
         const detailcard_deleteChecklist = options.detailcard_deleteChecklist;
         const detailcard_boxchecklist = options.detailcard_boxchecklist;
 
+        const detailcard_liststatus = options.detailcard_liststatus;
 
         const card_priority = options.card_priority;
         var IDCOL_ADDCARD;
@@ -150,6 +152,7 @@
             submitDeleteColumn();
             handleAddCommentDetailRow();
             handleAddChecklist();
+            handleOnchangStatus();
         }
 
         function initButton() {
@@ -392,8 +395,37 @@
             listuserNotInDetailRow();
             listCommentDetailRow();
             listChecklistDetailRow(DETAILCARD.checklistList);
+            listStatusSelect();
+        }
+        //GET LIST STATUS SELECT
+        function listStatusSelect() {
+            $.ajax({
+                url: options.url + "column/getAll",
+                type: "GET",
+                dataType: "json",
+                cache: false
+            }).done(function (data) {
+                $.each(data, function (index, value) {
+                    getColumnStatus(value);
+                })
+            });
+
         }
 
+        function getColumnStatus(column) {
+            let str = `<option value=${column.IDcolumn}>${column.title}</option>`;
+            $(detailcard_liststatus).append(str);
+        }
+
+        function handleOnchangStatus() {
+            $(detailcard_liststatus).change(function () {
+                let columnChanged = $(this).val();
+                $.post(options.url + "card/changState", { toColumn: columnChanged, idCard: DETAILCARD.IDcard })
+                    .done(function (data) {
+
+                    });
+            });
+        }
         //SHOW LIST USER ROW AND HANDLE DELETE
         function listUserDetailRow() {
             $(detailcard_listuser).empty();

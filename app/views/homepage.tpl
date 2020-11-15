@@ -272,6 +272,12 @@
                 </ul>
               </div>
             </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Status</label>
+              <select class="form-control" id="detailcard_liststatus">
+                <!--LIST COLUMN STATUS-->
+              </select>
+            </div>
             <!--CHECKLIST-->
             <label class="control-label mt-3">Checklist: </label>
             <div class="row mt-2">
@@ -285,7 +291,7 @@
               <div class="col-10">
                 <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
                   placeholder="Checklist">
-                  <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
+                <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_addChecklist" type="button" class="btn btn-info"
@@ -305,7 +311,7 @@
               <div class="col-10">
                 <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
                   placeholder="Message">
-                  <span id="warn_message_DetailRow" style="color:#d50000"></span>
+                <span id="warn_message_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>

@@ -52,4 +52,9 @@ class ColumnController extends Controller
             echo "Erorr";
         }
     }
+
+    public function getAll()
+    {
+        echo json_encode($this->__ColumnService->getAllColumn());
+    }
 }

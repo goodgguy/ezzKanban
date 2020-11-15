@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-14 17:55:47
+/* Smarty version 3.1.34-dev-7, created on 2020-11-15 21:18:50
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fafb7b368adf2_99984611',
+  'unifunc' => 'content_5fb138cad0f4d3_15520276',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605351345,
+      1 => 1605449250,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fafb7b368adf2_99984611 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb138cad0f4d3_15520276 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -294,6 +294,12 @@ function content_5fafb7b368adf2_99984611 (Smarty_Internal_Template $_smarty_tpl)
                 </ul>
               </div>
             </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Status</label>
+              <select class="form-control" id="detailcard_liststatus">
+                <!--LIST COLUMN STATUS-->
+              </select>
+            </div>
             <!--CHECKLIST-->
             <label class="control-label mt-3">Checklist: </label>
             <div class="row mt-2">
@@ -307,7 +313,7 @@ function content_5fafb7b368adf2_99984611 (Smarty_Internal_Template $_smarty_tpl)
               <div class="col-10">
                 <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
                   placeholder="Checklist">
-                  <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
+                <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_addChecklist" type="button" class="btn btn-info"
@@ -327,7 +333,7 @@ function content_5fafb7b368adf2_99984611 (Smarty_Internal_Template $_smarty_tpl)
               <div class="col-10">
                 <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
                   placeholder="Message">
-                  <span id="warn_message_DetailRow" style="color:#d50000"></span>
+                <span id="warn_message_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
