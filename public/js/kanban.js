@@ -852,7 +852,7 @@
             });
             $(detailcard_priority).on("click", function () {
                 $(this).toggleClass("btn-danger");
-                DETAILCARD.priority = DETAILCARD.priority === 1 ? 0 : 1;
+                DETAILCARD.priority = DETAILCARD.priority == 1 ? 0 : 1;
                 $.ajax({
                     url: options.url + "card/setPriority",
                     type: "POST",
@@ -866,7 +866,7 @@
             });
             $(detailcard_done).on("click", function () {
                 $(this).toggleClass("btn-success");
-                DETAILCARD.status = DETAILCARD.status === 1 ? 0 : 1;
+                DETAILCARD.status = DETAILCARD.status == 1 ? 0 : 1;
                 $.ajax({
                     url: options.url + "card/setStatus",
                     type: "POST",
