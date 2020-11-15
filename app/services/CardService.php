@@ -3,10 +3,7 @@
 class CardService extends Controller
 {
     private $__CardModel;
-    private $__ColumnModel;
     private $__UserModel;
-    private $__CommentModel;
-    private $__ChecklistModal;
 
     public function __construct()
     {
