@@ -366,7 +366,7 @@
                 }).done(function (data) {
                     DETAILCARD = data;
                     showDetailRow();
-                    // console.log(data);
+                    console.log(data);
                 });
                 $(getEditCard).modal();
             });

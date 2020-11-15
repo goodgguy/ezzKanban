@@ -70,22 +70,50 @@ class CardService extends Controller
 
     public function getDetailCard($idCard)
     {
+        // $this->__UserModel = $this->model('UserModel');
+        // $this->__CommentModel = $this->model('CommentModel');
+        // $this->__ChecklistModal = $this->model('ChecklistModel');
+
+        // $cardDetail = $this->__CardModel->getCardbyID($idCard);
+        // $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
+        // $commentList = $this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
+        // foreach ($commentList as &$comment) {
+        //     $user = $this->__UserModel->getuserById($comment['IDuser']);
+        //     $comment['user'] = $user;
+        // }
+        // $checklistList = $this->__ChecklistModal->getChecklistByCard($cardDetail['IDcard']);
+        // $cardDetail['userList'] = $userList;
+        // $cardDetail['commentList'] = $commentList;
+        // $cardDetail['checklistList'] = $checklistList;
+        // return $cardDetail;
+
         $this->__UserModel = $this->model('UserModel');
         $this->__CommentModel = $this->model('CommentModel');
         $this->__ChecklistModal = $this->model('ChecklistModel');
-
-        $cardDetail = $this->__CardModel->getCardbyID($idCard);
-        $userList = $this->__UserModel->getUserByCard($cardDetail['IDcard']);
+        $cardDetail = $this->getCardDetailWithUser($idCard);
         $commentList = $this->__CommentModel->getCommentByIDCard($cardDetail['IDcard']);
         foreach ($commentList as &$comment) {
             $user = $this->__UserModel->getuserById($comment['IDuser']);
             $comment['user'] = $user;
         }
         $checklistList = $this->__ChecklistModal->getChecklistByCard($cardDetail['IDcard']);
-        $cardDetail['userList'] = $userList;
         $cardDetail['commentList'] = $commentList;
         $cardDetail['checklistList'] = $checklistList;
         return $cardDetail;
+    }
+
+    public function getCardDetailWithUser($idCard)
+    {
+        $stop = "IDuser";
+        $cardDetail = $this->__CardModel->getCardDetailWithUser($idCard);
+        foreach ($cardDetail[0] as $key => $value) {
+            if ($key == $stop) {
+                break;
+            }
+            $cardDetailHandled[$key] = $value;
+        }
+        $cardDetailHandled['userList'] = $cardDetail;
+        return $cardDetailHandled;
     }
 
     public function setPriorityCard($id, $state)
