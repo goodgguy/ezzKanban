@@ -384,8 +384,8 @@
             } else {
                 $(detailcard_done).removeClass("btn-success");
             }
-            $(detailcard_title).text(DETAILCARD.title);
-            $(detailcard_description).text(DETAILCARD.description);
+            $(detailcard_title).html(DETAILCARD.title).text();
+            $(detailcard_description).html(DETAILCARD.description).text();
             $(detailcard_startdate).val(convertDate(DETAILCARD.startdate));
             $(detailcard_duedate).val(convertDate(DETAILCARD.duedate));
             listUserDetailRow();
