@@ -3,7 +3,6 @@
 class CommentService extends Controller
 {
     private $__CommentModel;
-    private $__UserModel;
 
     public function __construct()
     {

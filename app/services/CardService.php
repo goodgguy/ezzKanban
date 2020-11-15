@@ -67,9 +67,6 @@ class CardService extends Controller
 
     public function getDetailCard($idCard, $CommentService, $UserService, $ChecklistService)
     {
-        $this->__UserModel = $this->model('UserModel');
-        $this->__CommentModel = $this->model('CommentModel');
-        $this->__ChecklistModal = $this->model('ChecklistModel');
         $cardDetail = $this->getCardDetailWithUser($idCard);
         $commentList = $CommentService->getListCommentByCard($idCard, $UserService);
         $checklistList = $ChecklistService->getChecklistByCard($cardDetail['IDcard']);
