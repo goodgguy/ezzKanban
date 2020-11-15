@@ -62,10 +62,15 @@
             "warn_checklist_DetailRow": "#warn_checklist_DetailRow",
             "warn_message_DetailRow": "#warn_message_DetailRow",
             "warn_duedate_DetailRow": "#warn_duedate_DetailRow",
-            "detailcard_liststatus": "#detailcard_liststatus"
+            "detailcard_liststatus": "#detailcard_liststatus",
+            "row": "#cd_",
+            "card_createdate": "#card_createdate_"
+
 
         };
         options = $.extend({}, defaults, options);
+
+        const row = options.row;
 
         const addfield = options.addfield;
         const btnAddfield = options.btnAddfield;
@@ -96,6 +101,7 @@
         const row_status = options.row_status;
         const userlist_cardOnboard = options.userlist_cardOnboard;
         const user_img = options.user_img;
+        const card_createdate = options.card_createdate;
         //WARNING EDITCOL
         const warnEditCol = options.warnEditCol;
         //WARNING ADD ROW
@@ -243,7 +249,12 @@
 
         function addRow(idcol, cardlist) {
             $.each(cardlist, function (index, val) {
-                let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
+                addOneRow(idcol, val);
+            });
+        }
+
+        function addOneRow(idcol, val) {
+            let str = `<div class="card draggable shadow-sm mb-3" id="cd_${val.IDcard}" style="background-color: #f6f7d4;">
                 <div class="card-body p-2" id="row_status_${val.IDcard}" style="background-color: #${val.status == 1 ? "28df99" : ""}">
                     <div class="card-title">
                         <a id="row_title_${val.IDcard}" class="lead">${val.title}</a>
@@ -252,7 +263,7 @@
                                 class="rounded-circle float-right" width="25" height="25"></a>
                     </div>
                     <p>
-                        <span class="badge badge-warning">${val.create_date}</span>
+                        <span id="card_createdate_${val.IDcard}" class="badge badge-warning">${val.create_date}</span>
                     </p>
                     <span id="card_priority_${val.IDcard}" class="badge badge-danger float-right">${val.priority == 1 ? "PRIORITY" : ""}</span>
                 </div>
@@ -260,13 +271,11 @@
                     
                 </div>
             </div>`;
-                $("#" + idcol).append(str);
-                addUser(val.IDcard, val.userList);
-                handleDeleteRow(val.IDcard);
-                handleEditRow(val.IDcard);
-            });
+            $("#" + idcol).append(str);
+            addUser(val.IDcard, val.userList);
+            handleDeleteRow(val.IDcard);
+            handleEditRow(val.IDcard);
         }
-
         function handleDragdropCard(idcol) {
             let col = $("#" + idcol).get(0);
             new Sortable(col, {
@@ -368,8 +377,9 @@
                     cache: false
                 }).done(function (data) {
                     DETAILCARD = data;
+                    DETAILCARD.create_date = $(card_createdate + IDcard).text();
                     showDetailRow();
-                    // console.log(data);
+                    console.log(DETAILCARD);
                 });
                 $(getEditCard).modal();
             });
@@ -377,12 +387,12 @@
 
         //========================HANDLE SHOW DETAIL ROW
         function showDetailRow() {
-            if (DETAILCARD.priority === 1) {
+            if (DETAILCARD.priority == 1) {
                 $(detailcard_priority).addClass("btn-danger");
             } else {
                 $(detailcard_priority).removeClass("btn-danger");
             }
-            if (DETAILCARD.status === 1) {
+            if (DETAILCARD.status == 1) {
                 $(detailcard_done).addClass("btn-success");
             } else {
                 $(detailcard_done).removeClass("btn-success");
@@ -413,7 +423,7 @@
         }
 
         function getColumnStatus(column) {
-            let str = `<option value=${column.IDcolumn}>${column.title}</option>`;
+            let str = `<option value=${column.IDcolumn} ${column.IDcolumn == DETAILCARD.IDcolumn ? "selected" : ""}>${column.title}</option>`;
             $(detailcard_liststatus).append(str);
         }
 
@@ -424,6 +434,8 @@
                     .done(function (data) {
 
                     });
+                $(row + DETAILCARD.IDcard).remove();
+                addOneRow(columnChanged, DETAILCARD);
             });
         }
         //SHOW LIST USER ROW AND HANDLE DELETE
@@ -502,7 +514,7 @@
 
               </div>
               <div class="col-1 d-flex align-items-center">
-                <input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}" ${status === 1 ? "checked" : ""}>
+                <input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}" ${status == 1 ? "checked" : ""}>
               </div>
               <div class="col-8">
                 <span style="font-size: 9px;font-weight: bold;">${content}</span>
