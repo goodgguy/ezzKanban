@@ -16,7 +16,7 @@ class CommentService extends Controller
 
     public function getCommentByIdCard($idCard)
     {
-        return $this->__CommentModel->getCommentByIDCard($idCard);
+        return fillterdataService::encodeDataArrayList($this->__CommentModel->getCommentByIDCard($idCard));
     }
 
     public function getListCommentByCard($idCard, $userService)

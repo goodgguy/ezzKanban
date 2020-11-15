@@ -24,6 +24,6 @@ class UserService extends Controller
 
     public function getUserById($idUser)
     {
-        return $this->__UserModel->getuserById($idUser);
+        return fillterdataService::encodeDataArray($this->__UserModel->getuserById($idUser));
     }
 }

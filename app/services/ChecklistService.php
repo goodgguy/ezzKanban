@@ -16,7 +16,7 @@ class ChecklistService extends Controller
 
     public function getChecklistByCard($idCard)
     {
-        return $this->__ChecklistModal->getChecklistByCard($idCard);
+        return fillterdataService::encodeDataArrayList($this->__ChecklistModal->getChecklistByCard($idCard));
     }
 
     public function setStatusChecklist($statusChecklist, $idChecklist)
@@ -28,5 +28,4 @@ class ChecklistService extends Controller
     {
         return $this->__ChecklistModal->deleteChecklist($idChecklist);
     }
-
 }

@@ -47,12 +47,12 @@ class CardService extends Controller
     public function getUserByCard($idCard)
     {
         $this->__UserModel = $this->model('UserModel');
-        return $this->__UserModel->getUserByCard($idCard);
+        return fillterdataService::encodeDataArrayList($this->__UserModel->getUserByCard($idCard));
     }
 
     public function getCardByColumn($idCol)
     {
-        return $this->__CardModel->getCardByColumn($idCol);
+        return fillterdataService::encodeDataArrayList($this->__CardModel->getCardByColumn($idCol));
     }
 
     public function getColumnByIdCard($idCard)
@@ -78,7 +78,7 @@ class CardService extends Controller
     public function getCardDetailWithUser($idCard)
     {
         $stop = "IDuser";
-        $cardDetail = $this->__CardModel->getCardDetailWithUser($idCard);
+        $cardDetail = fillterdataService::encodeDataArrayList($this->__CardModel->getCardDetailWithUser($idCard));
         foreach ($cardDetail[0] as $key => $value) {
             if ($key == $stop) {
                 break;
@@ -124,7 +124,7 @@ class CardService extends Controller
     public function getUserNotinCard($idCard)
     {
         $this->__UserModel = $this->model('UserModel');
-        return $this->__UserModel->getUserNotinCard($idCard);
+        return fillterdataService::encodeDataArrayList($this->__UserModel->getUserNotinCard($idCard));
     }
 
     public function addUserCard($idUser, $idCard)
