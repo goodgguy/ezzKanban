@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-16 09:03:18
+/* Smarty version 3.1.34-dev-7, created on 2020-11-16 13:53:04
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb1dde662ae38_78690629',
+  'unifunc' => 'content_5fb221d0088379_30077168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605492095,
+      1 => 1605509582,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb1dde662ae38_78690629 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb221d0088379_30077168 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -322,6 +322,16 @@ function content_5fb1dde662ae38_78690629 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <!--MESSAGE-->
             <label class="control-label mt-3">Message: </label>
+            <div class="row">
+              <div class="col-10">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
+                       placeholder="Message">
+                <span id="warn_message_DetailRow" style="color:#d50000"></span>
+              </div>
+              <div class="col-2">
+                <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
+              </div>
+            </div>
             <div class="row mt-2">
               <div class="col-12">
                 <ul class="list-group" id="detailcard_listcomment">
@@ -329,16 +339,7 @@ function content_5fb1dde662ae38_78690629 (Smarty_Internal_Template $_smarty_tpl)
                 </ul>
               </div>
             </div>
-            <div class="row">
-              <div class="col-10">
-                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Message">
-                <span id="warn_message_DetailRow" style="color:#d50000"></span>
-              </div>
-              <div class="col-2">
-                <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
-              </div>
-            </div>
+
           </form>
         </div>
         <div class="modal-footer">

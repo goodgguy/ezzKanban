@@ -300,6 +300,16 @@
             </div>
             <!--MESSAGE-->
             <label class="control-label mt-3">Message: </label>
+            <div class="row">
+              <div class="col-10">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
+                       placeholder="Message">
+                <span id="warn_message_DetailRow" style="color:#d50000"></span>
+              </div>
+              <div class="col-2">
+                <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
+              </div>
+            </div>
             <div class="row mt-2">
               <div class="col-12">
                 <ul class="list-group" id="detailcard_listcomment">
@@ -307,16 +317,7 @@
                 </ul>
               </div>
             </div>
-            <div class="row">
-              <div class="col-10">
-                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Message">
-                <span id="warn_message_DetailRow" style="color:#d50000"></span>
-              </div>
-              <div class="col-2">
-                <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
-              </div>
-            </div>
+
           </form>
         </div>
         <div class="modal-footer">
