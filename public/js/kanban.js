@@ -350,6 +350,7 @@
                     $(warnEditCol).text('Title is empty');
                     return;
                 }
+                $(warnEditCol).text('');
                 $(getEditColumn).modal('toggle');
                 $.post(options.url + "editColumn", { column: IDCOLUMN_EDIT, title: titleChanged })
                     .done(function (data) {
