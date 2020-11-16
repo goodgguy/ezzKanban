@@ -4,7 +4,7 @@ class CommentModel extends Database
 {
     public function getCommentByIDCard($idCard)
     {
-        $query = "SELECT * FROM `comment` WHERE IDcard=?";
+        $query = "SELECT * FROM `comment` WHERE IDcard=? ORDER BY IDcomment DESC";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $idCard);
         $stmt->execute();
