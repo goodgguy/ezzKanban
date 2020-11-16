@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-16 15:38:28
+/* Smarty version 3.1.34-dev-7, created on 2020-11-16 15:58:41
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb23a84e1a3d9_05081980',
+  'unifunc' => 'content_5fb23f416e11a5_80305780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605515897,
+      1 => 1605517119,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb23a84e1a3d9_05081980 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb23f416e11a5_80305780 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -312,7 +312,7 @@ function content_5fb23a84e1a3d9_05081980 (Smarty_Internal_Template $_smarty_tpl)
             <div class="row">
               <div class="col-10">
                 <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Checklist">
+                  placeholder="Checklist" style="background:#e3e7f1">
                 <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
@@ -325,7 +325,7 @@ function content_5fb23a84e1a3d9_05081980 (Smarty_Internal_Template $_smarty_tpl)
             <div class="row">
               <div class="col-10">
                 <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
-                       placeholder="Message">
+                       placeholder="Message" style="background:#e3e7f1">
                 <span id="warn_message_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">

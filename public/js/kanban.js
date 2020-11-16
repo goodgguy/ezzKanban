@@ -510,7 +510,7 @@
         }
 
         function modelChecklist(idcheck, content, status) {
-            let str = `<li class="list-group-item d-flex justify-content-between" id="detailcard_boxchecklist_${idcheck}">
+            let str = `<li class="list-group-item d-flex justify-content-between" id="detailcard_boxchecklist_${idcheck}" style="background: #f4f4f4;">
             <div class="ml-3"><input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}" ${status == 1 ? "checked" : ""}>
             <span style="font-size: 9px;font-weight: bold;word-break: break-all;">${content}</span></div>
             <button id="detailcard_deleteChecklist_${idcheck}" type="button" class="btn btn-link"><img src="https://i.ibb.co/ZWwtFPW/delete.png"
@@ -573,7 +573,7 @@
         }
 
         function modalMessage(image, username, content, create_date) {
-            let str = `<li class="list-group-item">
+            let str = `<li class="list-group-item" style="background: #f4f4f4">
                 <div class="row">
                   <div class="col-1 d-flex align-items-center">
                     <img

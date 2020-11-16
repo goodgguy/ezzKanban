@@ -290,7 +290,7 @@
             <div class="row">
               <div class="col-10">
                 <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
-                  placeholder="Checklist">
+                  placeholder="Checklist" style="background:#e3e7f1">
                 <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
@@ -303,7 +303,7 @@
             <div class="row">
               <div class="col-10">
                 <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
-                       placeholder="Message">
+                       placeholder="Message" style="background:#e3e7f1">
                 <span id="warn_message_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
