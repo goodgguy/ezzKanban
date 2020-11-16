@@ -287,9 +287,7 @@
                     idCard = idCard.split("_").pop();
                     $.post(options.url + "card/changState", {toColumn: evt.to.id, idCard: idCard})
                         .done(function (data) {
-                            // if (data.length > 0) {
-                            //     //RELOAD();
-                            // }
+
                         });
                 },
             });
