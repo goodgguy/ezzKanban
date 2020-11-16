@@ -548,6 +548,7 @@
                 }).done(function (data) {
                     listChecklistDetailRow(data);
                 });
+                $(detailcard_inputChecklist).val("");
             });
         }
 
@@ -579,6 +580,7 @@
                         modalMessage(val.user.image, val.user.username, val.content, val.create_date);
                     });
                 });
+                $(detailcard_inputmessage).val('');
             })
         }
 
