@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-11 18:35:51
+/* Smarty version 3.1.34-dev-7, created on 2020-11-16 09:03:18
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fabcc97521dc1_99648261',
+  'unifunc' => 'content_5fb1dde662ae38_78690629',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605094455,
+      1 => 1605492095,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb1dde662ae38_78690629 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -141,11 +141,12 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group">
               <label for="recipient-name" class="col-form-label"><b>TITLE:</b></label>
               <input type="text" class="form-control" id="inputEditCol">
+              <span id="warnEditCol" style="color:#d50000"></span>
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button id="confirmEditCol" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+          <button id="confirmEditCol" type="button" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -168,10 +169,12 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
               <input id="title_addCard" type="text" class="form-control" id="recipient-name">
+              <span id="title_warn_addcard" style="color:#d50000"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <input id="description_addCard" type="text" class="form-control" id="recipient-name">
+              <textarea id="description_addCard" type="text" class="form-control" id="recipient-name"></textarea>
+              <span id="descrip_warn_addcard" style="color:#d50000"></span>
             </div>
             <div class="row">
               <div class="col-6">
@@ -191,6 +194,7 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
               </div>
             </div>
+            <span id="date_warn_addcard" style="color:#d50000" class="mb-2"></span>
             <div class="row">
               <div class="col-1">
                 <label class="control-label">Priority: </label>
@@ -202,7 +206,7 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="submit_addCard">Submit</button>
+          <button type="button" class="btn btn-secondary" id="submit_addCard">Submit</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -237,6 +241,7 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
                   <div class='input-group date'>
                     <input id="detailcard_startdate" type="datetime-local">
                   </div>
+                  <span id="warn_startdate_DetailRow" style="color:#d50000"></span>
                 </div>
               </div>
               <div class="col-6">
@@ -245,6 +250,7 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
                   <div class='input-group date'>
                     <input id="detailcard_duedate" type="datetime-local">
                   </div>
+                  <span id="warn_duedate_DetailRow" style="color:#d50000"></span>
                 </div>
               </div>
             </div>
@@ -288,6 +294,12 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
                 </ul>
               </div>
             </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Status</label>
+              <select class="form-control" id="detailcard_liststatus">
+                <!--LIST COLUMN STATUS-->
+              </select>
+            </div>
             <!--CHECKLIST-->
             <label class="control-label mt-3">Checklist: </label>
             <div class="row mt-2">
@@ -299,10 +311,13 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="row">
               <div class="col-10">
-                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Checklist">
+                <input id="detailcard_inputChecklist" type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Checklist">
+                <span id="warn_checklist_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
-                <button id="detailcard_addChecklist" type="button" class="btn btn-info" style="width: 100%;">Post</button>
+                <button id="detailcard_addChecklist" type="button" class="btn btn-info"
+                  style="width: 100%;">Post</button>
               </div>
             </div>
             <!--MESSAGE-->
@@ -316,7 +331,9 @@ function content_5fabcc97521dc1_99648261 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="row">
               <div class="col-10">
-                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Message">
+                <input id="detailcard_inputmessage" type="email" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Message">
+                <span id="warn_message_DetailRow" style="color:#d50000"></span>
               </div>
               <div class="col-2">
                 <button id="detailcard_senMessage" type="button" class="btn btn-info" style="width: 100%;">Send</button>
