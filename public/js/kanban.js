@@ -522,7 +522,8 @@
                 <span style="font-size: 9px;font-weight: bold;">${content}</span>
               </div>
               <div class="col-1">
-                <button id="detailcard_deleteChecklist_${idcheck}" type="button" class="btn btn-link">Delete</button>
+                <button id="detailcard_deleteChecklist_${idcheck}" type="button" class="btn btn-link"><img src="https://i.ibb.co/ZWwtFPW/delete.png"
+                                class="rounded-circle float-right" width="25" height="25"></button>
               </div>
               <div class="col-1 d-flex align-items-center">
               </div>
