@@ -378,7 +378,6 @@
                     DETAILCARD = data;
                     DETAILCARD.create_date = $(card_createdate + IDcard).text();
                     showDetailRow();
-                    console.log(DETAILCARD);
                 });
                 $(getEditCard).modal();
             });
@@ -814,7 +813,7 @@
             });
             $('.editable').each(function () {
                 let label = $(this);
-                label.after("<input type='text' style ='display:none' /> ");
+                label.after("<textarea type='text' style ='width: -webkit-fill-available;display:none' ></textarea> ");
                 let edittext = $(this).next();
                 edittext[0].name = this.id.replace('lbl', 'txt');
                 edittext.val(label.html());
