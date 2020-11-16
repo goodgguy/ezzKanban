@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-16 13:53:04
+/* Smarty version 3.1.34-dev-7, created on 2020-11-16 14:10:11
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb221d0088379_30077168',
+  'unifunc' => 'content_5fb225d33da4e1_72296499',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605509582,
+      1 => 1605510610,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb221d0088379_30077168 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb225d33da4e1_72296499 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -228,11 +228,11 @@ function content_5fb221d0088379_30077168 (Smarty_Internal_Template $_smarty_tpl)
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
-              <span id="detailcard_title" class="editable"></span>
+              <span id="detailcard_title" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <span id="detailcard_description" class="editable"></span>
+              <span id="detailcard_description" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="row">
               <div class="col-6">

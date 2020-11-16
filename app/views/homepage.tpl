@@ -206,11 +206,11 @@
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">TITLE:</label>
-              <span id="detailcard_title" class="editable"></span>
+              <span id="detailcard_title" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">DESCRIPTION:</label>
-              <span id="detailcard_description" class="editable"></span>
+              <span id="detailcard_description" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="row">
               <div class="col-6">
