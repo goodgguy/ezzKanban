@@ -30,3 +30,15 @@
     -webkit-border-radius: 9px 9px 9px 9px;
     border: 0px solid #000000;
 }
+.modal-header,.modal-footer
+{
+    background: #e8e8e8;
+}
+.modal-body
+{
+    background: #F4F4F2;
+}
+#detailcard_startdate,#detailcard_duedate,#detailcard_liststatus,detailcard_inputChecklist,detailcard_inputmessage
+{
+    background: #f1f3f8;
+}
