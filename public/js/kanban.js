@@ -815,7 +815,7 @@
                 edittext.focusout(function () {
                     $(this).hide();
                     if ($(this).val() == "" || $(this).val() === label.text()) {
-                        $(this).val(label.html());
+                        $(this).val(label.text());
                     } else {
                         let checkField = $(this).prev().attr('id');
                         if (checkField === "detailcard_title") {
@@ -839,7 +839,10 @@
                             });
                         }
                     }
-                    $(this).prev().html($(this).val()).text();
+                    //$(this).prev().html($(this).text()).text();
+                    //$(this).prev().text("UANQUEN");
+                    //console.log($(this).val());
+                    $(this).prev().html(htmlEntities($(this).val())).text();
                     $(this).prev().show();
                 })
             });
