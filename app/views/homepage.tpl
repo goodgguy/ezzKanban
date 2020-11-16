@@ -175,10 +175,10 @@
             <span id="date_warn_addcard" style="color:#d50000" class="mb-2"></span>
             <div class="row">
               <div class="col-1">
-                <label class="control-label">Priority: </label>
+                <label class="control-label" style="font-weight:bolder">Priority: </label>
               </div>
               <div class="col-11">
-                <button id="priority_addCard" type="button" class="btn" style="font-weight:bolder">Priority</button>
+                <button id="priority_addCard" type="button" class="btn">Priority</button>
               </div>
             </div>
           </form>

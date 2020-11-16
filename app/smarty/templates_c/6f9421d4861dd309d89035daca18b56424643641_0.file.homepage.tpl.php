@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-16 23:51:15
+/* Smarty version 3.1.34-dev-7, created on 2020-11-17 00:12:02
   from 'C:\xampp\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb2ae0372f869_26869484',
+  'unifunc' => 'content_5fb2b2e2159455_19105870',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f9421d4861dd309d89035daca18b56424643641' => 
     array (
       0 => 'C:\\xampp\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605545470,
+      1 => 1605546719,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb2ae0372f869_26869484 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb2b2e2159455_19105870 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -197,10 +197,10 @@ function content_5fb2ae0372f869_26869484 (Smarty_Internal_Template $_smarty_tpl)
             <span id="date_warn_addcard" style="color:#d50000" class="mb-2"></span>
             <div class="row">
               <div class="col-1">
-                <label class="control-label">Priority: </label>
+                <label class="control-label" style="font-weight:bolder">Priority: </label>
               </div>
               <div class="col-11">
-                <button id="priority_addCard" type="button" class="btn" style="font-weight:bolder">Priority</button>
+                <button id="priority_addCard" type="button" class="btn">Priority</button>
               </div>
             </div>
           </form>
