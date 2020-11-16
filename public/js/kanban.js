@@ -443,6 +443,7 @@
         function listUserDetailRow() {
             $(detailcard_listuser).empty();
             $.each(DETAILCARD.userList, function (index, val) {
+                if(val.IDuser==="")return;
                 let str = `<img id="user_in_${val.IDuser}"
             src="public/img/${val.image}"
             class="rounded-circle" width="30" height="30">`;
