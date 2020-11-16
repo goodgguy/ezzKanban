@@ -9,6 +9,7 @@ class fillterdataService
         }
         return $data;
     }
+
     public static function encodeDataArrayList($data)
     {
         foreach ($data as &$item) {
