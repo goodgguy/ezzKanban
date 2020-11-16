@@ -697,7 +697,7 @@
                 <div class="card-body" style="background-color: #ebecf0">
                     <div class="row">
                         <div class="col-sm-7 ">
-                            <h6 id="board_title_${data}" class="card-title text-uppercase text-truncate py-2">${value}</h6>
+                            <h6 id="board_title_${data}" class="card-title text-uppercase text-truncate py-2">${htmlEntities(value)}</h6>
                         </div>
                         <div class="col-sm-5">
                             <a col_delete_id=${data} id="col_del_${data}">
@@ -721,7 +721,6 @@
                 </div>
             </div>
         </div>`;
-
             $(board).append(str);
             $(addfield).val("");
             handleDragdropCard(data);
@@ -913,6 +912,10 @@
                 $(descrip_warn_addcard).text("")
             }
             return check;
+        }
+
+        function htmlEntities(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         }
     };
 
