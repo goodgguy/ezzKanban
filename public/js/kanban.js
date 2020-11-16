@@ -827,7 +827,7 @@
                                 cache: false
                             }).done(function (data) {
                             });
-                            $(row_title + DETAILCARD.IDcard).html($(this).val()).text();
+                            $(row_title + DETAILCARD.IDcard).html(htmlEntities($(this).val())).text();
                         } else {
                             $.ajax({
                                 url: options.url + "card/setDescription",
@@ -839,9 +839,6 @@
                             });
                         }
                     }
-                    //$(this).prev().html($(this).text()).text();
-                    //$(this).prev().text("UANQUEN");
-                    //console.log($(this).val());
                     $(this).prev().html(htmlEntities($(this).val())).text();
                     $(this).prev().show();
                 })
