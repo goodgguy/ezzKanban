@@ -45,7 +45,8 @@ class CardController extends Controller
         $duedate = dateService::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
         $idcol = $_POST["idcol"];
-        $result = $this->__CardService->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
+        $cardServiceArgs=array($title, $description, $startdate, $duedate, $priority, $idcol);
+        $result = call_user_func_array(array($this->__CardService, "addCard"),$cardServiceArgs );
         if ($result != -1) {
             $cardList = $this->__CardService->getCardListByColumn($idcol);
             echo json_encode($cardList);
