@@ -45,8 +45,8 @@ class CardController extends Controller
         $duedate = dateService::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
         $idcol = $_POST["idcol"];
-        $cardServiceArgs=array($title, $description, $startdate, $duedate, $priority, $idcol);
-        $result = call_user_func_array(array($this->__CardService, "addCard"),$cardServiceArgs );
+        $cardServiceAddCardArgs = array($title, $description, $startdate, $duedate, $priority, $idcol);
+        $result = call_user_func_array(array($this->__CardService, "addCard"), $cardServiceAddCardArgs);
         if ($result != -1) {
             $cardList = $this->__CardService->getCardListByColumn($idcol);
             echo json_encode($cardList);
@@ -72,7 +72,8 @@ class CardController extends Controller
         $UserService = $this->service("UserService");
         $ChecklistService = $this->service("ChecklistService");
         $idCard = $_POST['card'];
-        $cardDetail = $this->__CardService->getDetailCard($idCard, $CommentService, $UserService, $ChecklistService);
+        $cardServiceGetDetailArgs = array($idCard, $CommentService, $UserService, $ChecklistService);
+        $cardDetail = call_user_func_array(array($this->__CardService, "getDetailCard"), $cardServiceGetDetailArgs);
         echo json_encode($cardDetail);
     }
 
