@@ -48,7 +48,7 @@ class fileService
         if ($file[self::$file_key]["size"] > $maxfilesize) {
             $allowUpload = false;
         }
-        if (!in_array($imageFileType, self::$allowtypes)) {
+        if (!in_array(strtolower($imageFileType), self::$allowtypes)) {
             $allowUpload = false;
         }
         return $allowUpload;
