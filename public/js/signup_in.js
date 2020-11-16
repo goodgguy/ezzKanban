@@ -9,7 +9,6 @@ $(function () {
                 },
                 password: {
                     required: true,
-
                 }
             },
             messages: {
@@ -47,6 +46,8 @@ $(function () {
                 },
                 username: {
                     required: true,
+                    maxlength:30,
+                    minlength:3
                 }
             },
 
@@ -63,6 +64,8 @@ $(function () {
                 },
                 username: {
                     required: "Please provide a display name",
+                    maxlength:"Displayname cannot be longer than 30 characters",
+                    minlength:"Displayname must be longer than 3 characters"
                 }
             },
 
