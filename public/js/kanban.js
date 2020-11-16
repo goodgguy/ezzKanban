@@ -510,24 +510,11 @@
         }
 
         function modelChecklist(idcheck, content, status) {
-            let str = `<li class="list-group-item" id="detailcard_boxchecklist_${idcheck}">
-            <div class="row">
-              <div class="col-1 d-flex align-items-center">
-
-              </div>
-              <div class="col-1 d-flex align-items-center">
-                <input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}" ${status == 1 ? "checked" : ""}>
-              </div>
-              <div class="col-8">
-                <span style="font-size: 9px;font-weight: bold;">${content}</span>
-              </div>
-              <div class="col-1">
-                <button id="detailcard_deleteChecklist_${idcheck}" type="button" class="btn btn-link"><img src="https://i.ibb.co/ZWwtFPW/delete.png"
-                                class="rounded-circle float-right" width="25" height="25"></button>
-              </div>
-              <div class="col-1 d-flex align-items-center">
-              </div>
-            </div>
+            let str = `<li class="list-group-item d-flex justify-content-between" id="detailcard_boxchecklist_${idcheck}">
+            <div class="ml-3"><input type="checkbox" class="form-check-input" id="detailcard_check_${idcheck}" ${status == 1 ? "checked" : ""}>
+            <span style="font-size: 9px;font-weight: bold;word-break: break-all;">${content}</span></div>
+            <button id="detailcard_deleteChecklist_${idcheck}" type="button" class="btn btn-link"><img src="https://i.ibb.co/ZWwtFPW/delete.png"
+                                class="rounded-circle float-right" width="15" height="15"></button>
           </li>`;
             $(detailcard_listChecklist).append(str);
         }
@@ -595,7 +582,7 @@
                   </div>
                   <div class="col-11">
                     <span style="font-size: 9px;font-weight: bold;">${username}</span>
-                    <p style="font-size: 9px;margin-bottom:-6px">${content}</p>
+                    <p style="font-size: 9px;margin-bottom:-6px;word-break: break-all;">${content}</p>
                     <span style="font-size: 9px;opacity: 0.5;">${create_date}</span>
                   </div>
                 </div>
