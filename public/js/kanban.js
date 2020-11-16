@@ -606,7 +606,7 @@
         }
 
         function addUserNotIn(user) {
-            let str = `<li id="user_notin_${user.IDuser}" class="list-group-item">
+            let str = `<li id="user_notin_${user.IDuser}" class="list-group-item" style="background: #e6f8f9">
             <div class="row">
               <div class="col-1 d-flex align-items-center">
                 <img
@@ -617,7 +617,8 @@
                 <span style="font-size: 9px;font-weight: bold;">${user.username}</span>
               </div>
               <div class="col-1">
-                <button type="button" class="btn btn-link" id="user_notin_add_${user.IDuser}" id_user_notin=${user.IDuser}>ADD</button>
+                <button type="button" class="btn btn-link" id="user_notin_add_${user.IDuser}" id_user_notin=${user.IDuser}><img src="https://i.ibb.co/7Ns4N8S/plus-sign.png" class="float-right"
+                                    width="25" height="25"></button>
               </div>
             </div>
           </li>`;
