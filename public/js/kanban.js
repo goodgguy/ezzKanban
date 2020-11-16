@@ -820,12 +820,13 @@
                 edittext.val(label.html());
                 label.click(function () {
                     $(this).hide();
+                    $(this).next().val(label.text());
                     $(this).next().show();
                 })
                 edittext.focusout(function () {
                     $(this).hide();
                     if ($(this).val() == "" || $(this).val() === label.text()) {
-                        $(this).val(label.text());
+                        $(this).val(label.html());
                     } else {
                         let checkField = $(this).prev().attr('id');
                         if (checkField === "detailcard_title") {
@@ -837,7 +838,7 @@
                                 cache: false
                             }).done(function (data) {
                             });
-                            $(row_title + DETAILCARD.IDcard).text($(this).val());
+                            $(row_title + DETAILCARD.IDcard).html($(this).val()).text();
                         } else {
                             $.ajax({
                                 url: options.url + "card/setDescription",
@@ -849,7 +850,7 @@
                             });
                         }
                     }
-                    $(this).prev().html($(this).val());
+                    $(this).prev().html($(this).val()).text();
                     $(this).prev().show();
                 })
             });
@@ -897,7 +898,7 @@
                 $(title_warn_addcard).text("")
             }
             if (card.startdate.trim() === "" || card.duedate.trim() === "") {
-                $(date_warn_addcard).text("Your start date and due date is empty")
+                $(date_warn_addcard).text("Your start date or due date is empty")
                 check = false;
             } else if (card.startdate.trim() > card.duedate.trim()) {
                 $(date_warn_addcard).text("Start date must before duedate")
