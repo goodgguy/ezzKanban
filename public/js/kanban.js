@@ -159,6 +159,7 @@
             handleAddCommentDetailRow();
             handleAddChecklist();
             handleOnchangStatus();
+            evenCloseModal();
         }
 
         function initButton() {
@@ -166,6 +167,21 @@
             $(detailcard_addUser).click(function () {
                 $(detailcard_listUserNotIn).toggle();
             });
+        }
+
+        function evenCloseModal() {
+            $(getEditColumn).on('hidden.bs.modal', function (e) {
+                $(warnEditCol).text('');
+            })
+            $(getAddCard).on('hidden.bs.modal', function (e) {
+                $(title_warn_addcard).text("");
+                $(date_warn_addcard).text("");
+                $(descrip_warn_addcard).text("");
+            })
+            $(getEditCard).on('hidden.bs.modal', function (e) {
+                $(warn_startdate_DetailRow).text("");
+                $(warn_duedate_DetailRow).text("");
+            })
         }
 
         function addEventDragDropBoard() {
@@ -351,7 +367,6 @@
                     $(warnEditCol).text('Title is empty');
                     return;
                 }
-                $(warnEditCol).text('');
                 $(getEditColumn).modal('toggle');
                 $.post(options.url + "editColumn", {column: IDCOLUMN_EDIT, title: titleChanged})
                     .done(function (data) {
@@ -461,7 +476,7 @@
                         $(user_in + val.IDuser).remove();
                         listuserNotInDetailRow();
                         $(user_img + val.IDuser + "_" + DETAILCARD.IDcard).remove();
-                        DETAILCARD.userList.splice(DETAILCARD.userList.findIndex(x=>x.IDuser===val.IDuser), 1);
+                        DETAILCARD.userList.splice(DETAILCARD.userList.findIndex(x => x.IDuser === val.IDuser), 1);
                         console.log(DETAILCARD.userList);
                     });
                 })
@@ -727,7 +742,7 @@
         function handleModalAddRow() {
             let priorityInit = 0;
             $(priority_addCard).on('click', function () {
-                priorityInit = priorityInit===0?1:0;
+                priorityInit = priorityInit === 0 ? 1 : 0;
                 $(this).toggleClass("btn-danger");
             });
             $(submit_addCard).on('click', function () {
