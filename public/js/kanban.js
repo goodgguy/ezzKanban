@@ -725,9 +725,9 @@
 
         //===========================MODAL ADDROW
         function handleModalAddRow() {
-            let priorityInit = false;
+            let priorityInit = 0;
             $(priority_addCard).on('click', function () {
-                priorityInit = !priorityInit;
+                priorityInit = priorityInit===0?1:0;
                 $(this).toggleClass("btn-danger");
             });
             $(submit_addCard).on('click', function () {
