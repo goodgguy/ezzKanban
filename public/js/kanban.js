@@ -461,6 +461,8 @@
                         $(user_in + val.IDuser).remove();
                         listuserNotInDetailRow();
                         $(user_img + val.IDuser + "_" + DETAILCARD.IDcard).remove();
+                        DETAILCARD.userList.splice(DETAILCARD.userList.findIndex(x=>x.IDuser===val.IDuser), 1);
+                        console.log(DETAILCARD.userList);
                     });
                 })
             });
