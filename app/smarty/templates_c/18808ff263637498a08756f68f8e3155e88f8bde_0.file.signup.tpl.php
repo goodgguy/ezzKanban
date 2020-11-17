@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-12 17:35:33
+/* Smarty version 3.1.34-dev-7, created on 2020-11-17 17:55:21
   from 'C:\Apache24\htdocs\ezzKanban\app\views\signup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fad0ff5c729e1_99069683',
+  'unifunc' => 'content_5fb3ac19e08531_56987606',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '18808ff263637498a08756f68f8e3155e88f8bde' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\signup.tpl',
-      1 => 1605177314,
+      1 => 1605610520,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fad0ff5c729e1_99069683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb3ac19e08531_56987606 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +99,16 @@ function content_5fad0ff5c729e1_99069683 (Smarty_Internal_Template $_smarty_tpl)
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                         </div>
                         <input type="file" name="fileToUpload" id="fileToUpload" required style="visibility:hidden;">
-                        <label for="fileToUpload">Choose Avatar (Click here) allow: .jpg .png .jpeg .gif</label>
+                        <label for="fileToUpload">Choose Avatar allow: .jpg .png .jpeg .gif</label>
+                        <div class="row">
+                            <div class="col-1">
+                                <label for="fileToUpload"><img src="https://i.ibb.co/rZrQdnY/image.png"
+                                    width="25" height="25"></label>
+                            </div>
+                            <div class="col-11">
+                                <span id="nameImage"></span>
+                            </div>
+                        </div>
                         <div class="col-md-12 text-center mb-3 mt-2">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                         </div>

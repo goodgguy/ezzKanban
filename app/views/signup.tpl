@@ -62,7 +62,16 @@
                             <input type="password" name="confirm_password"  class="form-control" id="confirm_password" aria-describedby="emailHelp" placeholder="Enter Confirm Password">
                         </div>
                         <input type="file" name="fileToUpload" id="fileToUpload" required style="visibility:hidden;">
-                        <label for="fileToUpload">Choose Avatar (Click here) allow: .jpg .png .jpeg .gif</label>
+                        <label for="fileToUpload">Choose Avatar allow: .jpg .png .jpeg .gif</label>
+                        <div class="row">
+                            <div class="col-1">
+                                <label for="fileToUpload"><img src="https://i.ibb.co/rZrQdnY/image.png"
+                                    width="25" height="25"></label>
+                            </div>
+                            <div class="col-11">
+                                <span id="nameImage"></span>
+                            </div>
+                        </div>
                         <div class="col-md-12 text-center mb-3 mt-2">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Submit</button>
                         </div>

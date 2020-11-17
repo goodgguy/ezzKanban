@@ -46,8 +46,8 @@ $(function () {
                 },
                 username: {
                     required: true,
-                    maxlength:30,
-                    minlength:3
+                    maxlength: 30,
+                    minlength: 3
                 }
             },
 
@@ -64,8 +64,8 @@ $(function () {
                 },
                 username: {
                     required: "Please provide a display name",
-                    maxlength:"Displayname cannot be longer than 30 characters",
-                    minlength:"Displayname must be longer than 3 characters"
+                    maxlength: "Displayname cannot be longer than 30 characters",
+                    minlength: "Displayname must be longer than 3 characters"
                 }
             },
 
@@ -73,5 +73,11 @@ $(function () {
                 form.submit();
             }
         });
+    });
+});
+$(document).ready(function () {
+    $("#fileToUpload").change(function () {
+        var filename = $('input[type=file]').val().split('\\').pop();
+        $("#nameImage").text(filename);
     });
 });
