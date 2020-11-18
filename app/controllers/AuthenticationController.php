@@ -34,10 +34,9 @@ class AuthenticationController extends Controller
                 header("Location:" . URL_SERVER . "home");
                 return;
             }
-        } else {
-            $this->__smarty->assign("message", "Login failed");
-            $this->__smarty->display("signin.tpl");
         }
+        $this->__smarty->assign("message", "Login failed");
+        $this->__smarty->display("signin.tpl");
     }
 
     public function register()
