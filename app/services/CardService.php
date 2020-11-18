@@ -31,7 +31,7 @@ class CardService extends Controller
 
     public function addCard($args)
     {
-        call_user_func_array(array($this->__CardModel, "addCard"),$args);
+        call_user_func_array(array($this->__CardModel, "addCard"), $args);
     }
 
     public function getCardListByColumn($idCol)
