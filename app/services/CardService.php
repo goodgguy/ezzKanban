@@ -29,9 +29,9 @@ class CardService extends Controller
         return $this->__CardModel->setStateCard($toColumn, $idCard);
     }
 
-    public function addCard($title, $description, $startdate, $duedate, $priority, $idcol)
+    public function addCard($args)
     {
-        $this->__CardModel->addCard($title, $description, $startdate, $duedate, $priority, $idcol);
+        call_user_func_array(array($this->__CardModel, "addCard"),$args);
     }
 
     public function getCardListByColumn($idCol)

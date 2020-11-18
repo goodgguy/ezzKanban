@@ -46,7 +46,7 @@ class CardController extends Controller
         $priority = $_POST["priority"];
         $idcol = $_POST["idcol"];
         $cardServiceAddCardArgs = array($title, $description, $startdate, $duedate, $priority, $idcol);
-        $result = call_user_func_array(array($this->__CardService, "addCard"), $cardServiceAddCardArgs);
+        $result = $this->__CardService->addCard($cardServiceAddCardArgs);
         if ($result != -1) {
             $cardList = $this->__CardService->getCardListByColumn($idcol);
             echo json_encode($cardList);
