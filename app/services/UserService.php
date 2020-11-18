@@ -31,4 +31,9 @@ class UserService extends Controller
     {
         return fillterdataService::encodeDataArrayList($this->__UserModel->getUserNotinCard($idCard));
     }
+
+    public function getUserByCard($idCard)
+    {
+        return fillterdataService::encodeDataArrayList($this->__UserModel->getUserByCard($idCard));
+    }
 }

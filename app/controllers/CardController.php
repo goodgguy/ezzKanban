@@ -22,8 +22,9 @@ class CardController extends Controller
 
     public function getData()
     {
+        $UserService = $this->service('UserService');
         $columnService = $this->service('ColumnService');
-        $columnList = $this->__CardService->getAllData($columnService);
+        $columnList = $this->__CardService->getAllData($columnService, $UserService);
         echo json_encode($columnList);
     }
 
@@ -45,10 +46,11 @@ class CardController extends Controller
         $duedate = dateService::convertDate($_POST["duedate"]);
         $priority = $_POST["priority"];
         $idcol = $_POST["idcol"];
+        $UserService = $this->service('UserService');
         $cardServiceAddCardArgs = array($title, $description, $startdate, $duedate, $priority, $idcol);
         $result = $this->__CardService->addCard($cardServiceAddCardArgs);
         if ($result != -1) {
-            $cardList = $this->__CardService->getCardListByColumn($idcol);
+            $cardList = $this->__CardService->getCardListByColumn($idcol, $UserService);
             echo json_encode($cardList);
         }
     }
@@ -57,8 +59,9 @@ class CardController extends Controller
     {
         $idCard = $_POST["card"];
         $IDColumn = $this->__CardService->getColumnByIdCard($idCard);
+        $UserService = $this->service('UserService');
         $this->__CardService->deleteCard($idCard);
-        $cardList = $cardList = $this->__CardService->getCardListByColumn($IDColumn);
+        $cardList = $cardList = $this->__CardService->getCardListByColumn($IDColumn, $UserService);
         $response = array(
             "card" => $cardList,
             "idcol" => $IDColumn,

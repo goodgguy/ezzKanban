@@ -10,13 +10,13 @@ class CardService extends Controller
         $this->__CardModel = $this->model('CardModel');
     }
 
-    public function getAllData($columnService)
+    public function getAllData($columnService,$UserService)
     {
         $columnList = $columnService->getAllColumn();
         foreach ($columnList as &$column) {
             $cardList = $this->getCardByColumn($column['IDcolumn']);
             foreach ($cardList as &$card) {
-                $userList = $this->getUserByCard($card['IDcard']);
+                $userList = $UserService->getUserByCard($card['IDcard']);
                 $card['userList'] = $userList;
             }
             $column['cardlist'] = $cardList;
@@ -34,20 +34,14 @@ class CardService extends Controller
         call_user_func_array(array($this->__CardModel, "addCard"), $args);
     }
 
-    public function getCardListByColumn($idCol)
+    public function getCardListByColumn($idCol, $UserService)
     {
         $cardList = $this->getCardByColumn($idCol);
         foreach ($cardList as &$card) {
-            $userList = $this->getUserByCard($card['IDcard']);
+            $userList = $UserService->getUserByCard($card['IDcard']);
             $card['userList'] = $userList;
         }
         return $cardList;
-    }
-
-    public function getUserByCard($idCard)
-    {
-        $this->__UserModel = $this->model('UserModel');
-        return fillterdataService::encodeDataArrayList($this->__UserModel->getUserByCard($idCard));
     }
 
     public function getCardByColumn($idCol)
@@ -120,7 +114,7 @@ class CardService extends Controller
         $duedate = substr($duedate, 0, 19);
         return $this->__CardModel->setDuedateCard($id, $duedate);
     }
-    
+
     public function addUserCard($idUser, $idCard)
     {
         return $this->__CardModel->addUserCard($idUser, $idCard);
