@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-17 09:07:09
+/* Smarty version 3.1.34-dev-7, created on 2020-11-18 17:28:26
   from 'C:\Apache24\htdocs\ezzKanban\app\views\homepage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb3304d957961_44752446',
+  'unifunc' => 'content_5fb4f74a9ca482_78858964',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6a0ae0917ab8071f497764397f70ca9d2248405' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\ezzKanban\\app\\views\\homepage.tpl',
-      1 => 1605578688,
+      1 => 1605695305,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb3304d957961_44752446 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb4f74a9ca482_78858964 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -219,7 +219,7 @@ function content_5fb3304d957961_44752446 (Smarty_Internal_Template $_smarty_tpl)
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">DETAIL CARD</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Detail Card</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -227,11 +227,11 @@ function content_5fb3304d957961_44752446 (Smarty_Internal_Template $_smarty_tpl)
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">TITLE:</label>
+              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">Title:</label>
               <span id="detailcard_title" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">DESCRIPTION:</label>
+              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">Description:</label>
               <span id="detailcard_description" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="row">

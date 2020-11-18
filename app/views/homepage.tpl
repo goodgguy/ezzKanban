@@ -197,7 +197,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">DETAIL CARD</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Detail Card</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -205,11 +205,11 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">TITLE:</label>
+              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">Title:</label>
               <span id="detailcard_title" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">DESCRIPTION:</label>
+              <label for="recipient-name" class="col-form-label" style="font-weight:bolder">Description:</label>
               <span id="detailcard_description" class="editable" style="word-wrap: break-word"></span>
             </div>
             <div class="row">

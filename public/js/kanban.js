@@ -755,7 +755,7 @@
                     priority: priorityInit,
                     idcol: IDCOL_ADDCARD
                 };
-                card.title = $(title_addCard).val();
+                card.title = $(title_addCard).val().trim();
                 card.description = $(description_addCard).val().trim();
                 card.startdate = $(addcard_startdate).val();
                 card.duedate = $(addcard_duedate).val();
