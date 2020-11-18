@@ -120,13 +120,7 @@ class CardService extends Controller
         $duedate = substr($duedate, 0, 19);
         return $this->__CardModel->setDuedateCard($id, $duedate);
     }
-
-    public function getUserNotinCard($idCard)
-    {
-        $this->__UserModel = $this->model('UserModel');
-        return fillterdataService::encodeDataArrayList($this->__UserModel->getUserNotinCard($idCard));
-    }
-
+    
     public function addUserCard($idUser, $idCard)
     {
         return $this->__CardModel->addUserCard($idUser, $idCard);

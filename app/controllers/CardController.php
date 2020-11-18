@@ -122,7 +122,8 @@ class CardController extends Controller
     public function getUsernotIn()
     {
         $idCard = $_POST['card'];
-        $result = $this->__CardService->getUserNotinCard($idCard);
+        $userService = $this->service('UserService');
+        $result = $userService->getUserNotinCard($idCard);
         echo json_encode($result);
     }
 
