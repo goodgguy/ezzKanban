@@ -10,7 +10,7 @@ class CardService extends Controller
         $this->__CardModel = $this->model('CardModel');
     }
 
-    public function getAllData($columnService,$UserService)
+    public function getAllData($columnService, $UserService)
     {
         $columnList = $columnService->getAllColumn();
         foreach ($columnList as &$column) {
