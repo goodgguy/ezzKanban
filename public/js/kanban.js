@@ -477,7 +477,6 @@
                         listuserNotInDetailRow();
                         $(user_img + val.IDuser + "_" + DETAILCARD.IDcard).remove();
                         DETAILCARD.userList.splice(DETAILCARD.userList.findIndex(x => x.IDuser === val.IDuser), 1);
-                        console.log(DETAILCARD.userList);
                     });
                 })
             });
@@ -648,6 +647,7 @@
             class="rounded-circle" width="30" height="30">`;
             $(detailcard_listUserNotIn).append(str);
             $(user_notin_add + user.IDuser).on("click", function () {
+                DETAILCARD.userList.push(user);
                 $.ajax({
                     url: options.url + "card/addUser",
                     type: "POST",
@@ -669,6 +669,7 @@
                             $(user_in + user.IDuser).remove();
                             listuserNotInDetailRow();
                             $(user_img + user.IDuser + "_" + DETAILCARD.IDcard).remove();
+                            DETAILCARD.userList.splice(DETAILCARD.userList.findIndex(x => x.IDuser === user.IDuser), 1);
                         });
                     })
                 });
